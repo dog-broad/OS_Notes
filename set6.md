@@ -186,7 +186,7 @@ void main() {
 # External
 
 
-1.
+1. 
 ---
 
 ### A. **Delete Directory:**
@@ -240,7 +240,7 @@ void main() {
    - **Explanation:** The `ps` command without any options displays information about processes associated with the current terminal. It shows the process ID (PID), terminal, CPU and memory usage, and other details.
 
 
-2.
+2. Wish on Time
 ----
 
 ```bash
@@ -260,7 +260,7 @@ fi
 ```
 
 
-3a.
+3a. FCFS Scheduling
 ---
 
 ```c
@@ -312,7 +312,7 @@ void main() {
 ![](2023-08-01-21-26-10.png)
 
 
-3b.
+3b. INDEXED File Allocation
 ---
     
 ```c
