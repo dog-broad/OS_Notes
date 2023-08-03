@@ -74,23 +74,23 @@ The process will continue with routers exchanging information and updating their
 
 # Explain three way handshaking connection mechanisms in TCP(connection establishment,Data Transfer, connection Relase)
 
+The three-way handshake is a method used by TCP to establish a connection between a client and a server. It involves three steps:
+
 ### 1. Connection Establishment
 
-The three-way handshake is the process by which a TCP connection is established between a client and a server. It involves three steps:
+1. **Step 1: Client sends SYN (Synchronize) to Server**
+   - The client initiates the connection by sending a SYN packet to the server.
+   - The SYN packet contains a random initial sequence number (ISN) chosen by the client to start the communication.
 
-**Step 1: Client sends SYN (Synchronize)**
-1. The client initiates the connection by sending a SYN packet to the server.
-2. The SYN packet contains a randomly generated sequence number (ISN - Initial Sequence Number) to start the connection.
+2. **Step 2: Server Responds with SYN-ACK (Synchronize-Acknowledge) to Client**
+   - Upon receiving the SYN packet, the server responds with a SYN-ACK packet back to the client.
+   - The SYN-ACK packet contains its own random initial sequence number (ISN) as well as an acknowledgment number equal to the client's ISN incremented by 1.
+   - The server also reserves buffer space and resources to handle the upcoming connection.
 
-**Step 2: Server Responds with SYN-ACK (Synchronize-Acknowledge)**
-1. Upon receiving the SYN packet, the server acknowledges the request and responds with a SYN-ACK packet.
-2. The SYN-ACK packet includes its own randomly generated sequence number (ISS - Initial Sequence Number) and acknowledges the client's ISN by adding 1 to it.
-3. The server also includes its window size, indicating the maximum amount of data it can receive.
-
-**Step 3: Client Acknowledges with ACK (Acknowledge)**
-1. The client receives the SYN-ACK packet from the server.
-2. It acknowledges the server's ISN by adding 1 to it and sends back an ACK packet to the server.
-3. The ACK packet confirms the establishment of the connection and also contains the client's window size.
+3. **Step 3: Client Sends ACK (Acknowledge) to Server**
+   - Finally, the client acknowledges the server's response by sending an ACK packet.
+   - The ACK packet contains the acknowledgment number equal to the server's ISN incremented by 1.
+   - At this point, the connection is considered established, and both the client and server can begin exchanging data.
 
 At this point, the connection is considered established, and both client and server are ready to exchange data.
 
