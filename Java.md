@@ -415,3 +415,61 @@ On the other hand, Event Adapters are classes that provide default implementatio
 | Suitability for different events       | Suitable for handling a single type of event. | Suitable when you have multiple event types but only want to handle a few of them.                        |
 | Code readability                      | May result in a longer and cluttered code.   | Improves code readability and reduces clutter, especially when handling multiple events.                  |
 | Event handling when listener changes  | Requires changes in all implementing classes. | Does not affect existing classes if new event methods are added.                                          |
+
+
+
+# Illustrate the life cycle methods of an applet with a suitable program.
+
+Applet Life Cycle in Java
+
+In Java, an applet is a special type of program embedded in a web page to generate dynamic content. The applet has a life cycle consisting of five core methods: `init()`, `start()`, `stop()`, `paint()`, and `destroy()`. These methods are invoked by the web browser to execute and control the applet's behavior during its execution.
+
+![](2023-08-03-19-37-53.png)
+
+1. **init()**: The `init()` method is the first method to run when the applet is initialized. It is invoked only once at the beginning of the applet's execution. The web browser creates the applet object and calls the `init()` method to initialize it. This method is commonly used for applet setup and resource allocation.
+
+2. **start()**: The `start()` method contains the actual code of the applet and starts its execution. It is invoked immediately after the `init()` method and also whenever the applet's page is refreshed or revisited. This method is useful for starting any ongoing activities or animations in the applet.
+
+3. **paint()**: The `paint()` method belongs to the `Graphics` class in Java. It is used to draw shapes like circles, squares, and other graphical elements in the applet. The `paint()` method is executed after the `start()` method and whenever the applet's window is resized or refreshed.
+
+4. **stop()**: The `stop()` method is called when the applet is paused or stopped, such as when the user navigates away from the applet's page or minimizes the browser window. It is also invoked when the applet moves from one tab to another in the browser. The `stop()` method can be used to pause or halt ongoing activities in the applet.
+
+5. **destroy()**: The `destroy()` method is called when the applet is no longer needed and is about to be removed from memory. It is executed when the applet's window is closed or when the tab containing the webpage is closed. The `destroy()` method is used for cleanup tasks, releasing resources, or saving data before the applet is terminated.
+
+The sequence of method execution when an applet is executed is as follows:
+
+1. `init()`: Applet initialization
+2. `start()`: Applet execution starts
+3. `paint()`: Applet draws graphical elements
+4. `stop()`: Applet execution stops (e.g., user navigates away)
+5. `destroy()`: Applet cleanup and termination
+
+The Java plug-in software manages the life cycle of the applet, ensuring proper execution and resource management. The applet runs on the client-side within a web browser and doesn't have a `main()` method because it is designed to be placed on an HTML page. To create an applet, we extend the `Applet` class and override its methods to customize its behavior. The `paint()` method, which belongs to the `Graphics` class, is used to draw graphical elements within the applet.
+
+Example of Applet Life Cycle:
+
+```java
+import java.applet.*;
+
+public class MyApplet extends Applet {
+    public void init() {
+        // Initialization code here
+    }
+
+    public void start() {
+        // Start execution code here
+    }
+
+    public void paint(Graphics g) {
+        // Drawing code here
+    }
+
+    public void stop() {
+        // Stop execution code here
+    }
+
+    public void destroy() {
+        // Cleanup code here
+    }
+}
+```
