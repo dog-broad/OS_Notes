@@ -611,3 +611,43 @@ public class KeyEventsExample extends Frame implements KeyListener {
     }
 }
 ```
+
+
+# Illustrate the ways of passing parameters to applets.
+
+In Java applets, parameters can be passed from the HTML file to the applet. This allows us to customize the behavior or appearance of the applet based on the values provided in the HTML code. To pass parameters to an applet, we use the `<param>` tag in the HTML file, and then the applet can access these parameters using the `getParameter()` method.
+
+Let's illustrate the ways of passing parameters to applets with an example:
+
+Example of an Applet with Parameters:
+1. Java Applet Code (UseParam.java):
+```java
+import java.applet.Applet;
+import java.awt.Graphics;
+
+public class UseParam extends Applet {
+    public void paint(Graphics g) {
+        String str = getParameter("msg");
+        g.drawString(str, 50, 50);
+    }
+}
+```
+
+2. HTML File (myapplet.html):
+```html
+<html>
+<body>
+    <applet code="UseParam.class" width="300" height="300">
+        <param name="msg" value="Welcome to applet">
+    </applet>
+</body>
+</html>
+```
+
+In this example, we have created an applet named `UseParam` that extends the `Applet` class. Inside the `paint()` method, we use the `getParameter("msg")` method to retrieve the value of the parameter named "msg" passed from the HTML file.
+
+In the HTML file, we use the `<applet>` tag to embed the applet in the web page. The `code` attribute specifies the class file of the applet (`UseParam.class`). Inside the applet tag, we use the `<param>` tag to pass the parameter "msg" with the value "Welcome to applet" to the applet.
+
+When the HTML file is executed in a web browser, the applet will be displayed with the message "Welcome to applet" drawn at the position (50, 50) on the applet window.
+
+Using parameters in applets allows us to make our applets more versatile and dynamic, as we can change their behavior simply by modifying the values of the parameters in the HTML code.
