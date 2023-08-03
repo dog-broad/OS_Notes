@@ -126,3 +126,23 @@ When either the client or the server wants to close the connection, a connection
 Once both sides have exchanged FIN and ACK packets, the connection is considered closed gracefully.
 
 The three-way handshake and connection release mechanisms in TCP ensure reliable and orderly communication between client and server, while the data transfer process guarantees that data is successfully delivered and received.
+
+
+
+# Discuss in detail about TCP Connection Management Modeling
+
+![](2023-08-04-04-30-48.png)
+
+![](2023-08-04-04-31-05.png)
+
+In each of the 11 states shown in above table, some specific events are legal.
+
+Corresponding to every legal event some action may be taken, but if some other event happens, then error is reported.
+
+Each Connection is always in the CLOSED State Initially.
+
+It comes out of this state when it does either the passive open (LISTEN) or an active open (CONNECT).
+
+A connection is established, if the other side does the opposite and the state becomes ESTABLISHED.
+
+When the both the sides initiate a connection release the connection is terminated and the state returns to CLOSED state.
