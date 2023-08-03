@@ -220,3 +220,45 @@ The event source and event listener work together to make a program interactive.
 5. The event listener performs a specific action based on the event, like displaying a message when the button is clicked.
 
 By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
+
+
+# What is a Layout manager? Explain the different types of Layout managers in detail.
+
+A Layout Manager in Java enables us to control how visual components are arranged in GUI forms by determining their size and position within containers. There are six types of Layout Managers in Java:
+
+1. **FlowLayout**: Components are arranged from left to right and top to bottom like words on a page. If the container is not wide enough, components wrap around to the next line. Vertical and horizontal gaps between components can be controlled, and components can be left, center, or right-aligned.
+
+2. **BorderLayout**: Components are placed along the edges or in the middle of the container (top, bottom, right, left). Components added to the top or bottom get their preferred height and fill the width of the container. Those added to the left or right get their preferred width and fill the remaining height. The center component covers the remaining area.
+
+3. **GridLayout**: Components are arranged in a grid of equally sized cells, added from left to right and top to bottom. Each cell can hold only one component, and all cells have the same size. When the container is resized, cells are automatically resized. Components are placed based on the order they were added.
+
+4. **GridBagLayout**: This powerful layout arranges components in a grid of cells and maintains the aspect ratio of objects when the container is resized. Cells may have different sizes, and the layout allows for consistent gaps between components. Default alignments can be specified for components within columns or rows.
+
+5. **BoxLayout**: Components are arranged either vertically or horizontally, but not both. For horizontal alignment, all components have the same height (equal to the largest component's height). For vertical alignment, all components have the same width (equal to the largest component's width).
+
+6. **CardLayout**: It arranges components with the same size in a deck-like manner, where only the top component is visible at any time. Components are displayed either horizontally or vertically, and the first component added is kept at the top.
+
+Example:
+
+Suppose we have a simple Java Swing program with three buttons, and we want to arrange them horizontally using the FlowLayout manager:
+
+```java
+import javax.swing.*;
+
+public class LayoutExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Layout Example");
+        JPanel panel = new JPanel();
+
+        panel.setLayout(new FlowLayout());
+        panel.add(new JButton("Button 1"));
+        panel.add(new JButton("Button 2"));
+        panel.add(new JButton("Button 3"));
+
+        frame.add(panel);
+        frame.setSize(300, 100);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
