@@ -651,3 +651,22 @@ In the HTML file, we use the `<applet>` tag to embed the applet in the web page.
 When the HTML file is executed in a web browser, the applet will be displayed with the message "Welcome to applet" drawn at the position (50, 50) on the applet window.
 
 Using parameters in applets allows us to make our applets more versatile and dynamic, as we can change their behavior simply by modifying the values of the parameters in the HTML code.
+
+
+# Compare and contrast any 4 AWT and Swing components
+
+1. **AWT Button vs. Swing JButton:**
+   - AWT Button: AWT provides the `Button` class to create clickable buttons. It uses the native platform's appearance for rendering.
+   - Swing JButton: Swing provides the `JButton` class that creates buttons with a more consistent look across different platforms. It is lightweight and provides better control over appearance and behavior.
+
+2. **AWT TextField vs. Swing JTextField:**
+   - AWT TextField: AWT offers the `TextField` class for single-line text input. It is heavyweight and uses the native platform's rendering for text.
+   - Swing JTextField: Swing provides the `JTextField` class, which is lightweight and provides consistent text input fields with additional features like text alignment, password mode, and text validation.
+
+3. **AWT Label vs. Swing JLabel:**
+   - AWT Label: AWT has the `Label` class for displaying text or images. It uses native rendering for text and images.
+   - Swing JLabel: Swing provides the `JLabel` class, which offers more flexibility, supports HTML rendering, and can display images, icons, or custom components.
+
+4. **AWT List vs. Swing JList:**
+   - AWT List: AWT provides the `List` class to create simple lists of text items. It is limited to displaying text and has basic functionality.
+   - Swing JList: Swing offers the `JList` class, which is more powerful and supports custom data models, multiple selections, and complex rendering with custom cell renderers.
