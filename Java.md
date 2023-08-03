@@ -82,3 +82,17 @@ public class MouseEventsExample extends Frame implements MouseListener, MouseMot
 
 In this example, we create a simple Java AWT Frame and implement both MouseListener and MouseMotionListener interfaces. We override their respective methods to print messages when various mouse events occur. The `main` method creates an instance of our custom class `MouseEventsExample`, and the program displays the frame. When you run the program and interact with the window using the mouse, you will see the corresponding messages in the console.
 
+# Differentiate applets from application programs.
+| Parameters                  | Java Application                             | Java Applet                                     |
+|-----------------------------|--------------------------------------------|-----------------------------------------------|
+| Meaning                     | A stand-alone program that runs on the underlying OS.    | A small program embedded in a web page and runs on the client-side.   |
+| Requirement of main( ) method | Execution starts with the main( ) method, which is mandatory. | Initialization occurs through the init( ) method, and main( ) is not required. |
+| Execution                  | Requires Java Runtime Environment (JRE) to run.         | Runs on a Java-based web browser with APIs like Web API.     |
+| Installation               | Needs to be installed on the local computer before execution. | No pre-installation is required.                       |
+| Connectivity with server   | Can establish connections with other servers.            | Cannot establish connections to other servers.             |
+| Operation                  | Can perform read and write tasks on local files.          | Limited access to browser-specific services, no local system operations. |
+| File access                | Can easily access files on the local computer.            | Cannot access files on the local system or computer.      |
+| Security                   | Generally trusted and comes with no security concerns.    | Considered less reliable and needs to be secured.         |
+
+In summary, Java applications are standalone programs that run on the underlying operating system and require the main( ) method for execution. They have full access to local resources and can establish connections with other servers. On the other hand, Java applets are small programs embedded in web pages, run on the client-side within a Java-based web browser, and are limited in accessing local resources and establishing server connections.
+
