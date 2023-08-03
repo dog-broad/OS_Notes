@@ -353,3 +353,44 @@ public class MyApplet extends Applet {
      - `void setSelected(boolean selected)`: Sets whether the check box is selected or not.
      - `void setText(String text)`: Sets the text displayed next to the check box.
 
+
+# Demonstrate the usage of thread synchronization in Java with a suitable example?
+
+In Java, synchronization is used to control the access of multiple threads to shared resources. It ensures that only one thread can access the shared resource at a time, preventing thread interference and consistency problems.
+
+Thread synchronization in Java is achieved through mutual exclusion, which comes in two forms: synchronized methods and synchronized blocks.
+
+1. **Synchronized Method**:
+A method can be marked as synchronized, meaning only one thread can execute it at a time. When a thread enters a synchronized method, it automatically acquires the lock associated with the object and releases it when the method is complete.
+
+```java
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+```
+
+2. **Synchronized Block**:
+A block of code can be synchronized, allowing only one thread to execute that block at a time. The synchronized block must specify an object on which the lock will be acquired.
+
+```java
+class Counter {
+    private int count = 0;
+    private final Object lock = new Object();
+
+    public void increment() {
+        synchronized (lock) {
+            count++;
+        }
+    }
+}
+```
+
+Both synchronized methods and synchronized blocks provide mutual exclusion and help prevent thread interference when multiple threads access shared resources.
+
+The concept of locks in Java revolves around the monitor associated with each object. Threads that require consistent access to an object's fields must acquire the object's lock before accessing them and release it when done.
+
+Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
