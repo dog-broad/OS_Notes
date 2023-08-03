@@ -191,7 +191,7 @@ The DHCP process involves the following steps:
 
 # Working Principle of FTP
 
-File Transfer Protocol (FTP) is an internet tool provided by TCP/IP that enables the transfer of files between computers. It was first developed by Abhay Bhushan in 1971. FTP allows users to access directories or folders on remote computers and transfer data, software, and text files between different kinds of computers.
+File Transfer Protocol (FTP) is an internet tool provided by TCP/IP that enables the transfer of files between computers. It was first developed by Abhay Bhushan in 1971. FTP allows users to access directories or folders on remote computers and transfer data, software, and text files between different kinds of computers. The end-user in the connection is known as localhost and the server which provides data is known as the remote host. 
 
 ### Goals of FTP
 
