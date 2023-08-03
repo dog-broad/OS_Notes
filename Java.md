@@ -96,3 +96,48 @@ In this example, we create a simple Java AWT Frame and implement both MouseListe
 
 In summary, Java applications are standalone programs that run on the underlying operating system and require the main( ) method for execution. They have full access to local resources and can establish connections with other servers. On the other hand, Java applets are small programs embedded in web pages, run on the client-side within a Java-based web browser, and are limited in accessing local resources and establishing server connections.
 
+# Sketch the MVC architecture and also explain each and every component in it.
+
+The Model-View-Controller (MVC) is a widely-used design pattern in web development to organize code effectively. It emphasizes the separation of concerns, dividing a program or application into three distinct components: Model, View, and Controller.
+
+![](2023-08-03-18-48-19.png)
+
+### Components of MVC Architecture:
+
+1. **Model**: The Model represents the business logic and data of the application. It is an object that carries data and can also contain the logic to update the Controller if the data changes. In simple terms, it handles the data and its manipulation.
+
+2. **View**: The View represents the presentation layer of the application. It is responsible for visualizing the data present in the Model. The View is used to display information to the user in a format that is understandable and user-friendly.
+
+3. **Controller**: The Controller acts as an intermediary between the Model and the View. It manages the flow of the application, handling user requests, and updating the View whenever there is a change in data. The Controller serves as the backbone of the MVC pattern.
+
+### How MVC Works in Java:
+
+The process of interaction in MVC can be summarized as follows:
+
+1. A client (e.g., a web browser) sends a request to the Controller on the server side, requesting a specific page or action.
+
+2. The Controller then calls the Model to gather the required data.
+
+3. Once the data is retrieved, the Controller transfers it to the View layer for presentation.
+
+4. The View processes the data and generates the final output, which is sent back to the client (browser) for display.
+
+### Advantages of MVC Architecture:
+
+MVC architecture offers several advantages, making it a popular choice for organizing web applications:
+
+1. **Scalability**: MVC supports application growth as the components can be easily extended and modified without affecting other parts.
+
+2. **Easy Maintenance**: The separation of concerns in MVC reduces dependencies between components, making them easier to maintain and update.
+
+3. **Reusability**: The Model can be reused by multiple Views, leading to code reusability and saving development time.
+
+4. **Concurrent Development**: Developers can work simultaneously on different layers (Model, View, and Controller) without interfering with each other's code.
+
+5. **Clarity and Understandability**: MVC enhances application readability and understandability by dividing it into three distinct parts, making it easier for developers to comprehend and work with the codebase.
+
+6. **Simplified Codebase**: Since each layer is maintained separately, developers do not have to deal with massive code files, reducing complexity.
+
+7. **Easier Extension and Testing**: The modularity of MVC makes it easier to extend the application's functionality and perform unit testing on individual components.
+
+In conclusion, the MVC architecture in Java separates concerns and improves maintainability, reusability, and scalability of web applications. By dividing the application into Model, View, and Controller, developers can work efficiently and create more organized and manageable codebases.
