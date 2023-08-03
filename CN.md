@@ -187,3 +187,40 @@ The DHCP process involves the following steps:
 5. **Lease Renewal:** As the IP address lease approaches its expiration time, the client may request a lease renewal from the DHCP server. If the DHCP server approves the renewal, the client's IP address lease is extended.
 
 6. **Release:** When a device disconnects from the network or no longer needs an IP address, it sends a DHCP Release message to the DHCP server, indicating that it is relinquishing the leased IP address.
+
+
+# Working Principle of FTP
+
+File Transfer Protocol (FTP) is an internet tool provided by TCP/IP that enables the transfer of files between computers. It was first developed by Abhay Bhushan in 1971. FTP allows users to access directories or folders on remote computers and transfer data, software, and text files between different kinds of computers.
+
+## Goals of FTP
+
+- Encourages direct use of remote computers.
+- Shields users from system variations (operating system, directory structures, file structures, etc.).
+- Promotes sharing of files and other types of data.
+
+## FTP Clients
+
+FTP works on a client-server model. The FTP client is a program that runs on the user's computer, enabling them to interact with remote computers and retrieve files. FTP clients use various commands to establish connections, transfer files, and manage the process. Some common commands include `get` (retrieve a file from the server), `mget` (retrieve multiple files), and `ls` (list files available in the current directory of the server).
+
+## Types of FTP Connections
+
+FTP connections can be of two types:
+
+1. **Active FTP Connection:** In this type, the client establishes the command channel, and the server establishes the data channel. When the client requests data, the server initiates the transfer to the client. Active FTP is not the default connection and may encounter issues with firewalls.
+
+2. **Passive FTP Connection:** Here, the client establishes both the data and command channels. When the client requests data, the server sends a random port number to the client, which then establishes the data channel. Passive FTP is the default connection and works better with firewalls.
+
+## Anonymous FTP
+
+Some FTP sites offer anonymous access, where users can access files without providing a username or password. Instead, the username is set to "anonymous," and the password is typically set to the guest's email address. However, anonymous users usually have limited access and cannot navigate through directories.
+
+## How FTP Works
+
+1. FTP connection is established between two systems using the network.
+2. Two communication channels are established: the command channel and the data channel.
+3. The command channel is used to transfer commands and responses between the client and server using the NVT ASCII character set. It uses port number 21.
+4. The data channel is used for actual data transfer and uses port number 20.
+5. The user logs in using credentials or anonymous login (email address).
+6. Once connected, the client can access and transfer files from the server.
+7. The client exits the connection after transferring desired files.
