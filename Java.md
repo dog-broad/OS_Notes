@@ -196,3 +196,27 @@ class Test {
 ```
 
 In this example, we have a `Customer` class with two synchronized methods `withdraw` and `deposit`. When the `withdraw` method is called, it checks if the amount to be withdrawn is greater than the current balance. If so, it waits for a `notify` signal. Meanwhile, the `deposit` method is called from another thread, which deposits money into the account and then sends a `notify` signal to wake up the waiting thread. This way, the `withdraw` and `deposit` methods are synchronized and communicate with each other to manage the customer's balance.
+
+
+# Explain about Event classes, Event sources, Event listeners and the relationship among them.
+
+Event classes, event sources, and event listeners are essential concepts in programming that allow different parts of a program to communicate with each other when certain actions or events happen. Let's understand each concept in simpler terms:
+
+1. **Event Sources**:
+An event source is like a signal sender in a program. It generates signals or events when something important happens. Imagine it as a button that you press, and it tells other parts of the program that the button was pressed. These events can be things like clicking a button, pressing a key, or moving the mouse.
+
+2. **Event Listeners**:
+An event listener is like a signal receiver in a program. It waits and listens for specific events from the event source. It's like an attentive person who keeps an eye on the button and reacts when it is pressed. When an event occurs, the listener does something in response to that event. For example, if the button is clicked, the listener may perform a particular action, like opening a new window.
+
+3. **Event Classes**:
+An event class is like a message that carries information about the event. It helps the event listener to understand what exactly happened. For example, the event class might say, "ButtonClickedEvent" or "KeyPressedEvent," so the listener knows which event occurred and can respond accordingly.
+
+**Relationship among them**:
+The event source and event listener work together to make a program interactive. Here's how it works:
+1. The event source generates an event when something happens, like a button being clicked.
+2. The event class describes the event, saying it's a button click event.
+3. The event source sends this event to the event listener, saying, "Hey, a button was clicked!"
+4. The event listener receives the event and knows what kind of event it is.
+5. The event listener performs a specific action based on the event, like displaying a message when the button is clicked.
+
+By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
