@@ -146,3 +146,46 @@ It comes out of this state when it does either the passive open (LISTEN) or an a
 A connection is established, if the other side does the opposite and the state becomes ESTABLISHED.
 
 When the both the sides initiate a connection release the connection is terminated and the state returns to CLOSED state.
+
+
+# DHCP - Dynamic Host Configuration Protocol
+
+**Notes on DHCP**
+
+- DHCP stands for Dynamic Host Configuration Protocol.
+- It is a network protocol used to automatically assign IP addresses and other network configuration parameters to devices on a network.
+- DHCP is widely used in local area networks (LANs) to simplify the process of IP address management.
+- It operates on the client-server model, where a DHCP server manages a pool of IP addresses and leases them to DHCP clients.
+- The DHCP process involves four main steps: Discover, Offer, Request, and Acknowledge (DORA).
+
+**Understanding DHCP**
+
+DHCP is essential for the proper functioning of modern networks. Without DHCP, network administrators would need to manually assign IP addresses to each device, which can be time-consuming and prone to errors. DHCP automates this process, making it easier to manage IP address allocation and configuration.
+
+**What DHCP Does:**
+
+1. **IP Address Allocation:** DHCP dynamically assigns IP addresses to devices on a network. When a device joins the network, it sends a DHCP Discover message to find an available IP address. The DHCP server responds with a DHCP Offer, providing the client with an IP address lease.
+
+2. **Subnet Mask and Default Gateway:** DHCP not only provides IP addresses but also supplies subnet masks and default gateway information to clients. These parameters are crucial for proper routing of data packets within the network.
+
+3. **DNS Server Configuration:** DHCP can also provide clients with the IP addresses of Domain Name System (DNS) servers. This ensures that devices can resolve domain names into IP addresses for internet connectivity and name resolution.
+
+4. **Lease Management:** IP addresses assigned by DHCP are not permanent. Instead, they are leased for a specific duration. Before the lease expires, the client can request a lease renewal from the DHCP server. This allows the network to efficiently manage IP address allocation and adapt to changes in the network.
+
+**How DHCP Works**
+
+The DHCP process involves the following steps:
+
+1. **Discover:** When a device connects to a network and needs an IP address, it broadcasts a DHCP Discover message on the network. The Discover message asks for an available DHCP server.
+
+2. **Offer:** When a DHCP server receives the Discover message, it checks its pool of available IP addresses. If an address is available, the DHCP server sends a DHCP Offer message to the requesting client, offering the available IP address for lease.
+
+3. **Request:** Upon receiving the DHCP Offer, the client may receive multiple offers from different DHCP servers. It then selects one of the offers and sends a DHCP Request message to the chosen server, indicating its acceptance of the offered IP address.
+
+4. **Acknowledge:** The DHCP server that receives the DHCP Request message acknowledges the client's acceptance by sending a DHCP Acknowledge (ACK) message. This message confirms the IP address lease and provides additional configuration information, such as subnet mask, default gateway, and DNS server addresses.
+
+5. **Lease Renewal:** As the IP address lease approaches its expiration time, the client may request a lease renewal from the DHCP server. If the DHCP server approves the renewal, the client's IP address lease is extended.
+
+6. **Release:** When a device disconnects from the network or no longer needs an IP address, it sends a DHCP Release message to the DHCP server, indicating that it is relinquishing the leased IP address.
+
+Overall, DHCP simplifies network management by automating IP address assignment and configuration, allowing for efficient use of IP addresses, and supporting dynamic changes in network topology and devices.
