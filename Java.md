@@ -494,3 +494,64 @@ Its pure Java implementation, consistent behavior, and efficient performance mak
 5. **Performance**: The lightweight nature of Swing contributes to its superior performance. By minimizing reliance on the operating system's windowing system, Swing components efficiently manage painting, event handling, and rendering. The use of double-buffering techniques also helps to eliminate flickering, resulting in smoother animations and user interactions.
 
 6. **Extensibility**: Swing offers a rich set of components that can be easily customized and extended. Developers can create their own custom components or extend existing ones to suit specific application requirements. This level of extensibility empowers developers to craft unique user interfaces that cater to their application's needs.
+
+
+
+# How many types of ways are there for creating threads?  Explain each with an example.
+
+There are two main ways to create threads in Java: 
+
+1. **Extending the Thread class**:
+   - To create a thread by extending the `Thread` class, you need to override the `run()` method in the subclass. The `run()` method contains the code that will be executed when the thread is started.
+   - Once the `run()` method is defined, you can create an instance of the subclass and call the `start()` method on it to begin the execution of the thread.
+
+```java
+// Example of creating a thread by extending the Thread class
+
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 1: " + i);
+        }
+    }
+}
+
+public class ThreadExample1 {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        thread1.start();
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main Thread: " + i);
+        }
+    }
+}
+```
+
+2. **Implementing the Runnable interface**:
+   - To create a thread by implementing the `Runnable` interface, you need to implement the `run()` method in the class that implements `Runnable`. The `run()` method contains the code that will be executed when the thread is started.
+   - Once the `run()` method is defined, you can create an instance of the class that implements `Runnable`, and then pass it to a `Thread` object's constructor. Finally, call the `start()` method on the `Thread` object to begin the execution of the thread.
+
+```java
+// Example of creating a thread by implementing the Runnable interface
+
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 2: " + i);
+        }
+    }
+}
+
+public class ThreadExample2 {
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread2 = new Thread(myRunnable);
+        thread2.start();
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main Thread: " + i);
+        }
+    }
+}
+```
