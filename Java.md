@@ -114,13 +114,13 @@ The Model-View-Controller (MVC) is a widely-used design pattern in web developme
 
 The process of interaction in MVC can be summarized as follows:
 
-1. A client (e.g., a web browser) sends a request to the Controller on the server side, requesting a specific page or action.
+1. A user/client (e.g., a web browser) sends a request to the Controller on the server side, requesting a specific page or action.
 
 2. The Controller then calls the Model to gather the required data.
 
 3. Once the data is retrieved, the Controller transfers it to the View layer for presentation.
 
-4. The View processes the data and generates the final output, which is sent back to the client (browser) for display.
+4. The View processes the data and generates the final output, which is sent back to the user/client (browser) for display.
 
 ### Advantages of MVC Architecture:
 
