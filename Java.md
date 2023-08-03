@@ -262,3 +262,59 @@ public class LayoutExample {
     }
 }
 ```
+
+
+# Give the steps involved in developing and running an applet.
+
+An applet is a Java program that runs in a Java-compatible browser such as Internetexplorer. This feature allows users to display graphics and to run programs over the Internet. An applet allows web documents to be both animated and interactive.
+
+**Step 1: Import applet package and awt package:** To create an applet, our program must import the Applet class. This class is found in the `java.applet`  package. The Applet class contains code that works with a browser to create a display area. We also need to import the `java.awt` package. "awt” stands for `“Abstract Window Toolkit”`.  The java.awt package includes classes like `Graphics.`
+
+**Step 2: Extend the Applet class:** Then, a class must be defined that inherits from the class ‘Applet’. It contains the methods to paint the screen. The inherited class must be declared public.
+
+**Step 3: Override the paint method to draw text or graphics:** The paint method needs the Graphics object as its parameter.
+
+```java
+public void paint(Graphics g) { … }
+```
+
+The Graphics class object holds information about painting. We can invoke methods like drawLine(), drawCircle() etc. using this object.
+
+  
+
+**Syntax: The program looks something like this.**
+
+```java
+import java.applet.*;
+
+import java.awt.*;
+
+public class MyApplet extends Applet {
+    public void paint(Graphics g)
+    {                  
+         g.drawString("Welcome to Programming”,50,50);  
+    }
+}
+```
+
+**Step 4: Compiling the Program:** After writing the program, we compile it using the command "javac MyApplet.java". This command will compile our code so that we now have MyApplet.class file.  
+
+  
+
+**Step 5: Adding applet to HTML document:** To run the applet we need to create the HTML document. The BODY section of the HTML document allows APPLET tag. The HTML file looks something like this:
+
+```html
+<HTML>  
+<BODY>
+
+    <APPLET  codebase="MyAppPath" code="MyApp.class" width=200 height=200> </APPLET>
+
+</BODY>  
+</HTML> 
+```
+
+**Step 6: Running an applet:** The applet can be run in two ways
+
+1. Using appletviewer: To run the appletviewer, type appletviewer filename.html
+
+2. Using web browser: Open the web browser, type in the full address of html file.
