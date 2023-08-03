@@ -394,3 +394,24 @@ Both synchronized methods and synchronized blocks provide mutual exclusion and h
 The concept of locks in Java revolves around the monitor associated with each object. Threads that require consistent access to an object's fields must acquire the object's lock before accessing them and release it when done.
 
 Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
+
+
+# Distinguish Event Listeners from Event Adapters.
+
+Event Listeners are interfaces used for specific event handling, requiring implementations of all methods. They are suitable when you need to handle a single type of event.  
+On the other hand, Event Adapters are classes that provide default implementations for event listener methods. They are useful when you want to implement multiple event listener interfaces but handle only a few specific events. They enhance code readability and reduce redundancy by allowing selective method overrides.
+
+| **Feature**                           | **Event Listeners**                            | **Event Adapters**                                                                                         |
+|---------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Purpose                               | Interface used to handle specific events.   | Class that provides empty implementations for all methods in an event listener interface.                  |
+| Methods to implement                  | Must implement all methods in the interface.| Can extend an adapter class and override only the required methods, leaving others with empty implementations.|
+| Interface suffix                      | Ends with "Listener"                         | Ends with "Adapter"                                                                                        |
+| Functionality                         | Provides callbacks for events.              | Provides default implementations for event listener methods.                                              |
+| Usage                                 | Useful when specific event handling is needed.| Useful when you need to implement multiple event listener interfaces but handle only a few specific events. |
+| Code redundancy                       | May result in repetitive code for unused methods. | Helps reduce code redundancy as you only override the necessary methods.                                   |
+| Extensibility                         | Not easily extendable to add more methods.   | Easily extendable, can add more methods without changing the event listener interface.                    |
+| Efficiency                            | More efficient when handling specific events.| Slightly less efficient as it involves method call overhead for each event method.                         |
+| Type of class                         | Interface                                     | Class                                                                                                      |
+| Suitability for different events       | Suitable for handling a single type of event. | Suitable when you have multiple event types but only want to handle a few of them.                        |
+| Code readability                      | May result in a longer and cluttered code.   | Improves code readability and reduces clutter, especially when handling multiple events.                  |
+| Event handling when listener changes  | Requires changes in all implementing classes. | Does not affect existing classes if new event methods are added.                                          |
