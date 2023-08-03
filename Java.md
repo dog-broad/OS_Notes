@@ -318,3 +318,38 @@ public class MyApplet extends Applet {
 1. Using appletviewer: To run the appletviewer, type appletviewer filename.html
 
 2. Using web browser: Open the web browser, type in the full address of html file.
+
+# Explain any 4 Swing components along with its methods.
+
+1. **JButton**:
+   - Description: JButton is a simple button that users can click to perform an action.
+   - Methods:
+     - `JButton(String text)`: Creates a button with the specified text label.
+     - `void addActionListener(ActionListener listener)`: Registers an ActionListener to receive action events from the button.
+     - `void setText(String text)`: Sets the text displayed on the button.
+     - `void setEnabled(boolean enabled)`: Enables or disables the button.
+
+2. **JTextField**:
+   - Description: JTextField is a single-line text field that allows users to enter and edit text.
+   - Methods:
+     - `JTextField(int columns)`: Creates a text field with the specified number of columns to display.
+     - `String getText()`: Returns the text entered in the text field.
+     - `void setText(String text)`: Sets the text displayed in the text field.
+     - `void setEditable(boolean editable)`: Sets whether the text field can be edited or not.
+
+3. **JLabel**:
+   - Description: JLabel is used to display a single line of read-only text or an image.
+   - Methods:
+     - `JLabel(String text)`: Creates a label with the specified text.
+     - `JLabel(Icon image)`: Creates a label with the specified image.
+     - `void setText(String text)`: Sets the text displayed in the label.
+     - `void setIcon(Icon image)`: Sets the image displayed in the label.
+
+4. **JCheckBox**:
+   - Description: JCheckBox represents a check box that can be selected or deselected by the user.
+   - Methods:
+     - `JCheckBox(String text)`: Creates a check box with the specified text label.
+     - `boolean isSelected()`: Returns whether the check box is selected or not.
+     - `void setSelected(boolean selected)`: Sets whether the check box is selected or not.
+     - `void setText(String text)`: Sets the text displayed next to the check box.
+
