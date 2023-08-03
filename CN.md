@@ -193,17 +193,17 @@ The DHCP process involves the following steps:
 
 File Transfer Protocol (FTP) is an internet tool provided by TCP/IP that enables the transfer of files between computers. It was first developed by Abhay Bhushan in 1971. FTP allows users to access directories or folders on remote computers and transfer data, software, and text files between different kinds of computers.
 
-## Goals of FTP
+### Goals of FTP
 
 - Encourages direct use of remote computers.
 - Shields users from system variations (operating system, directory structures, file structures, etc.).
 - Promotes sharing of files and other types of data.
 
-## FTP Clients
+### FTP Clients
 
 FTP works on a client-server model. The FTP client is a program that runs on the user's computer, enabling them to interact with remote computers and retrieve files. FTP clients use various commands to establish connections, transfer files, and manage the process. Some common commands include `get` (retrieve a file from the server), `mget` (retrieve multiple files), and `ls` (list files available in the current directory of the server).
 
-## Types of FTP Connections
+### Types of FTP Connections
 
 FTP connections can be of two types:
 
@@ -211,11 +211,11 @@ FTP connections can be of two types:
 
 2. **Passive FTP Connection:** Here, the client establishes both the data and command channels. When the client requests data, the server sends a random port number to the client, which then establishes the data channel. Passive FTP is the default connection and works better with firewalls.
 
-## Anonymous FTP
+### Anonymous FTP
 
 Some FTP sites offer anonymous access, where users can access files without providing a username or password. Instead, the username is set to "anonymous," and the password is typically set to the guest's email address. However, anonymous users usually have limited access and cannot navigate through directories.
 
-## How FTP Works
+### How FTP Works
 
 1. FTP connection is established between two systems using the network.
 2. Two communication channels are established: the command channel and the data channel.
