@@ -172,7 +172,7 @@ DHCP is essential for the proper functioning of modern networks. Without DHCP, n
 
 4. **Lease Management:** IP addresses assigned by DHCP are not permanent. Instead, they are leased for a specific duration. Before the lease expires, the client can request a lease renewal from the DHCP server. This allows the network to efficiently manage IP address allocation and adapt to changes in the network.
 
-**How DHCP Works**
+**How DHCP Works:**
 
 The DHCP process involves the following steps:
 
@@ -187,5 +187,3 @@ The DHCP process involves the following steps:
 5. **Lease Renewal:** As the IP address lease approaches its expiration time, the client may request a lease renewal from the DHCP server. If the DHCP server approves the renewal, the client's IP address lease is extended.
 
 6. **Release:** When a device disconnects from the network or no longer needs an IP address, it sends a DHCP Release message to the DHCP server, indicating that it is relinquishing the leased IP address.
-
-Overall, DHCP simplifies network management by automating IP address assignment and configuration, allowing for efficient use of IP addresses, and supporting dynamic changes in network topology and devices.
