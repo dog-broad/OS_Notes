@@ -224,7 +224,7 @@ An event class is like a message that carries information about the event. It he
 The event source and event listener work together to make a program interactive. Here's how it works:
 1. The event source generates an event when something happens, like a button being clicked.
 2. The event class describes the event, saying it's a button click event.
-3. The event source sends this event to the event listener, saying, "Hey, a button was clicked!"
+3. The event source sends this event to the event listener.
 4. The event listener receives the event and knows what kind of event it is.
 5. The event listener performs a specific action based on the event, like displaying a message when the button is clicked.
 
