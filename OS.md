@@ -31,8 +31,8 @@ Inverted Page Table is a global table managed by the Operating System for all pr
 
 The traditional page tables look like this:
 
-![](2023-08-04-18-30-06.png)
+![](2023-08-04-18-32-29.png)
 
 Each entry in the inverted page table reserves space for a page regardless of its presence in the main memory. However, this could lead to memory wastage if the page is not present. To save memory, the inverted page table only stores details for pages that are present in the main memory. The entries are indexed by frames, and inside each entry, we save the Process ID and the corresponding page number. This way, the inverted page table efficiently manages memory usage for all processes.
 
-![](2023-08-04-18-30-36.png)
+![](2023-08-04-18-32-39.png)
