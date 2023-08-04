@@ -23,3 +23,16 @@ Fragmentation in an operating system refers to the inefficient use of memory, le
 | Memory Wastage        | Wastes space inside allocated memory blocks. | Wastes space due to fragmented free memory blocks.   |
 | Addressing Flexibility| Less flexibility due to fixed block sizes. | More flexibility with variable block sizes.   |
 | Complexity            | Simpler memory management due to fixed structure. | More complex memory management with varying memory sizes. |
+
+
+# Explain the structure of inverted page table?
+
+Inverted Page Table is a global table managed by the Operating System for all processes. Unlike traditional page tables, where each process has its own table, the inverted page table has entries equal to the number of frames in the main memory. This helps overcome the drawbacks of individual page tables.
+
+The traditional page tables look like this:
+
+![](2023-08-04-18-30-06.png)
+
+Each entry in the inverted page table reserves space for a page regardless of its presence in the main memory. However, this could lead to memory wastage if the page is not present. To save memory, the inverted page table only stores details for pages that are present in the main memory. The entries are indexed by frames, and inside each entry, we save the Process ID and the corresponding page number. This way, the inverted page table efficiently manages memory usage for all processes.
+
+![](2023-08-04-18-30-36.png)
