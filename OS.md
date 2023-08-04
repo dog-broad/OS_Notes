@@ -75,27 +75,27 @@ A directory in an operating system acts as a container that organizes files and 
    - Advantages: Simple to implement, fast searching for smaller files, easy file operations (creation, deletion, etc.).
    - Disadvantages: Limited when the number of files or users increases, potential name collision issues.
 
-![](2023-08-04-18-49-04.png)
+<img src="2023-08-04-18-49-04.png" width = 50%>
 
 2. **Two-Level Directory:**
    - Each user has a separate directory, preventing name conflicts and enhancing security. But it hinders file sharing between users and lacks subdirectory creation.
    - Advantages: Provides a separate directory for each user, avoids name conflicts, easy file searching.
    - Disadvantages: Users cannot share files, users cannot create subdirectories.
 
-![](2023-08-04-18-49-20.png)
+<img src = "2023-08-04-18-49-20.png" width = 60%>
 
 3. **Tree Structure (Hierarchical Structure):**
    - Directories are organized in a tree-like structure, allowing subdirectories, easier searching, and scalable organization. However, it restricts file sharing between users.
    - Advantages: Allows subdirectories, easier searching, file sorting becomes manageable, scalable for various users.
    - Disadvantages: Prevents file sharing among users, increased complexity with many subdirectories.
 
-![](2023-08-04-18-49-39.png)
+<img src = "2023-08-04-18-49-39.png" width = 60%>
 
 4. **Acyclic Graph Structure:**
    - This structure enables file sharing between multiple users and supports efficient searching. Still, it's more complex to implement, and file deletion requires handling multiple references.
    - Advantages: Supports sharing of files and directories among multiple users, efficient searching.
    - Disadvantages: More complex to implement, requires caution while editing or deleting shared files.
 
-![](2023-08-04-18-50-14.png)
+<img src = "2023-08-04-18-50-14.png" width = 50%>
 
 Each directory structure offers different benefits and trade-offs. The single-level directory is simple but limited, while the two-level directory solves name conflicts but restricts sharing. The tree structure is commonly used due to its flexibility and scalability, although it also has some limitations regarding file sharing and increased complexity with extensive subdirectories. The acyclic graph structure provides file sharing capabilities, but managing changes and deletions can be challenging.
