@@ -99,3 +99,12 @@ A directory in an operating system acts as a container that organizes files and 
 <img src = "2023-08-04-18-50-14.png" width = 50%>
 
 Each directory structure offers different benefits and trade-offs. The single-level directory is simple but limited, while the two-level directory solves name conflicts but restricts sharing. The tree structure is commonly used due to its flexibility and scalability, although it also has some limitations regarding file sharing and increased complexity with extensive subdirectories. The acyclic graph structure provides file sharing capabilities, but managing changes and deletions can be challenging.
+
+
+# Consider the following disk queue with requests for I/O to blocks on cylinders 98, 183, 37,122,14,124,65,67 in that order, with the disk head initially at cylinder 53; using FCFS, SSTF algorithms measure the total head movement in cylinders. Also provide the necessary diagram to show the head movement for the above queue.
+
+![](2023-08-04-19-31-41.png)
+
+![](2023-08-04-19-32-07.png)
+
+![](2023-08-04-19-32-16.png)
