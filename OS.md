@@ -178,3 +178,30 @@ The demand paging process involves the CPU checking the page table to find the p
 Common terms associated with demand paging are page fault (miss), swapping, and thrashing. Page faults occur when a referenced page is not present in the main memory. Swapping involves moving processes between secondary and main memory. Thrashing occurs when the CPU spends more time swapping pages than executing processes.
 
 Several algorithms are used for demand paging, including First In First Out (FIFO), Optimal Page, Least Recently Used (LRU), Page Buffering, and Least Frequently Used (LFU). Each algorithm aims to minimize page faults and optimize memory access.
+
+
+# Explain the concept of thrashing
+
+Thrashing in computer science refers to the poor performance of a virtual memory system when there is a constant state of paging and page faults due to a lack of available main memory. It occurs when the system spends more time swapping pages between main memory and secondary storage than actually executing application-level processes. Thrashing severely degrades system performance, and the throughput of the system can degrade significantly.
+
+**Concept of Thrashing**
+
+The concept of thrashing is closely related to page faults and swapping. Page faults occur when a program attempts to access data or code that is not currently located in the main memory. Swapping is the process of moving pages between the main memory and secondary storage to accommodate page faults.
+
+<img src="2023-08-04-20-05-16.png" width=40%>
+
+**Causes of Thrashing**
+
+Thrashing happens when the page fault rate becomes excessively high, leading the operating system to continually swap pages between main memory and secondary storage. This results in low CPU utilization and inhibits application-level processing.
+
+**Impact and Mitigation**
+
+The performance degradation caused by thrashing can be severe. To mitigate thrashing, various algorithms are used, such as the Global Page Replacement Algorithm and the Local Page Replacement Algorithm. However, these may not always be effective in preventing thrashing.
+
+**Preventive Measures**
+
+To avoid thrashing, various techniques and preventive measures can be employed. These include adjusting the swap file size, increasing the amount of RAM, closing unnecessary background applications, and replacing memory-intensive programs with lighter alternatives.
+
+**Techniques for Controlling Thrashing**
+
+The locality model and working-set model are techniques used to control thrashing by managing the working set size for each process. The page fault frequency approach focuses on controlling the page fault rate to keep it within desired upper and lower limits.
