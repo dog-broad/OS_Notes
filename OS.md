@@ -205,3 +205,28 @@ To avoid thrashing, various techniques and preventive measures can be employed. 
 **Techniques for Controlling Thrashing**
 
 The locality model and working-set model are techniques used to control thrashing by managing the working set size for each process. The page fault frequency approach focuses on controlling the page fault rate to keep it within desired upper and lower limits.
+
+
+# Explain ‘File Concept’. What are the different operations performed on files.
+
+The file concept in computer science refers to a collection of related data stored on secondary storage, organized in a sequence of operations. Files are created and managed by the operating system and can be accessed by various applications. Different operations can be performed on files, allowing users to read, write, open, close, and manipulate the file contents. The main file operations are as follows:
+
+1. **Create**: The create operation is used to create a new file in the file system. It allocates space for the file but does not add any data to it initially.
+
+2. **Open**: After a file is created, the open operation is performed to open the file for further processing. This operation is essential for performing other file operations.
+
+3. **Read**: The read operation allows the user to read data from the file. The operating system maintains a read pointer to track the position up to which data has been read.
+
+4. **Write**: The write operation is used to add information to the file. It increases the file length and repositions the file pointer after the last byte is written.
+
+5. **Reposition/Seek**: The seek operation is used to reposition the file pointer to a specific position in the file, allowing random access to the file data.
+
+6. **Truncate**: The truncate operation is used to delete the data stored inside the file without releasing the disk space. It clears the file content.
+
+7. **Delete**: The delete operation is used to remove the file from the file system. It deletes all the data stored in the file and frees up the disk space occupied by the file.
+
+8. **Rename**: The rename operation changes the name of an existing file. It allows the user to assign a new name to the file.
+
+9. **Append**: The append operation is used to add data to the end of the file. It is similar to the write operation, but data is added at the end of the file.
+
+10. **Close**: The close operation is performed when the processing of the file is finished. It releases all the resources occupied by the file and makes any changes permanent.
