@@ -36,3 +36,29 @@ The traditional page tables look like this:
 Each entry in the inverted page table reserves space for a page regardless of its presence in the main memory. However, this could lead to memory wastage if the page is not present. To save memory, the inverted page table only stores details for pages that are present in the main memory. The entries are indexed by frames, and inside each entry, we save the Process ID and the corresponding page number. This way, the inverted page table efficiently manages memory usage for all processes.
 
 ![](2023-08-04-18-32-39.png)
+
+
+# What are the different Accessing Methods of a File?
+
+File access methods are crucial for efficiently managing data in computer systems. These methods determine how data is read and written to and from files. Choosing the right method can significantly impact the performance and efficiency of applications. Let's explore the five different accessing methods of a file:
+
+1. **Sequential Access Method:**
+   In this simple method, data is processed in order, one record after another. Read and write operations traverse records sequentially. It is widely used in applications like editors and compilers. However, its major drawback is inefficient random access, as each record must be crossed to reach the desired one.
+   
+   ![](2023-08-04-18-41-23.png)
+
+2. **Direct Access Method:**
+   Also known as relative access, this method treats files as a sequence of blocks or records. It allows random access to any block, enabling quick data retrieval. Users provide a relative block number, and the operating system calculates the exact block address. This method is commonly used in database management systems and real-time applications.
+
+   ![](2023-08-04-18-41-37.png)
+
+3. **Index Sequential Access:**
+   To address the limitation of sequential access, this method adds an index to the file. The index holds pointers to various blocks, enabling random access. By accessing the index first, the pointers to specific blocks are obtained. This method is similar to indexed file allocation, where an index block holds pointers to allocated disk blocks.
+
+4. **Relative Record Access:**
+   Relative Record Access uses relative record numbers (RRN's) to represent the order of records in a file. Each record has a unique RRN and fixed size. Data can be directly accessed using its RRN and fixed record size, making it efficient for random or non-sequential access.
+
+5. **Content Addressable Access:**
+   This method retrieves data based on its content rather than its location or identifier. Data is stored with a unique content-based address, often generated using a hash function. When specific data is required, its content is provided, and the system uses the content-based address to locate and return the matching data. This method is useful for applications like caching and data deduplication.
+
+Each file access method has distinct advantages and disadvantages, making it suitable for specific use cases. The selection of the appropriate method depends on the application's data access patterns, performance requirements, and data integrity considerations.
