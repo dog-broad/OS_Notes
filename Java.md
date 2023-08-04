@@ -93,6 +93,18 @@ In this example, we create a simple Java AWT Frame and implement both MouseListe
 | Operation                  | Can perform read and write tasks on local files.          | Limited access to browser-specific services, no local system operations. |
 | File access                | Can easily access files on the local computer.            | Cannot access files on the local system or computer.      |
 | Security                   | Generally trusted and comes with no security concerns.    | Considered less reliable and needs to be secured.         |
+| User Interface             | Often uses Graphical User Interface (GUI) to interact with users. | Provides user interaction through the web page containing the applet.    |
+| Portability                | Platform-dependent; may have platform-specific code.          | Platform-independent; runs on any browser with Java support.      |
+| Accessibility              | Needs to be installed on each user's computer separately.     | Accessed over the internet through a web browser without installation. |
+| Deployment                 | Deployed as executable files on the user's computer.         | Deployed as part of web pages and loaded dynamically in the browser.   |
+| Interaction                | Requires direct interaction with the operating system and hardware. | Interacts with the browser's APIs and restricted to browser capabilities. |
+| Resource Consumption       | May consume more resources as it runs directly on the OS.    | Consumes fewer resources as it runs within the browser sandbox.       |
+| Initialization             | Initialization parameters are set within the application.   | Initialization parameters are passed from the HTML code to the applet. |
+| Integration                | Can easily integrate with other applications on the system.   | Integrated with HTML and can interact with other web elements.        |
+| Update and Maintenance     | Requires updates and maintenance to the application files.   | Updates can be made to the applet on the server without user action.   |
+| Offline Availability       | Can be used offline once installed on the user's computer.    | Requires an internet connection to load and execute the applet.       |
+
+Please note that the actual usage and behavior of Java applications and applets may vary depending on the specific implementation and requirements. The table provides a general comparison between the two based on common characteristics and use cases.
 
 In summary, Java applications are standalone programs that run on the underlying operating system and require the main( ) method for execution. They have full access to local resources and can establish connections with other servers. On the other hand, Java applets are small programs embedded in web pages, run on the client-side within a Java-based web browser, and are limited in accessing local resources and establishing server connections.
 
