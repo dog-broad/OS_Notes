@@ -104,9 +104,6 @@ In this example, we create a simple Java AWT Frame and implement both MouseListe
 | Update and Maintenance     | Requires updates and maintenance to the application files.   | Updates can be made to the applet on the server without user action.   |
 | Offline Availability       | Can be used offline once installed on the user's computer.    | Requires an internet connection to load and execute the applet.       |
 
-Please note that the actual usage and behavior of Java applications and applets may vary depending on the specific implementation and requirements. The table provides a general comparison between the two based on common characteristics and use cases.
-
-In summary, Java applications are standalone programs that run on the underlying operating system and require the main( ) method for execution. They have full access to local resources and can establish connections with other servers. On the other hand, Java applets are small programs embedded in web pages, run on the client-side within a Java-based web browser, and are limited in accessing local resources and establishing server connections.
 
 # Sketch the MVC architecture and also explain each and every component in it.
 
