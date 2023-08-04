@@ -161,3 +161,20 @@ Users can utilize the operating system's security features to enhance protection
 | Memory Management Overhead                    | Lower memory management overhead due to fixed-size blocks.                                                                     | Higher memory management overhead due to variable block sizes and need for dynamic memory management.                          |
 | Complexity of Memory Management               | Simpler memory management techniques and algorithms.                                                                           | More complex memory management techniques, especially for fragmentation handling and block allocation.                          |
 | Suitability for Dynamic Workloads              | Less suitable for dynamic workloads with varying process sizes.                                                               | More suitable for dynamic workloads with frequent process size changes.                                                          |
+
+
+# Define Demand Paging
+
+Demand Paging in operating systems is a virtual memory management technique where only the required pages of a process are loaded into the main memory when needed. It overcomes the problem of loading the entire process into memory, thereby utilizing memory efficiently. When a page is not present in the main memory and is accessed by the CPU, a page fault occurs, and the missing page is fetched from secondary memory.
+
+In a real-life analogy, demand paging is similar to a shopkeeper bringing a product from the warehouse only when a customer demands it, instead of keeping all products in the store.
+
+Advantages of demand paging include better memory utilization, support for large virtual memory, and the ability to run programs larger than physical memory. However, it can lead to internal fragmentation and may take longer to access memory due to page table lookup.
+
+The demand paging process involves the CPU checking the page table to find the page in the main memory. If not found, a page fault occurs, and the page is swapped-in from secondary memory. Valid and invalid bits are used to indicate whether the page is present in the main memory.
+
+![](2023-08-04-20-00-15.png)
+
+Common terms associated with demand paging are page fault (miss), swapping, and thrashing. Page faults occur when a referenced page is not present in the main memory. Swapping involves moving processes between secondary and main memory. Thrashing occurs when the CPU spends more time swapping pages than executing processes.
+
+Several algorithms are used for demand paging, including First In First Out (FIFO), Optimal Page, Least Recently Used (LRU), Page Buffering, and Least Frequently Used (LFU). Each algorithm aims to minimize page faults and optimize memory access.
