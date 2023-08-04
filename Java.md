@@ -319,10 +319,10 @@ public class MyApplet extends Applet {
 <HTML>  
 <BODY>
 
-    <APPLET  codebase="MyAppPath" code="MyApp.class" width=200 height=200> </APPLET>
+    <APPLET code="MyApplet.class" width="200" height="200"></APPLET>
 
 </BODY>  
-</HTML> 
+</HTML>
 ```
 
 **Step 6: Running an applet:** The applet can be run in two ways
