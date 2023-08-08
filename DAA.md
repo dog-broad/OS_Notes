@@ -353,3 +353,118 @@ Matrix multiplication involves multiplying two matrices to produce a resulting m
 In this case, Strassen's algorithm is preferred for large matrices despite its higher space complexity, as its lower time complexity dominates for sufficiently large 'n'.
 
 Performance analysis helps us make informed decisions about algorithm selection based on factors such as input size, available memory, and computational resources. It guides us in designing efficient algorithms that can handle real-world scenarios effectively.
+
+
+# What is Divide-and Conquer method? Explain General Method (Control Abstraction) of Divide-and Conquer
+
+**Divide and Conquer Method:**
+
+The divide and conquer method is a problem-solving strategy in computer science and mathematics. It involves breaking down a complex problem into smaller sub-problems, solving them individually, and then combining their solutions to solve the original problem. This approach is particularly useful for solving problems that can be divided into similar sub-problems, making it easier to manage and optimize the solution process.
+
+**General Method (Control Abstraction) of Divide and Conquer:**
+
+1. **Divide:**
+   - The problem instance is divided into smaller sub-problems of the same type.
+   - These sub-problems are typically disjoint and share the same characteristics as the original problem.
+
+2. **Conquer:**
+   - The sub-problems are solved recursively, often using the same divide-and-conquer approach.
+   - When the sub-problems are small enough, their solutions are computed directly (base case).
+
+3. **Combine:**
+   - The solutions of the sub-problems are combined to obtain the solution for the original problem.
+   - This step involves merging the solutions in a way that aligns with the problem's requirements.
+
+**Control Abstraction for the Divide and Conquer Strategy:**
+
+```c
+Algorithm DAndC(P)
+{
+    if Small(P) then return S(P);
+    else
+    {
+        divide P into smaller instances P1, P2, P3, ..., Pk, k ≥ 1;
+        Apply DAndC to each of these subproblems;
+        return Combine(DAndC(P1), DAndC(P2), ..., DAndC(Pk));
+    }
+}
+```
+
+Here,
+- `Small(P)` is a Boolean function that determines whether the input size is small enough to compute the answer directly.
+- `S(P)` represents the solution for small instances.
+
+**Recurrence Relation:**
+
+The time complexity of many divide-and-conquer algorithms can be represented by recurrence relations of the form:
+
+$T(n) = a \cdot T(n/b) + f(n)$
+
+Where:
+- `T(n)` is the time complexity for a problem of size 'n'.
+- 'a' is the number of sub-problems.
+- 'b' is the factor by which the problem size is reduced.
+- `f(n)` represents the time for dividing the problem and combining solutions to sub-problems.
+
+**Solving the Recurrence Relation:**
+
+By solving the recurrence relation, the time complexity of the algorithm can be determined. For example, if we substitute $a = 2$, $b = 2$, and $T(1) = 2$ into the recurrence relation $T(n) = 2T(n/2) + n$, we can solve it to obtain $T(n) = O(n \log n)$.
+
+**Applications:**
+
+Divide and conquer is a powerful strategy used in various algorithms:
+- **Binary Search:** Divide the search range in half at each step to find a key element efficiently.
+- **Quick Sort:** Partition the array into smaller sub-arrays, sort them, and then combine to achieve efficient sorting.
+- **Merge Sort:** Divide the array into halves, sort each half, and merge them to achieve efficient sorting.
+- **Strassen's Matrix Multiplication:** Divide matrices into sub-matrices, perform matrix operations, and combine results to multiply matrices more efficiently.
+
+
+# Write both Recursive and Non-Recursive algorithms on Binary Search
+
+**Recursive Binary Search Algorithm:**
+
+```c
+int binarySearchRecursive(int arr[], int low, int high, int key) {
+    if (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == key) {
+            return mid;
+        }
+
+        if (arr[mid] < key) {
+            return binarySearchRecursive(arr, mid + 1, high, key);
+        }
+
+        return binarySearchRecursive(arr, low, mid - 1, key);
+    }
+
+    return -1;  // Element not found
+}
+```
+
+**Non-Recursive Binary Search Algorithm:**
+
+```c
+int binarySearchNonRecursive(int arr[], int size, int key) {
+    int low = 0, high = size - 1;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] == key) {
+            return mid;
+        }
+
+        if (arr[mid] < key) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    return -1;  // Element not found
+}
+```
+
+In both versions, the `low` and `high` parameters represent the current range of the array being searched. The recursive version divides this range in half during each recursive call, while the non-recursive version updates the range within the `while` loop until the key is found or the range is exhausted.
