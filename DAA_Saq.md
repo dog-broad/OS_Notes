@@ -113,3 +113,56 @@ The Master Theorem has several cases depending on how $f(n)$ compares with $n^{\
 $\log_2 7$ is approximately 2.8074. Hence, $T(n)$ is often approximated as $O(n^{2.8074})$, which is better than the $O(n^3)$ time complexity of the naive matrix multiplication algorithm.
 
 Keep in mind that while Strassen's algorithm has a theoretically better time complexity, it's not always faster in practice due to constants and overhead. Nonetheless, the analysis provides valuable insights into how divide-and-conquer techniques can lead to improved algorithms for specific problems.
+
+
+
+# Unit 2
+
+## 1. **Define Greedy method?**
+   **Greedy Method** is an algorithmic approach where solutions are constructed incrementally by making locally optimal choices at each step. The chosen choice is the one that offers the most immediate benefit. Problems suitable for Greedy are those in which local optimal choices lead to a global solution.
+
+## 2. **Define a spanning tree?**
+   A spanning tree of a graph is a subgraph that includes all the vertices of the original graph while forming a tree structure (no cycles). It must be connected and have the minimum possible number of edges to ensure connectivity.
+   ![](2023-08-08-18-16-58.png)
+
+## 3. **Formally represent the Knapsack problem?**
+   The Knapsack problem is represented as follows:
+   Given a set of items with weights and values, determine the optimal selection of items to include in a knapsack of limited capacity, maximizing the total value while staying within the weight constraint.
+
+## 4. **Write the differences between Prim’s and Kruskal’s algorithms.**
+   Prim's Algorithm:
+   - Builds the Minimum Spanning Tree (MST) from a starting vertex.
+   - Always connects to the closest vertex.
+   - Guarantees that the MST is connected.
+   - May result in a different MST for different starting vertices.
+   
+   Kruskal's Algorithm:
+   - Builds the MST by sorting and selecting edges in increasing order of weight.
+   - Can connect distant vertices directly.
+   - May result in disconnected components before the final MST is formed.
+   - Always results in the same MST regardless of the starting vertex.
+
+## 5. **Differentiate Greedy and Divide-and-Conquer algorithms?**
+   Greedy Algorithm:
+   - Makes locally optimal choices at each step.
+   - Doesn't guarantee a globally optimal solution.
+   - Often simpler and faster for certain problems.
+   - Can be used to find approximate solutions.
+
+   Divide-and-Conquer Algorithm:
+   - Divides the problem into smaller subproblems.
+   - Solves subproblems recursively and combines their solutions.
+   - Guarantees globally optimal solutions.
+   - Often more complex and slower for certain problems.
+
+## 6. **Define Job sequencing with deadlines problem?**
+   Job sequencing with deadlines is a problem where a set of jobs with associated profits and deadlines must be scheduled on a single machine, considering that each job takes a unit of time and cannot miss its deadline. The goal is to maximize the total profit by choosing an optimal order of job execution.
+
+## 7. **Define feasible solution?**
+   A feasible solution is one that satisfies all the given constraints and requirements of a problem. It might not necessarily be optimal, but it meets the necessary conditions.
+
+## 8. **Define optimal solution?**
+   An optimal solution is the best possible solution among all feasible solutions for a given problem. It provides the highest value or the lowest cost, depending on the problem's objective.
+
+## 9. **Write the aim of the single source shortest path problem?**
+   The aim of the single source shortest path problem is to find the shortest paths from a specified source vertex to all other vertices in a weighted graph. The objective is to determine the minimum cumulative weight of paths from the source vertex to all other vertices.
