@@ -1,3 +1,5 @@
+# IGNORE RECURRENCE RELATION!!
+
 # Unit 1
 
 ## 1. **What is an Algorithm? How to devise an Algorithm?**
