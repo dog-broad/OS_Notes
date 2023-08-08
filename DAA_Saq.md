@@ -205,16 +205,19 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 
 # Unit 4
 
-## **State the concept of bounding function?**
+## 1. **State the concept of bounding function**
 A bounding function estimates the potential of a partial solution to lead to an optimal solution. It prunes branches of the search tree that cannot improve the current best solution, reducing search space and enhancing efficiency.
 
-## **List out the importance of LC search in branch and bound?**
-Linear constraints (LC) search in branch and bound narrows down solution candidates by considering constraints that improve the lower bound. This accelerates pruning and leads to earlier detection of optimal solutions.
+## 2. **List out the importance of LC search in branch and bound**
+- **Enhanced Pruning:** LC (Linear Constraints) search improves lower bounds efficiently, allowing faster pruning of unpromising branches.
+- **Optimal Solutions:** It aids in identifying promising solution candidates by utilizing constraints, contributing to the discovery of optimal solutions.
+- **Accelerated Exploration:** LC search narrows down the search space, guiding the algorithm toward potential optimal solutions earlier in the process.
+- **Reduced Complexity:** By leveraging linear constraints, it minimizes unnecessary exploration, leading to improved efficiency in solving complex problems.
 
-## **How is row minimization performed in TSP using Branch and Bound?**
+## 3. **How is row minimization performed in TSP using Branch and Bound**
 Row minimization in Traveling Salesperson Problem (TSP) involves subtracting the minimum value in each row of the cost matrix. This step reduces problem size and doesn't affect optimal solutions.
 
-## **Discuss about column minimization in TSP using Branch and Bound with an example?**
+## 4. **Discuss about column minimization in TSP using Branch and Bound with an example**
 Column minimization in TSP entails subtracting the minimum value in each column of the cost matrix. It doesn't change optimal solutions but aids in faster pruning. For instance, if the cost matrix is:
 ```
 5 4 8
@@ -228,20 +231,35 @@ Subtracting column minima yields:
 4 4 4
 ```
 
-## **State the principle of LIFO branch and bound?**
+## 5. **State the principle of LIFO branch and bound**
 The LIFO (Last In, First Out) principle in branch and bound explores recently generated nodes first. It utilizes a stack data structure. This approach intensifies search in a particular branch, potentially leading to a solution quicker.
 
-## **Explain the principle of FIFO branch and bound?**
+## 6. **Explain the principle of FIFO branch and bound**
 The FIFO (First In, First Out) principle explores nodes in the order they are generated. It employs a queue. This strategy provides a breadth-first exploration of the search tree, ensuring optimality in finding solutions.
 
-## **Suggest a solution for the 8 Queens Problem?**
+## 7. **Suggest a solution for the 8 Queens Problem**
 The 8 Queens Problem can be solved by backtracking. Place queens sequentially in rows, ensuring no two queens threaten each other. If a safe position isn't found, backtrack and try a different position.
 
-## **Discuss about M-coloring concept?**
+## 8. **Discuss M-coloring concept**
 M-coloring involves coloring the vertices of a graph with M colors such that no two adjacent vertices have the same color. This concept is vital in map coloring, register allocation, and scheduling problems.
+![](2023-08-08-19-02-21.png)
 
-## **Compare and contrast Brute force approach Vs backtracking?**
-Both Brute force and backtracking exhaustively search for solutions. Brute force considers all possibilities without pruning, while backtracking optimizes by avoiding unpromising paths, utilizing heuristics like bounding.
+## **Compare and contrast Brute force approach Vs backtracking**
+**Brute Force Approach:**
+- Brute force examines every possible solution without any intelligent pruning.
+- It's straightforward to implement, as it straightforwardly searches through all options.
+- Due to its exhaustive nature, brute force becomes highly inefficient for problems with large solution spaces.
+- It doesn't utilize heuristics or strategies to optimize the search process.
+- Brute force may require significant computational resources and time.
+
+**Backtracking:**
+- Backtracking selectively explores solution paths, pruning unfeasible options and improving efficiency.
+- It prunes branches that can't lead to a solution, reducing the search space.
+- Backtracking is advantageous for problems with a high branching factor or complex constraints.
+- It uses resources more judiciously by discarding unfruitful paths, leading to quicker solutions.
+- Backtracking can be designed to guarantee optimal solutions, unlike brute force.
+- Backtracking requires careful handling of branching, recursion, and constraints.
+- It can incorporate heuristics to guide the search and further improve efficiency.
 
 ## **Explain connected components and strongly connected components with an example?**
 
