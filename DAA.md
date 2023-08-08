@@ -279,14 +279,14 @@ The function f(n) = Θ(g(n)) if and only if there exist positive constants C₁,
 **Little-oh Notation (o-notation):**
 The function f(n) = o(g(n)) if and only if:
 
-\[\lim_{{n \to \infty}} \frac{f(n)}{g(n)} = 0\]
+![](2023-08-08-14-19-55.png)
 
 where g(n) represents the upper bound function.
 
 **Little-omega Notation (ω-notation):**
 Similarly, the function f(n) = ω(g(n)) if and only if:
 
-\[\lim_{{n \to \infty}} \frac{f(n)}{g(n)} = \infty\]
+![](2023-08-08-14-20-05.png)
 
 where g(n) represents the lower bound function.
 
