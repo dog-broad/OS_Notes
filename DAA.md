@@ -1,3 +1,9 @@
+```
+The word Algorithm means ” A set of finite rules or instructions to be followed in calculations or other problem-solving operations ”
+Or
+” A procedure for solving a mathematical problem in a finite number of steps that frequently involves recursive operations”.
+```
+
 # Properties/Criteria of an Algorithm:
 
 1. **Clear and Unambiguous:** An algorithm should be expressed in a clear and unambiguous manner. Each step must be precisely defined and leave no room for interpretation or confusion. This ensures that anyone following the algorithm will execute the same steps and produce the same results.
