@@ -128,3 +128,22 @@ Start
   Output sum
 End
 ```
+
+
+# Priori Analysis vs. Posteriori Analysis
+
+In the analysis of algorithms, the choice of the best algorithm for a problem is based on factors such as CPU time and memory space.
+
+| Aspect                            | Priori Analysis                             | Posteriori Analysis                           |
+|-----------------------------------|----------------------------------------------|-----------------------------------------------|
+| Analysis Nature                   | Absolute analysis independent of the system. | Relative analysis based on specific system.   |
+| Dependency                        | Independent of compiler and hardware.        | Depends on compiler, hardware, and input data. |
+| Precision                         | Provides estimates based on theoretical analysis.| Provides exact answers based on real scenarios.|
+| Notation Usage                    | Uses asymptotic notations to represent efficiency.| Does not use asymptotic notations.            |
+| Time Complexity Variation         | Theoretical time complexity remains consistent. | Varies across different systems and inputs.   |
+| Credit Distribution               | Credits programmer for algorithm efficiency. | Credits both hardware and algorithm design for speed. |
+| Timing                           | Done before algorithm execution.            | Done after algorithm execution.               |
+| Resource Utilization              | Relies on theoretical assumptions.          | Requires real hardware and input data.        |
+| Cost                              | Cheaper in terms of resources.              | Costlier due to software, hardware, and test data needs. |
+| Maintenance for Tuning           | Maintenance phase not needed after design. | Requires ongoing maintenance to adapt to changing systems. |
+| Suitability for Real-world Scenarios | More suited for theoretical efficiency analysis. | Well-suited for real-world performance comparisons. |
