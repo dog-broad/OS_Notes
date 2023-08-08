@@ -41,23 +41,11 @@
 ## 7. **Describe control abstraction of Divide and Conquer strategy.**
    Divide and Conquer breaks a problem into smaller subproblems, solves them independently, and combines their solutions to solve the original problem. Control abstraction involves the steps of dividing, conquering, and combining to create a modular and efficient algorithm.
 
-## 8. **Solve the recurrence relation for a=2, b=2, T(1)=2, and f(n)=n.**
-   - Given the recurrence relation $T(n) = 2 \cdot T\left(\frac{n}{2}\right) + n$, we want to find  its time complexity.  
-   - The Master Theorem helps us analyze this kind of recurrence.   
-   - For our values $a = 2$ and $b =   2$, we compare $f(n)$ (which is $n$) with $n^{\log_b a}$ (which is $n^{\log_2 2} = n$).   
-   - Since $f(n)$ and $n^{\log_b a}$ are in the same category, the time complexity is in the 2nd case of the Master Theorem. This means the time complexity is approximately $T(n) =   \Theta(n \log n)$.   
-   - So, for the given recurrence relation, the time complexity is $\Theta(n \log n)$.
+## 8. **Define pseudocode and its purpose.**
+Pseudocode is a high-level, human-readable representation of an algorithm using a combination of natural language and programming constructs. It aids in conveying the logic of an algorithm to programmers and readers without focusing on specific programming syntax, facilitating easier understanding, communication, and initial implementation.
 
-## 9. **Derive the time complexity for a=28, b=3, and f(n)=cn^3 using the substitution method.**
-   ! Answer unknown
-
-## 10. **Derive the time complexity of Strassen’s Matrix multiplication?**
-
-Strassen's algorithm recursively divides the problem into smaller subproblems. For each of the four submatrices, there are seven matrix multiplications (denoted as M1, M2, ..., M7) involved. These multiplications occur on submatrices of size $n/2 \times n/2$.
-
-The recursive algorithm has a recurrence relation $T(n) = 7T(n/2) + O(n^2)$, where the $7T(n/2)$ accounts for the seven subproblems and $O(n^2)$ is the cost of combining the subproblems.
-
-Using the Master Theorem or recurrence solving techniques, we can determine that the time complexity of Strassen's Matrix Multiplication is approximately $O(n^{\log_2 7}) \approx O(n^{2.81})$. This complexity is better than the naive matrix multiplication algorithm, which is $O(n^3)$, especially for large matrices.
+## 9. **Differentiate a priori and a posteriori Analysis.**
+A priori analysis involves theoretical analysis of an algorithm before its implementation, often estimating its efficiency based on characteristics like time and space complexity. A posteriori analysis, performed after implementation, involves practical evaluation using real-world data, benchmarking, and performance profiling to assess the actual efficiency and behavior of the algorithm.
 
 ---
 
@@ -313,6 +301,15 @@ The efficiency of a backtracking algorithm depends on branching factor, depth of
 ## **Write short notes on Hamiltonian cycles?**
 A Hamiltonian cycle is a path in a graph that visits every vertex exactly once, returning to the starting vertex. It's a fundamental problem in graph theory and has applications in optimization and network design. Unlike the simpler problem of finding a Hamiltonian path, finding Hamiltonian cycles is NP-complete, implying that no efficient algorithm exists for large graphs.
 
+## **What are implicit and explicit constraints?**
+Implicit constraints are restrictions on problem solutions that are not explicitly stated but are inherent in the problem context. Explicit constraints are directly specified limitations that solutions must adhere to, often provided as part of the problem statement.
+
+## **Explain the concepts of live node, e-node, successor, and dead node.**
+- Live Node: A node in a search tree that hasn't been expanded yet.
+- E-node (Epsilon-node): A node in the search tree that satisfies the desired properties.
+- Successor: A node generated from another node by applying an operator.
+- Dead Node: A node that doesn't satisfy the desired properties and can be pruned.
+
 
 
 # Unit 5
@@ -358,3 +355,17 @@ NP-Hard problems are at least as hard as the hardest problems in NP. NP-Complete
 ## **10. Give the time complexity and space complexity of the traveling salesperson problem.**
 
 The time complexity of the exact solution to the traveling salesperson problem is O(n!), and the space complexity is O(n^2) for dynamic programming. For heuristic or approximation algorithms, the time and space complexities can vary depending on the method used.
+
+## **11. Differentiate between deterministic and non-deterministic algorithms.**
+| **Aspect**               | **Deterministic Algorithm**                          | **Non-Deterministic Algorithm**                      |
+|--------------------------|------------------------------------------------------|------------------------------------------------------|
+| **Execution**            | Produces the same result for a given input always.   | May produce different results for the same input.  |
+| **Predictability**       | Fully predictable and reproducible behavior.        | Less predictable, behavior influenced by randomness.|
+| **Examples**             | Binary search, Selection sort.                      | Genetic algorithms, Monte Carlo simulations.        |
+
+## **11. What are the differences between polynomial and non-polynomial problems?**
+| **Aspect**          | **Polynomial Problems**                            | **Non-Polynomial Problems**                         |
+|---------------------|---------------------------------------------------|---------------------------------------------------|
+| **Complexity**      | Can be solved in polynomial time (P).            | Solution time grows faster than any polynomial (NP-Hard). |
+| **Examples**        | Linear equations, Shortest path in DAGs.         | Traveling Salesperson Problem, Subset Sum.       |
+| **Verification**    | Solutions can be verified in polynomial time.   | Solutions may be hard to verify in polynomial time. |
