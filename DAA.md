@@ -711,3 +711,51 @@ Consider a directed graph with nodes A, B, C, D, and E, and weighted edges as de
 The final distances represent the shortest paths from the source node A to other nodes: B(3), C(5), D(6), E(8).
 
 Bellman-Ford algorithm efficiently finds the shortest paths from a source node to all other nodes in a weighted graph, handling negative-weight edges and detecting negative-weight cycles. It iterates over edges multiple times, relaxing them to find the shortest paths gradually.
+
+
+
+# 0/1 Knapsack Problem - Dynamic Programming:
+
+**0/1 Knapsack Problem:**
+1. Given a set of items with weights and values, and a knapsack with a maximum weight capacity:
+   - Create a table DP of size (number of items + 1) x (knapsack capacity + 1).
+2. Initialize the table:
+   - For i from 0 to number of items:
+     - Set DP[i][0] to 0 (when knapsack capacity is 0).
+   - For w from 0 to knapsack capacity:
+     - Set DP[0][w] to 0 (when there are no items to choose from).
+3. Fill in the table:
+   - For i from 1 to number of items:
+     - For w from 1 to knapsack capacity:
+       - If the weight of item i is less than or equal to w:
+         - DP[i][w] = max(value[i] + DP[i-1][w-weight[i]], DP[i-1][w])
+       - Else:
+         - DP[i][w] = DP[i-1][w]
+4. The value at DP[number of items][knapsack capacity] gives the maximum value that can be obtained.
+5. To find the items included in the knapsack:
+   - Starting from DP[number of items][knapsack capacity], backtrack through the table:
+     - If DP[i][w] != DP[i-1][w], item i is included. Deduct weight[i] from w.
+     - Move to DP[i-1][w].
+
+**Example:**
+Consider items with weights [2, 3, 4, 5] and values [3, 4, 5, 6], and a knapsack capacity of 5.
+
+**Step-by-step:**
+1. Initialize DP table: (0 represents knapsack capacity)
+   | Item \ Weight | 0 | 1 | 2 | 3 | 4 | 5 |
+   |---------------|---|---|---|---|---|---|
+   | 0             | 0 | 0 | 0 | 0 | 0 | 0 |
+   | 1             | 0 | 0 | 3 | 3 | 3 | 3 |
+   | 2             | 0 | 0 | 3 | 4 | 4 | 7 |
+   | 3             | 0 | 0 | 3 | 4 | 5 | 7 |
+   | 4             | 0 | 0 | 3 | 4 | 5 | 7 |
+
+2. Maximum value: DP[4][5] = 7.
+
+3. Items included: Backtrack from DP[4][5]:
+   - Item 4 included, w = 5 - 5 = 0.
+   - Item 2 included, w = 0 - 3 = -3 (stop).
+
+The maximum value that can be obtained is 7, and the items included are 4 and 2.
+
+The dynamic programming approach solves the 0/1 Knapsack problem by building a table that stores the maximum value that can be obtained for different item weights and capacities. This solution efficiently handles various item weights and values to maximize the value within the knapsack's capacity.
