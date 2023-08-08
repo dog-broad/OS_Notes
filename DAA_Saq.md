@@ -201,3 +201,94 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 
 ## 9. **Define a Tour of Traveling Salesperson Problem**
    A tour in the Traveling Salesperson Problem refers to a circular route that visits all given cities exactly once and returns to the starting city. The objective is to find the shortest possible tour that covers all cities and returns to the starting point.
+
+
+# Unit 4
+
+## **State the concept of bounding function?**
+A bounding function estimates the potential of a partial solution to lead to an optimal solution. It prunes branches of the search tree that cannot improve the current best solution, reducing search space and enhancing efficiency.
+
+## **List out the importance of LC search in branch and bound?**
+Linear constraints (LC) search in branch and bound narrows down solution candidates by considering constraints that improve the lower bound. This accelerates pruning and leads to earlier detection of optimal solutions.
+
+## **How is row minimization performed in TSP using Branch and Bound?**
+Row minimization in Traveling Salesperson Problem (TSP) involves subtracting the minimum value in each row of the cost matrix. This step reduces problem size and doesn't affect optimal solutions.
+
+## **Discuss about column minimization in TSP using Branch and Bound with an example?**
+Column minimization in TSP entails subtracting the minimum value in each column of the cost matrix. It doesn't change optimal solutions but aids in faster pruning. For instance, if the cost matrix is:
+```
+5 4 8
+7 6 9
+9 8 10
+```
+Subtracting column minima yields:
+```
+0 0 2
+2 2 3
+4 4 4
+```
+
+## **State the principle of LIFO branch and bound?**
+The LIFO (Last In, First Out) principle in branch and bound explores recently generated nodes first. It utilizes a stack data structure. This approach intensifies search in a particular branch, potentially leading to a solution quicker.
+
+## **Explain the principle of FIFO branch and bound?**
+The FIFO (First In, First Out) principle explores nodes in the order they are generated. It employs a queue. This strategy provides a breadth-first exploration of the search tree, ensuring optimality in finding solutions.
+
+## **Suggest a solution for the 8 Queens Problem?**
+The 8 Queens Problem can be solved by backtracking. Place queens sequentially in rows, ensuring no two queens threaten each other. If a safe position isn't found, backtrack and try a different position.
+
+## **Discuss about M-coloring concept?**
+M-coloring involves coloring the vertices of a graph with M colors such that no two adjacent vertices have the same color. This concept is vital in map coloring, register allocation, and scheduling problems.
+
+## **Compare and contrast Brute force approach Vs backtracking?**
+Both Brute force and backtracking exhaustively search for solutions. Brute force considers all possibilities without pruning, while backtracking optimizes by avoiding unpromising paths, utilizing heuristics like bounding.
+
+## **Explain connected components and strongly connected components with an example?**
+
+Connected components are subgraphs where every vertex has a path to every other vertex. Strongly connected components are subgraphs where every vertex has a directed path to every other vertex.
+
+Example:
+```mermaid
+graph LR
+    A --- B
+    B --- C
+    C --- A
+    D --- E
+    E --- D
+    F --- G
+    G --- F
+```
+Components: {A, B, C}, {D, E}, {F, G}
+
+## **Illustrate the concept of articulation points with an example?**
+
+Articulation points are vertices whose removal splits a graph into disconnected components.
+
+Example:
+```mermaid
+graph LR
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
+    F --> G
+    G --> H
+    G --> I
+```
+In this graph, vertex F is an articulation point. Removing F disconnects the graph into two parts: A-B-C-D-E and G-H-I.
+```mermaid
+graph LR
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    G --> H
+    G --> I
+```
+
+## **State the factors that influence the efficiency of the backtracking algorithm?**
+The efficiency of a backtracking algorithm depends on branching factor, depth of the search tree, heuristics for node ordering, and pruning strategies. Clever node ordering, and effective bounding functions enhance efficiency.
+
+## **Write short notes on Hamiltonian cycles?**
+A Hamiltonian cycle is a path in a graph that visits every vertex exactly once, returning to the starting vertex. It's a fundamental problem in graph theory and has applications in optimization and network design. Unlike the simpler problem of finding a Hamiltonian path, finding Hamiltonian cycles is NP-complete, implying that no efficient algorithm exists for large graphs.
