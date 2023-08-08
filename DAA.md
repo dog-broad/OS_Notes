@@ -256,3 +256,53 @@ Here's the analysis of space complexity for this algorithm:
 3. **Variables Space:** The variable `n` and any temporary variables used within the function take constant space.
 
 4. **Total Space Complexity:** The space complexity of this algorithm is determined by the maximum depth of the function call stack. Since the maximum depth is `n` in this case, the space complexity is `O(n)`.
+
+
+
+# Discuss all the Asymptotic Notations with suitable examples.
+
+**Asymptotic Notations with Examples:**
+
+Asymptotic analysis, which includes the concepts of Worst, Average, and Best Cases of Algorithms, aims to assess algorithm efficiency independently of machine-specific constants. Asymptotic notations, like Big-O, Omega, and Theta, serve as mathematical tools for representing the time complexity of algorithms during this analysis.
+
+**Asymptotic Notations:**
+
+**Big-O Notation (O-notation):**
+The function f(n) = O(g(n)) if and only if there exists positive constants C and n₀ such that f(n) ≤ C * g(n) for all values of 'n' greater than or equal to n₀.
+
+**Omega Notation (Ω-notation):**
+The function f(n) = Ω(g(n)) if and only if there exists positive constants C and n₀ such that C * g(n) ≤ f(n) for all values of 'n' greater than or equal to n₀.
+
+**Theta Notation (Θ-notation):**
+The function f(n) = Θ(g(n)) if and only if there exist positive constants C₁, C₂, and n₀ such that C₁ * g(n) ≤ f(n) ≤ C₂ * g(n) for all values of 'n' greater than or equal to n₀.
+
+**Little-oh Notation (o-notation):**
+The function f(n) = o(g(n)) if and only if:
+
+\[\lim_{{n \to \infty}} \frac{f(n)}{g(n)} = 0\]
+
+where g(n) represents the upper bound function.
+
+**Little-omega Notation (ω-notation):**
+Similarly, the function f(n) = ω(g(n)) if and only if:
+
+\[\lim_{{n \to \infty}} \frac{f(n)}{g(n)} = \infty\]
+
+where g(n) represents the lower bound function.
+
+**Examples:**
+
+1. **Big-O Notation (O-notation):**
+   - Example: Bubble Sort's worst-case time complexity is O(n^2), indicating quadratic growth rate.
+
+2. **Omega Notation (Ω-notation):**
+   - Example: Merge Sort's best-case time complexity is Ω(n log n), indicating linearithmic growth.
+
+3. **Theta Notation (Θ-notation):**
+   - Example: Quick Sort's average-case time complexity is Θ(n log n), balanced between linear and quadratic rates.
+
+4. **Little-oh Notation (o-notation):**
+   - Example: If an algorithm's time complexity is o(n^2), it grows slower than quadratic time but faster than linear.
+
+5. **Little-omega Notation (ω-notation):**
+   - Example: If an algorithm's time complexity is ω(n^2), it grows faster than quadratic time but slower than exponential.
