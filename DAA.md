@@ -488,19 +488,19 @@ Here's the algorithm in pseudocode:
 ```c
 Algorithm quickSort(low, high) {
     if (low < high) then {
-        pivotIndex = partition(low, high);
+        pivotIndex := partition(low, high);
         quickSort(low, pivotIndex - 1);
         quickSort(pivotIndex + 1, high);
     }
 }
 
 Algorithm partition(low, high) {
-    pivot = arr[high];
-    i = low - 1;
+    pivot := arr[high];
+    i := low - 1;
 
-    for (j = low to high - 1) do {
-        if (arr[j] <= pivot) then {
-            i = i + 1;
+    for (j := low to high - 1) do {
+        if (arr[j] <:= pivot) then {
+            i := i + 1;
             swap(arr[i], arr[j]);
         }
     }
@@ -510,9 +510,9 @@ Algorithm partition(low, high) {
 }
 
 Algorithm swap(a, b) {
-    temp = a;
-    a = b;
-    b = temp;
+    temp := a;
+    a := b;
+    b := temp;
 }
 ```
 
@@ -536,7 +536,7 @@ Here's the algorithm in pseudocode:
 ```c
 Algorithm mergeSort(low, high) {
     if (low < high) then {
-        mid = (low + high) / 2;
+        mid := (low + high) / 2;
         
         mergeSort(low, mid);
         mergeSort(mid + 1, high);
@@ -546,35 +546,35 @@ Algorithm mergeSort(low, high) {
 }
 
 Algorithm merge(low, mid, high) {
-    h = low;
-    i = low;
-    j = mid + 1;
+    h := low;
+    i := low;
+    j := mid + 1;
 
-    while ((h <= mid) && (j <= high)) do {
-        if (arr[h] <= arr[j]) then {
-            temp[i] = arr[h];
-            h = h + 1;
+    while ((h <:= mid) && (j <:= high)) do {
+        if (arr[h] <:= arr[j]) then {
+            temp[i] := arr[h];
+            h := h + 1;
         } else {
-            temp[i] = arr[j];
-            j = j + 1;
+            temp[i] := arr[j];
+            j := j + 1;
         }
-        i = i + 1;
+        i := i + 1;
     }
 
     if (h > mid) then {
-        for (k = j to high) do {
-            temp[i] = arr[k];
-            i = i + 1;
+        for (k := j to high) do {
+            temp[i] := arr[k];
+            i := i + 1;
         }
     } else {
-        for (k = h to mid) do {
-            temp[i] = arr[k];
-            i = i + 1;
+        for (k := h to mid) do {
+            temp[i] := arr[k];
+            i := i + 1;
         }
     }
 
-    for (k = low to high) do {
-        arr[k] = temp[k];
+    for (k := low to high) do {
+        arr[k] := temp[k];
     }
 }
 ```
