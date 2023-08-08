@@ -310,3 +310,49 @@ The efficiency of a backtracking algorithm depends on branching factor, depth of
 
 ## **Write short notes on Hamiltonian cycles?**
 A Hamiltonian cycle is a path in a graph that visits every vertex exactly once, returning to the starting vertex. It's a fundamental problem in graph theory and has applications in optimization and network design. Unlike the simpler problem of finding a Hamiltonian path, finding Hamiltonian cycles is NP-complete, implying that no efficient algorithm exists for large graphs.
+
+
+
+# Unit 5
+
+## **1. What are NP-Hard and NP-Complete problems?**
+
+**NP-Hard:** These problems are at least as hard as the hardest problems in NP. No known polynomial-time algorithm exists for solving all NP-Hard problems.
+
+**NP-Complete:** A subset of NP-Hard problems that are particularly difficult. If a polynomial-time algorithm is found for one NP-Complete problem, it implies polynomial-time solutions for all NP problems.
+
+## **2. What is a decision problem?**
+
+A decision problem is a problem that requires a yes/no answer. It involves determining whether a given input satisfies a specific property or condition.
+
+## **3. What is an approximate solution?**
+
+An approximate solution is a solution that is not guaranteed to be optimal but provides a reasonably good solution within a certain margin of error or deviation from the optimal solution.
+
+## **4. What are promising and non-promising nodes?**
+
+Promising nodes are those that are likely to lead to a solution and are worth exploring. Non-promising nodes are unlikely to lead to a solution and can be pruned to save computational effort.
+
+## **5. Write the formula for the bounding function in the Knapsack problem.**
+
+Bounding function = (current solution value) + (maximum possible value of remaining items based on their weights and values)
+
+## **6. Write about the traveling salesperson problem.**
+
+The Traveling Salesperson Problem involves finding the shortest possible route that visits a given set of cities exactly once and returns to the starting city. It is NP-Hard and has applications in logistics, transportation, and network optimization.
+
+## **7. Differentiate decision problem and optimization problem.**
+
+In a decision problem, the goal is to determine a yes/no answer based on a given input. In an optimization problem, the objective is to find the best solution among a set of feasible solutions that optimizes a certain criterion.
+
+## **8. What is class P and NP?**
+
+Class P consists of decision problems that can be solved in polynomial time. Class NP consists of decision problems for which a proposed solution can be verified in polynomial time.
+
+## **9. Define NP-Hard and NP-Complete problems.**
+
+NP-Hard problems are at least as hard as the hardest problems in NP. NP-Complete problems are a subset of NP-Hard problems and are particularly difficult. Solving an NP-Complete problem in polynomial time implies solving all NP problems in polynomial time.
+
+## **10. Give the time complexity and space complexity of the traveling salesperson problem.**
+
+The time complexity of the exact solution to the traveling salesperson problem is O(n!), and the space complexity is O(n^2) for dynamic programming. For heuristic or approximation algorithms, the time and space complexities can vary depending on the method used.
