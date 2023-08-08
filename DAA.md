@@ -147,3 +147,112 @@ In the analysis of algorithms, the choice of the best algorithm for a problem is
 | Cost                              | Cheaper in terms of resources.              | Costlier due to software, hardware, and test data needs. |
 | Maintenance for Tuning           | Maintenance phase not needed after design. | Requires ongoing maintenance to adapt to changing systems. |
 | Suitability for Real-world Scenarios | More suited for theoretical efficiency analysis. | Well-suited for real-world performance comparisons. |
+
+
+
+# Explain Time Complexity with examples Using Counter method.
+
+**Time Complexity with Counter Method:**
+
+Time complexity is a measure of the amount of time an algorithm takes to run as a function of the length of the input. The counter method involves using a count variable to track the number of basic operations performed during an algorithm's execution. Let's explore this with examples of summing an array and matrix multiplication:
+
+**1. Sum of Array:**
+
+Consider calculating the sum of an array using a loop:
+
+```c
+Algorthm sum(a, n){
+   s := 0.0; // count := count + 1;
+   for i := 1  to n do{ // count := count + 1;  ----
+      s := s + a[i]; // count := count + 1;        | ---> 2n
+   }  // count := count + 1;                    ----
+   return s; // count := count + 1;
+}
+```
+
+For an array of size `n`, the count of operations (count variable) would increase by approximately `2n` since each addition operation contributes to the count.
+
+Total time of count = `2n + 3` (3 for the initialization and return statements)
+
+**2. Matrix Addition:**
+
+Let's analyze a simple matrix addition algorithm:
+
+```c
+Algorithm add(a, b, c , n, m){
+   for i := 1 to m do
+   {  // count := count + 1;                                 ---------------------                  
+      for j := 1 to n do                                  //                     |
+      {  // count := count + 1;                                   ----           |
+         c[i][j] := a[i][j] + b[i][j]; // count := count + 1;        | ---> 2mn  | ---> 2m
+      }                                                   //      ----           |
+      // count := count + 1;                                                     |
+   }                                                      //----------------------                   
+   // count := count + 1;
+}
+```
+
+Here, the count increases by `2mn + 2m + 1` for the nested loops and the initialization and return statements.
+
+**3. Matrix Multiplication:**
+
+Let's analyze a simple matrix multiplication algorithm:
+
+![](2023-08-08-12-33-12.png)
+
+Total time of count = `2mnp + 3mp + 2m + 1`
+
+
+# Explain Space Complexity with examples
+
+**Space Complexity with Examples:**
+
+Space complexity refers to the amount of memory space an algorithm or program requires to execute, as a function of the input size. It includes the memory used by variables, data structures, function call stack, and other resources.
+
+Consider the given pseudocode example for matrix addition:
+
+```c
+Algorithm add(a, b, c, n, m) {
+   for i := 1 to m do
+   {
+      for j := 1 to n do
+      {
+         c[i][j] := a[i][j] + b[i][j];
+      }
+   }
+}
+```
+
+In this example, we have three matrices: `a`, `b`, and `c`, each having dimensions `m x n`. Let's analyze the space complexity step by step:
+
+1. **Input Space:** The matrices `a` and `b` each occupy space `O(m x n)` in memory.
+
+2. **Output Space:** The matrix `c`, which stores the result, also occupies space `O(m x n)`.
+
+3. **Variables Space:** The variables `i`, `j`, and any loop control variables occupy constant space.
+
+4. **Temporary Variables:** The temporary variable storing the sum `a[i][j] + b[i][j]` occupies constant space for each iteration.
+
+5. **Total Space Complexity:** Considering all the components, the space complexity of this algorithm is `O(m x n)`, since the space required by the input matrices, output matrix, and temporary variables dominates the space used by other variables and constants.
+
+
+Consider the following pseudocode example for calculating the factorial of a number:
+
+```c
+Algorithm factorial(n) {
+   if (n == 0)
+      return 1;
+   else
+      return n * factorial(n - 1);
+}
+```
+
+Here's the analysis of space complexity for this algorithm:
+
+1. **Input Space:** The input parameter `n` takes constant space.
+
+2. **Function Call Stack:** Recursion involves function calls, which create a stack frame for each recursive call. In this case, the maximum depth of the call stack will be `n`, as we are calling the function recursively `n` times.
+
+3. **Variables Space:** The variable `n` and any temporary variables used within the function take constant space.
+
+4. **Total Space Complexity:** The space complexity of this algorithm is determined by the maximum depth of the function call stack. Since the maximum depth is `n` in this case, the space complexity is `O(n)`.
