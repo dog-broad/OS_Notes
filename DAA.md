@@ -67,3 +67,64 @@ Explanation of the Algorithm Design Steps:
 6. **Code the Algorithm:** Translate your algorithm into actual code using a programming language. This step involves converting the logical steps into a syntax that a computer can understand and execute.
 
 If the correctness of the algorithm is proven and the analysis indicates effectiveness, the algorithm progresses to the coding phase. If either condition is not met, you can revisit the choice of algorithm design techniques for refinement. This iterative approach ensures a well-crafted, correct, and efficient algorithm design.
+
+
+# What is Pseudo Code? Explain the steps required for writing a Pseudo Code.
+
+**Pseudocode** is a high-level description of an algorithm or program written in a manner that resembles a programming language, but is meant to be easily understandable by humans, without getting into the specifics of actual programming syntax. It's used as a tool to plan and outline the logical steps of an algorithm before translating it into a specific programming language.
+
+**Steps for Writing Pseudocode:**
+
+1. **Start with Problem Understanding:**
+   Begin by comprehending the problem thoroughly. Understand the requirements, constraints, and desired outcomes. This lays the foundation for your pseudocode.
+
+2. **Outline the Main Steps:**
+   Break down the solution into major steps. Describe what the algorithm needs to accomplish at each stage. Use simple and descriptive statements.
+
+3. **Use Variables and Constants:**
+   Employ variable names that are indicative of their purpose. Declare and initialize variables as needed to hold data.
+
+4. **Control Structures:**
+   Utilize control structures like loops (for, while) and conditionals (if, else) to dictate the flow of the algorithm based on different scenarios.
+
+5. **Modularize with Functions/Procedures:**
+   Break down complex tasks into smaller sub-tasks using functions or procedures. Describe what each function does without delving into the specifics of its implementation.
+
+6. **Input and Output:**
+   Include input and output statements that represent user interactions or data processing.
+
+7. **Commenting:**
+   Add comments to clarify the logic or steps, especially when dealing with complex portions.
+
+8. **Iteration and Loops:**
+   Use loops for repetitive tasks. Specify loop conditions and how the iteration should be performed.
+
+9. **Conditionals:**
+   Employ conditionals for decision-making. Describe the conditions that trigger specific actions or branches.
+
+10. **Error Handling:**
+    Include error handling statements, such as try-catch blocks, if relevant to the problem.
+
+11. **Termination:**
+    Clearly indicate how the algorithm should terminate or exit.
+
+12. **Testing:**
+    Mentally simulate the algorithm by reading through the pseudocode. Verify that the logic is sound and the steps align with the intended solution.
+
+Here's an example of pseudocode for finding the sum of even numbers from 1 to N:
+
+```c
+Start
+  Declare N, sum as Integer
+  Input N
+  sum = 0
+
+  For i = 1 to N do
+    If i % 2 == 0 then
+      sum = sum + i
+    End If
+  End For
+
+  Output sum
+End
+```
