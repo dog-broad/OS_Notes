@@ -759,3 +759,59 @@ Consider items with weights [2, 3, 4, 5] and values [3, 4, 5, 6], and a knapsack
 The maximum value that can be obtained is 7, and the items included are 4 and 2.
 
 The dynamic programming approach solves the 0/1 Knapsack problem by building a table that stores the maximum value that can be obtained for different item weights and capacities. This solution efficiently handles various item weights and values to maximize the value within the knapsack's capacity.
+
+
+
+
+
+# All Pair Shortest Path:
+
+**All Pair Shortest Path:**
+
+1. Given a weighted directed graph, find the shortest path between every pair of vertices.
+2. Create a DP table of size n x n, where n is the number of vertices.
+3. Initialize the DP table (A):
+   - Set A[i][j] = distance[i][j] for all i and j. If i = j, set A[i][j] = 0 (base cases).
+4. For each vertex k from 1 to n:
+   - For each pair of vertices i and j from 1 to n:
+     - Calculate A[i][j] using the formula:
+       - A[i][j] = min(A[i][j], A[i][k] + A[k][j]).
+5. The DP table A stores the shortest distances between all pairs of vertices.
+
+**Example:**
+Consider a graph with vertices 1, 2, 3, 4, and weighted edges as follows:
+- distance[1][2] = 3, distance[1][3] = ∞, distance[1][4] = 7
+- distance[2][1] = ∞, distance[2][3] = 2, distance[2][4] = ∞
+- distance[3][1] = ∞, distance[3][2] = ∞, distance[3][4] = 1
+- distance[4][1] = 6, distance[4][2] = ∞, distance[4][3] = ∞
+
+**Step-by-step:**
+1. Initialize A table:
+   - A[1][1] = 0, A[1][2] = 3, A[1][3] = ∞, A[1][4] = 7
+   - A[2][1] = ∞, A[2][2] = 0, A[2][3] = 2, A[2][4] = ∞
+   - A[3][1] = ∞, A[3][2] = ∞, A[3][3] = 0, A[3][4] = 1
+   - A[4][1] = 6, A[4][2] = ∞, A[4][3] = ∞, A[4][4] = 0
+2. Calculate A[1][2], A[1][3], A[1][4]:
+   - A[1][2] = min(A[1][2], A[1][1] + A[1][2])
+   - A[1][3] = min(A[1][3], A[1][1] + A[1][3])
+   - A[1][4] = min(A[1][4], A[1][1] + A[1][4])
+3. Calculate A[1][2], A[1][3], A[1][4]:
+   - A[1][2] = min(A[1][2], A[1][3] + A[3][2])
+   - A[1][3] = min(A[1][3], A[1][3] + A[3][3])
+   - A[1][4] = min(A[1][4], A[1][3] + A[3][4])
+4. Calculate A[1][2], A[1][3], A[1][4]:
+   - A[1][2] = min(A[1][2], A[1][4] + A[4][2])
+   - A[1][3] = min(A[1][3], A[1][4] + A[4][3])
+   - A[1][4] = min(A[1][4], A[1][4] + A[4][4])
+5. Calculate A[2][3], A[2][4]:
+   - A[2][3] = min(A[2][3], A[2][1] + A[1][3])
+   - A[2][4] = min(A[2][4], A[2][1] + A[1][4])
+6. Calculate A[2][3], A[2][4]:
+   - A[2][3] = min(A[2][3], A[2][4] + A[4][3])
+   - A[2][4] = min(A[2][4], A[2][4] + A[4][4])
+7. Calculate A[3][4]:
+   - A[3][4] = min(A[3][4], A[3][1] + A[1][4])
+
+The A table stores the shortest distances between all pairs of vertices:
+- A[1][2] = 3, A[1][3] = 5, A[1][4] = 6
+- A[2][3] = 2, A[2][4] = 8, A[3][4] = 1.
