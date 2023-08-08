@@ -678,3 +678,36 @@ Consider a simple graph with nodes A, B, C, D, and E, and weighted edges as desc
 7. Algorithm terminates.
 
 The final distances represent the shortest paths from node A to other nodes: B(4), C(2), D(5), E(12).
+
+
+# Bellman-Ford Algorithm - Single Source Shortest Path
+
+**Bellman-Ford Algorithm:**
+1. Initialize distances and predecessors for all nodes. Set the distance of the source node to 0 and others to infinity.
+2. Repeat for the number of nodes - 1 times:
+   - For each edge (u, v) with weight w:
+     - Relax the edge: If distance[u] + w < distance[v], update distance[v] to distance[u] + w and set predecessor[v] to u.
+3. Check for negative-weight cycles:
+   - For each edge (u, v) with weight w:
+     - If distance[u] + w < distance[v], then a negative-weight cycle exists.
+4. The distances and predecessors computed represent the shortest paths from the source node to all other nodes.
+
+**Example:**
+Consider a directed graph with nodes A, B, C, D, and E, and weighted edges as described earlier.
+
+**Step-by-step:**
+1. Initialize distances: A(0), B(∞), C(∞), D(∞), E(∞). Predecessors: A(nil), B(nil), C(nil), D(nil), E(nil).
+2. **Iteration 1:**
+   - Relax edges: A-B(3), A-C(5).
+   - Update distances: A(0), B(3), C(5), D(∞), E(∞).
+3. **Iteration 2:**
+   - Relax edges: B-C(2), B-D(4), C-D(1), C-E(4).
+   - Update distances: A(0), B(3), C(5), D(6), E(9).
+4. **Iteration 3:**
+   - Relax edges: D-E(2).
+   - Update distances: A(0), B(3), C(5), D(6), E(8).
+5. No negative-weight cycles found.
+
+The final distances represent the shortest paths from the source node A to other nodes: B(3), C(5), D(6), E(8).
+
+Bellman-Ford algorithm efficiently finds the shortest paths from a source node to all other nodes in a weighted graph, handling negative-weight edges and detecting negative-weight cycles. It iterates over edges multiple times, relaxing them to find the shortest paths gradually.
