@@ -1,3 +1,5 @@
+# IGNORE RECURRENCE RELATION!!
+
 # Unit 1
 
 ## 1. **What is an Algorithm? How to devise an Algorithm?**
@@ -118,14 +120,14 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 
 # Unit 2
 
-## 1. **Define Greedy method?**
+## 1. **Define Greedy method.**
    **Greedy Method** is an algorithmic approach where solutions are constructed incrementally by making locally optimal choices at each step. The chosen choice is the one that offers the most immediate benefit. Problems suitable for Greedy are those in which local optimal choices lead to a global solution.
 
-## 2. **Define a spanning tree?**
+## 2. **Define a spanning tree.**
    A spanning tree of a graph is a subgraph that includes all the vertices of the original graph while forming a tree structure (no cycles). It must be connected and have the minimum possible number of edges to ensure connectivity.
    ![](2023-08-08-18-16-58.png)
 
-## 3. **Formally represent the Knapsack problem?**
+## 3. **Formally represent the Knapsack problem.**
    The Knapsack problem is represented as follows:
    Given a set of items with weights and values, determine the optimal selection of items to include in a knapsack of limited capacity, maximizing the total value while staying within the weight constraint.
 
@@ -142,7 +144,7 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
    - May result in disconnected components before the final MST is formed.
    - Always results in the same MST regardless of the starting vertex.
 
-## 5. **Differentiate Greedy and Divide-and-Conquer algorithms?**
+## 5. **Differentiate Greedy and Divide-and-Conquer algorithms.**
    Greedy Algorithm:
    - Makes locally optimal choices at each step.
    - Doesn't guarantee a globally optimal solution.
@@ -155,25 +157,25 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
    - Guarantees globally optimal solutions.
    - Often more complex and slower for certain problems.
 
-## 6. **Define Job sequencing with deadlines problem?**
+## 6. **Define Job sequencing with deadlines problem.**
    Job sequencing with deadlines is a problem where a set of jobs with associated profits and deadlines must be scheduled on a single machine, considering that each job takes a unit of time and cannot miss its deadline. The goal is to maximize the total profit by choosing an optimal order of job execution.
 
-## 7. **Define feasible solution?**
+## 7. **Define feasible solution.**
    A feasible solution is one that satisfies all the given constraints and requirements of a problem. It might not necessarily be optimal, but it meets the necessary conditions.
 
-## 8. **Define optimal solution?**
+## 8. **Define optimal solution.**
    An optimal solution is the best possible solution among all feasible solutions for a given problem. It provides the highest value or the lowest cost, depending on the problem's objective.
 
-## 9. **Write the aim of the single source shortest path problem?**
+## 9. **Write the aim of the single source shortest path problem.**
    The aim of the single source shortest path problem is to find the shortest paths from a specified source vertex to all other vertices in a weighted graph. The objective is to determine the minimum cumulative weight of paths from the source vertex to all other vertices.
 
 
 # Unit 3
 
-## 1. **Define Dynamic programming**
+## 1. **Define Dynamic programming.**
    Dynamic Programming is a problem-solving technique that involves breaking down complex problems into simpler overlapping subproblems. It stores and reuses solutions to subproblems to avoid redundant calculations, aiming to solve larger problems efficiently.
 
-## 2. **State the Principle of optimality**
+## 2. **State the Principle of optimality.**
    The principle of optimality states that an optimal solution to a larger problem contains optimal solutions to its smaller subproblems. This forms the basis of dynamic programming, where solutions to subproblems are reused to solve the main problem.
 
 ## 3. **What is the aim of the All Pairs Shortest Path problem?**
@@ -182,10 +184,10 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 ## 4. **How single source shortest path problem can be solved using dynamic programming?**
    The problem can be solved using the Bellman-Ford algorithm, which iteratively relaxes edges to find the shortest paths from a single source vertex to all other vertices. Dynamic programming is used by maintaining an array to store minimum distances.
 
-## 5. **Define Optimal Binary Search Tree problem**
+## 5. **Define Optimal Binary Search Tree problem.**
    The Optimal Binary Search Trees problem involves constructing a binary search tree from a sorted list of keys, aiming to minimize the expected search cost by assigning higher probabilities to frequently searched keys.
 
-## 6. **Differentiate Greedy and Dynamic programming algorithms**
+## 6. **Differentiate Greedy and Dynamic programming algorithms.**
    Greedy Knapsack:
    - Chooses items based on their immediate benefit.
    - Doesn't guarantee an optimal solution in all cases.
@@ -193,31 +195,31 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
    - Solves subproblems and combines solutions for an optimal global solution.
    - Guarantees an optimal solution using a bottom-up approach.
 
-## 7. **Define Purging Rule**
+## 7. **Define Purging Rule.**
    The **Purging Rule** is employed in Backtracking algorithms to prune specific choices that cannot lead to a solution. If a set of pairs $(P_j, W_j)$ and $(P_k, W_k)$ in sequence $s_{i+1}$ satisfy $P_j \leq P_k$ and $W_j \geq W_k$, then $(P_j, W_j)$ can be eliminated. This rule, also known as the dominance rule, removes dominated tuples. In essence, it discards the pair with lower profit and higher weight to streamline the search space for a solution.
 
-## 8. **Represent Reliability Design Problem Formally**
+## 8. **Represent Reliability Design Problem Formally.**
    In the Reliability Design problem, given a network with components connected in series or parallel, having reliability values, the goal is to find a configuration that maximizes the overall reliability of the network, considering component failures and the connectivity between components.
 
-## 9. **Define a Tour of Traveling Salesperson Problem**
+## 9. **Define a Tour of Traveling Salesperson Problem.**
    A tour in the Traveling Salesperson Problem refers to a circular route that visits all given cities exactly once and returns to the starting city. The objective is to find the shortest possible tour that covers all cities and returns to the starting point.
 
 
 # Unit 4
 
-## 1. **State the concept of bounding function**
+## 1. **State the concept of bounding function.**
 A bounding function estimates the potential of a partial solution to lead to an optimal solution. It prunes branches of the search tree that cannot improve the current best solution, reducing search space and enhancing efficiency.
 
-## 2. **List out the importance of LC search in branch and bound**
+## 2. **List out the importance of LC search in branch and bound.**
 - **Enhanced Pruning:** LC (Linear Constraints) search improves lower bounds efficiently, allowing faster pruning of unpromising branches.
 - **Optimal Solutions:** It aids in identifying promising solution candidates by utilizing constraints, contributing to the discovery of optimal solutions.
 - **Accelerated Exploration:** LC search narrows down the search space, guiding the algorithm toward potential optimal solutions earlier in the process.
 - **Reduced Complexity:** By leveraging linear constraints, it minimizes unnecessary exploration, leading to improved efficiency in solving complex problems.
 
-## 3. **How is row minimization performed in TSP using Branch and Bound**
+## 3. **How is row minimization performed in TSP using Branch and Bound.**
 Row minimization in Traveling Salesperson Problem (TSP) involves subtracting the minimum value in each row of the cost matrix. This step reduces problem size and doesn't affect optimal solutions.
 
-## 4. **Discuss about column minimization in TSP using Branch and Bound with an example**
+## 4. **Discuss about column minimization in TSP using Branch and Bound with an example.**
 Column minimization in TSP entails subtracting the minimum value in each column of the cost matrix. It doesn't change optimal solutions but aids in faster pruning. For instance, if the cost matrix is:
 ```
 5 4 8
@@ -231,20 +233,20 @@ Subtracting column minima yields:
 4 4 4
 ```
 
-## 5. **State the principle of LIFO branch and bound**
+## 5. **State the principle of LIFO branch and bound.**
 The LIFO (Last In, First Out) principle in branch and bound explores recently generated nodes first. It utilizes a stack data structure. This approach intensifies search in a particular branch, potentially leading to a solution quicker.
 
-## 6. **Explain the principle of FIFO branch and bound**
+## 6. **Explain the principle of FIFO branch and bound.**
 The FIFO (First In, First Out) principle explores nodes in the order they are generated. It employs a queue. This strategy provides a breadth-first exploration of the search tree, ensuring optimality in finding solutions.
 
-## 7. **Suggest a solution for the 8 Queens Problem**
+## 7. **Suggest a solution for the 8 Queens Problem.**
 The 8 Queens Problem can be solved by backtracking. Place queens sequentially in rows, ensuring no two queens threaten each other. If a safe position isn't found, backtrack and try a different position.
 
-## 8. **Discuss M-coloring concept**
+## 8. **Discuss M-coloring concept.**
 M-coloring involves coloring the vertices of a graph with M colors such that no two adjacent vertices have the same color. This concept is vital in map coloring, register allocation, and scheduling problems.
 ![](2023-08-08-19-02-21.png)
 
-## **Compare and contrast Brute force approach Vs backtracking**
+## **Compare and contrast Brute force approach Vs backtracking.**
 **Brute Force Approach:**
 - Brute force examines every possible solution without any intelligent pruning.
 - It's straightforward to implement, as it straightforwardly searches through all options.
