@@ -520,6 +520,46 @@ Algorithm swap(a, b) {
 
 The time complexity of QuickSort depends on the partitioning strategy. The worst-case time complexity is O(n^2), but the average-case time complexity is O(n log n).
 
+**Worst Case Analysis for QuickSort:**
+
+In the worst-case scenario, QuickSort's pivot selection leads to unbalanced partitioning, causing it to approach its worst-case time complexity.
+
+**Equation:**
+The recurrence relation for the worst case of QuickSort can be expressed as:
+
+$T(n) = T(1) + T(n-1) + n$
+
+Where:
+- $T(1)$ is the time taken by a partition with one element (base case).
+- $T(n-1)$ is the time taken by the remaining elements except the pivot element.
+- $n$ is the number of comparisons required to identify the exact position of the pivot element.
+
+In the worst case, the pivot is selected in a way that consistently divides the array into subarrays with sizes $1$ and $n-1$, leading to unbalanced partitioning. This results in a quadratic time complexity of $O(n^2)$.
+
+**Average Case Analysis for QuickSort:**
+
+The average-case scenario for QuickSort assumes that the pivot element divides the array into roughly equal subarrays, leading to more balanced partitioning.
+
+**Equation:**
+For the average case, we consider that the pivot element divides the array into two subarrays of approximately equal sizes. The recurrence relation can be approximated as:
+
+$T(n) = 2 \cdot T(\frac{n}{2}) + n$
+
+The average time complexity for QuickSort in this case is $O(n \log n)$.
+
+**Best Case Analysis for QuickSort:**
+
+The best-case scenario for QuickSort occurs when the pivot element consistently divides the array into two subarrays of nearly equal sizes.
+
+**Equation:**
+In the best case, the pivot element divides the array into two nearly equal subarrays. The recurrence relation can be expressed as:
+
+$T(n) = 2 \cdot T(\frac{n}{2}) + n$
+
+The best-case time complexity for QuickSort is $O(n \log n)$, similar to the average case.
+
+It's important to note that while the average and best cases have a time complexity of $O(n \log n)$, the worst case can degrade to $O(n^2)$ due to unbalanced partitioning. To mitigate this, randomized pivot selection or other pivot strategies are often used in practical implementations.
+
 
 
 # Merge Sort Algorithm
@@ -582,3 +622,26 @@ Algorithm merge(low, mid, high) {
 **Time Complexity:**
 
 The time complexity of MergeSort is O(n log n) in all cases. This is because the array is divided into halves during each recursive call. The merging process takes O(n) time, and the number of recursive calls is O(log n). Therefore, the total time complexity is O(n log n).
+
+**Time Complexity Analysis of Merge Sort:**
+
+Merge Sort is known for its consistent performance across different scenarios, with a time complexity of \(O(n \log n)\) for all cases.
+
+**Equation:**
+The recurrence relation for Merge Sort is expressed as:
+
+\[ T(n) = 2 \cdot T\left(\frac{n}{2}\right) + n \]
+
+- \(T\left(\frac{n}{2}\right)\) represents the time taken for sorting two subarrays of size \(\frac{n}{2}\).
+- \(n\) represents the time taken for merging the subarrays.
+
+**Worst Case:**
+In the worst case, where the array is evenly divided during each recursive step, the recursion depth will be \(\log n\), and at each level, \(n\) comparisons are performed for merging. This leads to a worst-case time complexity of \(O(n \log n)\).
+
+**Average Case:**
+The average-case time complexity is also \(O(n \log n)\) because Merge Sort consistently divides the array into balanced subarrays, resulting in similar behavior to the worst case.
+
+**Best Case:**
+Even when dealing with a nearly sorted array, Merge Sort maintains its \(O(n \log n)\) time complexity. Although some initial divisions may lead to smaller subarrays, the subsequent merging steps still contribute to the \(O(n \log n)\) behavior.
+
+Merge Sort's time complexity remains stable regardless of the input characteristics, making it a dependable choice for sorting tasks. However, its auxiliary space complexity should also be considered due to the additional memory required for merging.
