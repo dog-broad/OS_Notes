@@ -166,3 +166,38 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 
 ## 9. **Write the aim of the single source shortest path problem?**
    The aim of the single source shortest path problem is to find the shortest paths from a specified source vertex to all other vertices in a weighted graph. The objective is to determine the minimum cumulative weight of paths from the source vertex to all other vertices.
+
+
+# Unit 3
+
+## 1. **Define Dynamic programming**
+   Dynamic Programming is a problem-solving technique that involves breaking down complex problems into simpler overlapping subproblems. It stores and reuses solutions to subproblems to avoid redundant calculations, aiming to solve larger problems efficiently.
+
+## 2. **State the Principle of optimality**
+   The principle of optimality states that an optimal solution to a larger problem contains optimal solutions to its smaller subproblems. This forms the basis of dynamic programming, where solutions to subproblems are reused to solve the main problem.
+
+## 3. **What is the aim of the All Pairs Shortest Path problem?**
+   The aim of the All Pairs Shortest Path problem is to find the shortest path between all pairs of vertices in a weighted graph, considering both directed and undirected graphs.
+
+## 4. **How single source shortest path problem can be solved using dynamic programming?**
+   The problem can be solved using the Bellman-Ford algorithm, which iteratively relaxes edges to find the shortest paths from a single source vertex to all other vertices. Dynamic programming is used by maintaining an array to store minimum distances.
+
+## 5. **Define Optimal Binary Search Tree problem**
+   The Optimal Binary Search Trees problem involves constructing a binary search tree from a sorted list of keys, aiming to minimize the expected search cost by assigning higher probabilities to frequently searched keys.
+
+## 6. **Differentiate Greedy and Dynamic programming algorithms**
+   Greedy Knapsack:
+   - Chooses items based on their immediate benefit.
+   - Doesn't guarantee an optimal solution in all cases.
+   Dynamic Programming Knapsack:
+   - Solves subproblems and combines solutions for an optimal global solution.
+   - Guarantees an optimal solution using a bottom-up approach.
+
+## 7. **Define Purging Rule**
+   The **Purging Rule** is employed in Backtracking algorithms to prune specific choices that cannot lead to a solution. If a set of pairs $(P_j, W_j)$ and $(P_k, W_k)$ in sequence $s_{i+1}$ satisfy $P_j \leq P_k$ and $W_j \geq W_k$, then $(P_j, W_j)$ can be eliminated. This rule, also known as the dominance rule, removes dominated tuples. In essence, it discards the pair with lower profit and higher weight to streamline the search space for a solution.
+
+## 8. **Represent Reliability Design Problem Formally**
+   In the Reliability Design problem, given a network with components connected in series or parallel, having reliability values, the goal is to find a configuration that maximizes the overall reliability of the network, considering component failures and the connectivity between components.
+
+## 9. **Define a Tour of Traveling Salesperson Problem**
+   A tour in the Traveling Salesperson Problem refers to a circular route that visits all given cities exactly once and returns to the starting city. The objective is to find the shortest possible tour that covers all cities and returns to the starting point.
