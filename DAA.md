@@ -398,13 +398,17 @@ Here,
 
 The time complexity of many divide-and-conquer algorithms can be represented by recurrence relations of the form:
 
-$T(n) = a \cdot T(n/b) + f(n)$
+$T(n) = 1, n = 1$
+
+$T(n) = a \cdot T(n/b) + f(n), n>1$
 
 Where:
 - `T(n)` is the time complexity for a problem of size 'n'.
 - 'a' is the number of sub-problems.
 - 'b' is the factor by which the problem size is reduced.
 - `f(n)` represents the time for dividing the problem and combining solutions to sub-problems.
+- $n = b^k$ is the base case.
+- $k = \log_b n$ is the number of levels in the recursion tree.
 
 **Solving the Recurrence Relation:**
 
@@ -468,3 +472,113 @@ int binarySearchNonRecursive(int arr[], int size, int key) {
 ```
 
 In both versions, the `low` and `high` parameters represent the current range of the array being searched. The recursive version divides this range in half during each recursive call, while the non-recursive version updates the range within the `while` loop until the key is found or the range is exhausted.
+
+
+# Quick Sort Algorithm
+
+- QuickSort is a popular sorting algorithm.
+- It uses the divide-and-conquer approach.
+- The algorithm selects a pivot element from the array. Elements are partitioned into two sub-arrays based on the pivot. Sub-arrays are recursively sorted using QuickSort.
+- This process continues until the entire array is sorted.
+- QuickSort is known for its efficiency and fast average-case time complexity of O(n log n).
+- It's widely used in programming libraries and is a fundamental algorithm in computer science.
+
+Here's the algorithm in pseudocode:
+
+```c
+Algorithm quickSort(low, high) {
+    if (low < high) then {
+        pivotIndex = partition(low, high);
+        quickSort(low, pivotIndex - 1);
+        quickSort(pivotIndex + 1, high);
+    }
+}
+
+Algorithm partition(low, high) {
+    pivot = arr[high];
+    i = low - 1;
+
+    for (j = low to high - 1) do {
+        if (arr[j] <= pivot) then {
+            i = i + 1;
+            swap(arr[i], arr[j]);
+        }
+    }
+
+    swap(arr[i + 1], arr[high]);
+    return i + 1;
+}
+
+Algorithm swap(a, b) {
+    temp = a;
+    a = b;
+    b = temp;
+}
+```
+
+**Time Complexity:**
+
+The time complexity of QuickSort depends on the partitioning strategy. The worst-case time complexity is O(n^2), but the average-case time complexity is O(n log n).
+
+
+
+# Merge Sort Algorithm
+
+- MergeSort is a sorting algorithm that follows the divide-and-conquer strategy.
+- It divides the array into smaller sub-arrays until they contain only one element each.
+- It then merges these sub-arrays back together while maintaining their sorted order.
+- The merging process compares elements from the sub-arrays and arranges them in order.
+- This merging continues until a single sorted array is obtained.
+- It's efficient for large datasets and is often used in practice for its stable sorting and reliable performance.
+
+Here's the algorithm in pseudocode:
+
+```c
+Algorithm mergeSort(low, high) {
+    if (low < high) then {
+        mid = (low + high) / 2;
+        
+        mergeSort(low, mid);
+        mergeSort(mid + 1, high);
+        
+        merge(low, mid, high);
+    }
+}
+
+Algorithm merge(low, mid, high) {
+    h = low;
+    i = low;
+    j = mid + 1;
+
+    while ((h <= mid) && (j <= high)) do {
+        if (arr[h] <= arr[j]) then {
+            temp[i] = arr[h];
+            h = h + 1;
+        } else {
+            temp[i] = arr[j];
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+
+    if (h > mid) then {
+        for (k = j to high) do {
+            temp[i] = arr[k];
+            i = i + 1;
+        }
+    } else {
+        for (k = h to mid) do {
+            temp[i] = arr[k];
+            i = i + 1;
+        }
+    }
+
+    for (k = low to high) do {
+        arr[k] = temp[k];
+    }
+}
+```
+
+**Time Complexity:**
+
+The time complexity of MergeSort is O(n log n) in all cases. This is because the array is divided into halves during each recursive call. The merging process takes O(n) time, and the number of recursive calls is O(log n). Therefore, the total time complexity is O(n log n).
