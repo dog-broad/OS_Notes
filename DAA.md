@@ -645,3 +645,36 @@ The average-case time complexity is also \(O(n \log n)\) because Merge Sort cons
 Even when dealing with a nearly sorted array, Merge Sort maintains its \(O(n \log n)\) time complexity. Although some initial divisions may lead to smaller subarrays, the subsequent merging steps still contribute to the \(O(n \log n)\) behavior.
 
 Merge Sort's time complexity remains stable regardless of the input characteristics, making it a dependable choice for sorting tasks. However, its auxiliary space complexity should also be considered due to the additional memory required for merging.
+
+
+
+
+# Dijkstra's Algorithm - Single Source Shortest Path
+
+**Dijkstra's Algorithm:**
+1. Initialize a set of unvisited nodes and set the distance of all nodes to a very large value except for the start node, which is set to 0.
+2. While there are unvisited nodes:
+   - Choose the node with the smallest distance from the unvisited set. Mark it as visited.
+   - For each neighbor of the chosen node:
+     - Calculate the distance from the start node to the neighbor through the chosen node.
+     - If this calculated distance is smaller than the current distance of the neighbor, update the distance.
+3. Continue step 2 until all nodes have been visited.
+4. The distances computed in step 2 represent the shortest path from the start node to all other nodes.
+
+**Example:**
+Consider a simple graph with nodes A, B, C, D, and E, and weighted edges as described earlier.
+
+**Step-by-step:**
+1. Initialize distances: A(0), B(∞), C(∞), D(∞), E(∞).
+2. Choose node A with distance 0.
+   - Update distances: B(4), C(2), D(∞), E(∞).
+3. Choose node C with distance 2.
+   - Update distances: B(4), D(5), E(∞).
+4. Choose node B with distance 4.
+   - Update distances: D(5), E(∞).
+5. Choose node D with distance 5.
+   - Update distances: E(12).
+6. Choose node E with distance 12.
+7. Algorithm terminates.
+
+The final distances represent the shortest paths from node A to other nodes: B(4), C(2), D(5), E(12).
