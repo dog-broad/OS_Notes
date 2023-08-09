@@ -157,6 +157,8 @@ public class ProceduralExample {
     }
 }
 ```
+> Output:
+> ```Circle Area: 78.5```
 
 Object-Oriented Example:
 ```java
@@ -181,6 +183,8 @@ public class OOPExample {
     }
 }
 ```
+> Output:
+> ```Circle Area: 78.5```
 
 ## OOP Concepts
 
@@ -207,6 +211,8 @@ public class Main {
     }
 }
 ```
+> Output:
+> ```Car is starting...```
 
 2. **Encapsulation**:
    - Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, known as a class.
@@ -237,6 +243,8 @@ public class Main {
     }
 }
 ```
+> Output:
+> ```Balance: 1000.0```
 
 3. **Inheritance**:
    - Inheritance allows a class (subclass or derived class) to inherit properties and methods from another class (superclass or base class).
@@ -261,6 +269,8 @@ public class Main {
     }
 }
 ```
+> Output:
+> ```Woof woof```
 
 4. **Polymorphism**:
    - Polymorphism means "many forms" and refers to the ability of different classes to be treated as instances of the same class through inheritance.
@@ -287,6 +297,11 @@ public class Main {
     }
 }
 ```
+> Output:
+> ```
+> 5
+> 6.2
+> ```
 
 5. **Abstraction**:
    - Abstraction focuses on providing a simplified view of an object, by hiding complex implementation details and showing only relevant features.
@@ -320,6 +335,10 @@ public class Main {
     }
 }
 ```
+> Output:
+> ```
+> Circle Area: 78.53981633974483
+> ```
 
 ## Method Overloading 
 
@@ -372,6 +391,60 @@ In this example:
 3. The `add(String s1, String s2)` method takes two string arguments and returns their concatenation.
 
 When calling the methods, Java uses the number and types of arguments to determine which method to execute. This is known as compile-time polymorphism or method overloading.
+
+
+## Method Overriding
+
+Method overriding in Java is a concept in object-oriented programming where a subclass provides a specific implementation of a method that is already defined in its superclass. This allows a subclass to provide its own version of a method that has the same name, return type, and parameters as a method in its superclass.
+
+In simple terms, method overriding means replacing a method in the superclass with a different implementation in the subclass.
+
+Key points about method overriding:
+
+1. **Inheritance Required:** Method overriding occurs in a subclass that inherits from a superclass. The overridden method in the subclass should have the same method signature (name, return type, and parameters) as the method in the superclass.
+
+2. **Runtime Polymorphism:** Method overriding is a form of runtime polymorphism. When a subclass object is used to call an overridden method, Java dynamically determines which version of the method to execute based on the actual type of the object.
+
+3. **@Override Annotation:** In Java, the `@Override` annotation is used to indicate that a method is intended to override a method in the superclass. In simpler terms the developer is telling the compiler that the method is overriding the superclass method. It is a good practice to use this annotation to avoid accidental method overloading.
+
+Example:
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class MethodOverridingDemo {
+    public static void main(String[] args) {
+        Animal animal = new Animal();
+        Animal dog = new Dog();
+        
+        animal.makeSound(); // Animal makes a sound
+        dog.makeSound();    // Dog barks
+    }
+}
+```
+> Output:
+> ```
+> Animal makes a sound
+> Dog barks
+> ```
+
+
+In this example:
+
+1. The `Animal` class has a method named `makeSound()` with a generic implementation.
+2. The `Dog` class extends `Animal` and overrides the `makeSound()` method with a specific implementation for dogs.
+3. When an object of the `Dog` class is created and used to call `makeSound()`, the overridden method in the `Dog` class is executed instead of the one in the `Animal` class.
 
 
 
