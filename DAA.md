@@ -625,24 +625,24 @@ The time complexity of MergeSort is O(n log n) in all cases. This is because the
 
 **Time Complexity Analysis of Merge Sort:**
 
-Merge Sort is known for its consistent performance across different scenarios, with a time complexity of \(O(n \log n)\) for all cases.
+Merge Sort is known for its consistent performance across different scenarios, with a time complexity of $O(n \log n)$ for all cases.
 
 **Equation:**
 The recurrence relation for Merge Sort is expressed as:
 
 \[ T(n) = 2 \cdot T\left(\frac{n}{2}\right) + n \]
 
-- \(T\left(\frac{n}{2}\right)\) represents the time taken for sorting two subarrays of size \(\frac{n}{2}\).
-- \(n\) represents the time taken for merging the subarrays.
+- $T\left(\frac{n}{2}\right)$ represents the time taken for sorting two subarrays of size $\frac{n}{2}$.
+- $n$ represents the time taken for merging the subarrays.
 
 **Worst Case:**
-In the worst case, where the array is evenly divided during each recursive step, the recursion depth will be \(\log n\), and at each level, \(n\) comparisons are performed for merging. This leads to a worst-case time complexity of \(O(n \log n)\).
+In the worst case, where the array is evenly divided during each recursive step, the recursion depth will be $\log n$, and at each level, $n$ comparisons are performed for merging. This leads to a worst-case time complexity of $O(n \log n)$.
 
 **Average Case:**
-The average-case time complexity is also \(O(n \log n)\) because Merge Sort consistently divides the array into balanced subarrays, resulting in similar behavior to the worst case.
+The average-case time complexity is also $O(n \log n)$ because Merge Sort consistently divides the array into balanced subarrays, resulting in similar behavior to the worst case.
 
 **Best Case:**
-Even when dealing with a nearly sorted array, Merge Sort maintains its \(O(n \log n)\) time complexity. Although some initial divisions may lead to smaller subarrays, the subsequent merging steps still contribute to the \(O(n \log n)\) behavior.
+Even when dealing with a nearly sorted array, Merge Sort maintains its $O(n \log n)$ time complexity. Although some initial divisions may lead to smaller subarrays, the subsequent merging steps still contribute to the $O(n \log n)$ behavior.
 
 Merge Sort's time complexity remains stable regardless of the input characteristics, making it a dependable choice for sorting tasks. However, its auxiliary space complexity should also be considered due to the additional memory required for merging.
 
@@ -851,7 +851,7 @@ Where the clauses are:
 3. $C_3 = \neg x_2 \lor x_3$
 4. $C_4 = \neg x_1 \lor \neg x_3$
 
-The Satisfiability Problem is to determine if there exists a truth assignment to \(x_1\), \(x_2\), and \(x_3\) that satisfies all clauses simultaneously. In this case, there is a satisfying assignment: \(x_1 = \text{false}\), \(x_2 = \text{true}\), and \(x_3 = \text{true}\), which makes all clauses true.
+The Satisfiability Problem is to determine if there exists a truth assignment to $x_1$, $x_2$, and $x_3$ that satisfies all clauses simultaneously. In this case, there is a satisfying assignment: $x_1 = \text{false}$, $x_2 = \text{true}$, and $x_3 = \text{true}$, which makes all clauses true.
 
 Solving the Satisfiability Problem involves exploring different truth assignments systematically to determine if there exists a combination that satisfies the entire formula. The problem is important in various areas of computer science, such as formal verification, automated reasoning, and artificial intelligence.
 
