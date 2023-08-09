@@ -448,6 +448,21 @@ In this example:
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
