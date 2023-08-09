@@ -69,6 +69,63 @@ public class VariableScope {
 }
 ```
 
+## Constructor and its types
+
+A constructor in Java is a special method that gets called when an object of a class is created. It's used to initialize the instance variables and set up the initial state of the object.
+
+Here's a simple example of a constructor and its types:
+
+```java
+// Example of Constructor
+class Student {
+    String name;
+
+    // Default Constructor
+    Student() {
+        name = "John Doe";
+    }
+
+    // Parameterized Constructor
+    Student(String n) {
+        name = n;
+    }
+
+    void display() {
+        System.out.println("Student Name: " + name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        Student student2 = new Student("Alice");
+
+        student1.display();
+        student2.display();
+    }
+}
+```
+In the example above:
+- `Student()` is a default constructor that initializes `name` to "John Doe" when an object is created without any arguments.
+- `Student(String n)` is a parameterized constructor that initializes `name` to the value passed as an argument when an object is created with an argument.
+- `student1` and `student2` are objects created using different constructors.
+
+
+Types of Constructors:
+1. **Default Constructor**: It's a constructor with no parameters. If you don't provide any constructor in your class, the Java compiler adds a default constructor automatically.
+2. **Parameterized Constructor**: It's a constructor with parameters. You can define your own constructors with parameters to initialize instance variables based on user input.
+3. **Copy Constructor**: It's used to create a new object as a copy of an existing object. Java doesn't have built-in copy constructors, but you can implement them.
+
+**Properties of Constructor:**
+
+1. **Name and Class Match**: Constructors must share the same name as the class they belong to. This name congruence allows Java to associate the constructor with its respective class.
+
+2. **No Return Type**: Unlike methods, constructors do not have a return type, not even "void". This is because their primary purpose is to initialize object properties, not to produce a return value.
+
+3. **Initialization at Object Creation**: Constructors are automatically invoked when an object is instantiated using the `new` keyword. This ensures that object properties are properly set up at the very beginning of the object's life cycle.
+
+4. **Default Constructor**: If a class does not explicitly define any constructors, Java provides a default constructor. This constructor doesn't accept any arguments and initializes object properties to default values (e.g., numerical properties to 0, object references to null).
+
 
 ## POP vs OOP (Procedural vs Object Oriented Programming)
 
