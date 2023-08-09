@@ -1,4 +1,4 @@
-# Unit 1
+# <p align=center>Unit 1</p>
 
 ## History of Java
 
@@ -125,6 +125,48 @@ Types of Constructors:
 3. **Initialization at Object Creation**: Constructors are automatically invoked when an object is instantiated using the `new` keyword. This ensures that object properties are properly set up at the very beginning of the object's life cycle.
 
 4. **Default Constructor**: If a class does not explicitly define any constructors, Java provides a default constructor. This constructor doesn't accept any arguments and initializes object properties to default values (e.g., numerical properties to 0, object references to null).
+
+
+## Recursion
+
+Recursion in Java is a programming technique where a method calls itself to solve a problem. It's like a function solving a smaller instance of the same problem, and then combining the result to solve the original problem. Recursion is used to solve problems that can be broken down into smaller sub-problems of the same nature.
+
+Here's an example of using recursion to calculate the factorial of a number:
+
+```java
+public class FactorialUsingRecursion {
+    // Recursive method to calculate factorial
+    static int factorial(int n) {
+        // Base case: factorial of 0 is 1
+        if (n == 0) {
+            return 1;
+        }
+        // Recursive case: n! = n * (n-1)!
+        else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        int num = 5;
+        int result = factorial(num);
+        
+        System.out.println("Factorial of " + num + " is " + result);
+    }
+}
+```
+> Output:
+> ```
+> Factorial of 5 is 120
+> ```
+
+Recursion works by breaking down a complex problem into smaller, simpler instances of the same problem. In this factorial example, when `factorial(5)` is called, it becomes `5 * factorial(4)`, and so on until reaching the base case of `factorial(0)` which is 1. The results of the sub-problems are then combined to get the final result.
+
+However, there are a few drawbacks to using recursion:
+- Recursion can be inefficient, as it involves repeated function calls and memory allocation.
+- Recursive functions can be difficult to debug and understand.
+- Recursive functions can cause stack overflow if the number of recursive calls exceeds the maximum stack size.
+- Recursive functions can be slower than iterative solutions.
 
 
 ## POP vs OOP (Procedural vs Object Oriented Programming)
