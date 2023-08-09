@@ -125,6 +125,144 @@ public class OOPExample {
 }
 ```
 
+## OOP Concepts
+
+Object-Oriented Programming (OOP) is a programming paradigm that organizes code around the concept of objects, which are instances of classes. Java is an object-oriented programming language that embraces the following core OOP concepts:
+
+1. **Class and Object**:
+   - A class is a blueprint or template that defines the structure and behavior of objects.
+   - An object is an instance of a class, representing a real-world entity with attributes (data) and methods (behavior).
+
+```java
+// Example of Class and Object
+class Car {
+    String brand;
+    void start() {
+        System.out.println("Car is starting...");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car myCar = new Car(); // Creating an object
+        myCar.brand = "Toyota";
+        myCar.start(); // Calling a method
+    }
+}
+```
+
+2. **Encapsulation**:
+   - Encapsulation is the concept of bundling data (attributes) and methods (functions) that operate on the data into a single unit, known as a class.
+   - Access to the internal data of an object is controlled through methods, allowing for data protection and security.
+  
+```java
+// Example of Encapsulation
+class BankAccount {
+    private double balance; // Encapsulated private attribute
+    // Method to deposit money into the account
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount; // Updating the balance attribute
+            System.out.println("Deposit successful");
+        }
+    }
+    // Method to get the current balance of the account
+    public double getBalance() {
+        return balance; // Returning the balance attribute
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount(); // Creating a new BankAccount object
+        account.deposit(1000); // Depositing 1000 into the account
+        System.out.println("Balance: " + account.getBalance()); // Printing the current balance of the account
+    }
+}
+```
+
+3. **Inheritance**:
+   - Inheritance allows a class (subclass or derived class) to inherit properties and methods from another class (superclass or base class).
+   - It promotes code reusability and enables the creation of a more specialized class from a general class.
+
+```java
+// Example of Inheritance
+class Animal {
+    void makeSound() {
+        System.out.println("Some sound");
+    }
+}
+class Dog extends Animal { // Inheriting from Animal class
+    void makeSound() {
+        System.out.println("Woof woof");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.makeSound(); // Polymorphism in action
+    }
+}
+```
+
+4. **Polymorphism**:
+   - Polymorphism means "many forms" and refers to the ability of different classes to be treated as instances of the same class through inheritance.
+   - Method overriding and method overloading are examples of polymorphism in Java.
+
+```java
+// Example of Polymorphism
+class MathOperations {
+    // Method overloading with different parameter types
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        MathOperations math = new MathOperations();
+        // Calling the add method with integer parameters
+        System.out.println(math.add(2, 3));
+        // Calling the add method with double parameters
+        System.out.println(math.add(2.5, 3.7));
+    }
+}
+```
+
+5. **Abstraction**:
+   - Abstraction focuses on providing a simplified view of an object, by hiding complex implementation details and showing only relevant features.
+   - Abstract classes and interfaces help achieve abstraction in Java.
+
+```java
+// Example of Abstraction
+// Abstract class Shape with an abstract method calculateArea()
+abstract class Shape {
+    abstract double calculateArea();
+}
+
+// Circle class extends Shape class and implements calculateArea() method
+class Circle extends Shape {
+    double radius;
+    // Constructor to initialize radius
+    Circle(double r) {
+        radius = r;
+    }
+    // Implementing calculateArea() method from Shape class
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object of Circle class
+        Circle myCircle = new Circle(5);
+        System.out.println("Circle Area: " + myCircle.calculateArea());
+    }
+}
+```
 
 ## Distinguish Multithreading and Multitasking.
 
