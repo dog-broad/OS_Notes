@@ -1,4 +1,76 @@
-# Distinguish Multithreading and Multitasking.
+# Unit 1
+
+## History of Java
+
+- Java: An Object-Oriented programming language.
+- Developed by James Gosling in the early 1990s.
+- Project initiated for digital devices like set-top boxes, television, etc.
+- Considered using C++, but rejected due to memory constraints.
+- Gosling aimed to alter and expand C++, leading to the creation of "Green."
+- Project initially named "Greentalk" with file extension .gt.
+- Evolved into "OAK" over time.
+- Java's history rooted in addressing limitations of existing languages.
+
+
+## Java Buzzwords
+
+1. **Simple**: Java was designed with simplicity in mind, offering a clear and straightforward syntax that is easy to understand and use. Unnecessary complexities, such as explicit memory management and pointer arithmetic, were removed, making Java more user-friendly for developers.
+
+2. **Object-Oriented**: Java follows the object-oriented programming paradigm, allowing developers to structure their code around objects, which are instances of classes. This promotes modularity, reusability, and easier maintenance by encapsulating data and behavior together.
+
+3. **Platform Independent**: Java's "Write Once, Run Anywhere" philosophy stems from its platform independence. Java code is compiled into an intermediate bytecode, which is executed by the Java Virtual Machine (JVM). This bytecode can run on any platform with a compatible JVM, ensuring cross-platform compatibility.
+
+4. **Secured**: Java incorporates built-in security mechanisms to protect against unauthorized access, viruses, and other security threats. Features like class loaders, bytecode verification, and runtime security checks ensure that Java applications run securely in a controlled environment.
+
+5. **Robust**: Java's robustness is reflected in its strong compile-time type checking, runtime checking, and exception handling. This helps prevent errors and enhances reliability by catching potential issues early and handling them gracefully.
+
+6. **Architecture Neutral**: Java's architecture-neutral nature means that compiled Java code (bytecode) can run on any platform with a corresponding Java Virtual Machine (JVM). The JVM interprets the bytecode and translates it into machine code, making the application architecture-neutral.
+
+7. **Portable**: The combination of platform independence and architecture neutrality makes Java highly portable. Once compiled, Java applications can be moved and executed across different systems without modification.
+
+8. **High Performance**: Java offers a balance between interpreted and compiled execution. While it's not as fast as natively compiled languages like C++, modern JVMs employ Just-In-Time (JIT) compilation techniques that optimize bytecode into machine code at runtime, providing good performance.
+
+9. **Distributed**: Java's built-in networking capabilities make it well-suited for creating distributed and networked applications. Java's Remote Method Invocation (RMI) and networking libraries simplify the development of applications that interact across networks.
+
+10. **Multithreaded**: Java's multithreading support allows developers to create programs that can execute multiple threads concurrently. This enhances efficiency and responsiveness, making Java suitable for applications requiring simultaneous execution of tasks.
+
+11. **Dynamic**: Java supports dynamic linking and loading of classes at runtime, enabling the extension of applications without recompilation. Reflection and dynamic proxies allow developers to create flexible and adaptable software.
+
+12. **Interpreted**: While Java code is compiled into bytecode, it is not compiled to native machine code like some other languages. Instead, the JVM interprets the bytecode at runtime, allowing Java applications to be more flexible and portable. However, modern JVMs use JIT compilation for improved performance.
+
+
+## Scope and Lifetime of Variables
+
+Scope refers to the region in a program where a variable can be accessed and manipulated. The lifetime of a variable indicates the duration for which it exists in memory.
+
+- **Scope of Variables**: Variables can be declared at different levels such as class, method, or block. Their scope defines where they can be accessed:
+  - **Member Variables (Class Level Scope)**: These variables are declared within a class but outside any method. They are accessible throughout the class and can be used by different methods.
+  - **Local Variables (Method/Block Level Scope)**: These variables are declared inside a method or a block (like a loop or conditional statement). They are limited in scope to the method or block where they are declared.
+
+- **Lifetime of Variables**: The lifetime of a variable is determined by the duration for which it remains in memory:
+  - **Member Variables**: They exist as long as the object of the class exists. They are initialized when the object is created and stay in memory until the object is garbage-collected.
+  - **Local Variables**: They are created when the method or block is entered and are destroyed when the method or block exits. They exist only within their scope.
+
+Example:
+```java
+public class VariableScope {
+    // Member variable
+    String name = "Andrew";
+    static double height = 5.9;
+
+    public static void main(String[] args) {
+        // Local variable
+        int marks = 72;
+
+        System.out.println("Name: " + name);   // Compilation error, name is not accessible
+        System.out.println("Height: " + height); // Accessible as it's a member variable
+        System.out.println("Marks: " + marks); // Accessible as it's in the same scope
+    }
+}
+```
+
+
+## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
 
@@ -20,7 +92,7 @@ Multi-tasking and multi-threading are two techniques used in operating systems. 
 | 14.  | Used to manage multiple processes and improve efficiency.   | Used to manage multiple processes and improve efficiency.           |
 | 15.  | Examples: running multiple applications, servers on a network. | Examples: splitting a video encoding task, responsive UI in an app. |
 
-# How do you handle the mouse events using java AWT. Explain.
+## How do you handle the mouse events using java AWT. Explain.
 
 In Java AWT (Abstract Window Toolkit), mouse events can be handled using two interfaces:
 
@@ -82,7 +154,7 @@ public class MouseEventsExample extends Frame implements MouseListener, MouseMot
 
 In this example, we create a simple Java AWT Frame and implement both MouseListener and MouseMotionListener interfaces. We override their respective methods to print messages when various mouse events occur. The `main` method creates an instance of our custom class `MouseEventsExample`, and the program displays the frame. When you run the program and interact with the window using the mouse, you will see the corresponding messages in the console.
 
-# Differentiate applets from application programs.
+## Differentiate applets from application programs.
 | Parameters                  | Java Application                             | Java Applet                                     |
 |-----------------------------|--------------------------------------------|-----------------------------------------------|
 | Meaning                     | A stand-alone program that runs on the underlying OS.    | A small program embedded in a web page and runs on the client-side.   |
@@ -105,13 +177,13 @@ In this example, we create a simple Java AWT Frame and implement both MouseListe
 | Offline Availability       | Can be used offline once installed on the user's computer.    | Requires an internet connection to load and execute the applet.       |
 
 
-# Sketch the MVC architecture and also explain each and every component in it.
+## Sketch the MVC architecture and also explain each and every component in it.
 
 The Model-View-Controller (MVC) is a widely-used design pattern in web development to organize code effectively. It emphasizes the separation of concerns, dividing a program or application into three distinct components: Model, View, and Controller.
 
 ![](2023-08-03-18-48-19.png)
 
-### Components of MVC Architecture:
+#### Components of MVC Architecture:
 
 1. **Model**: The Model represents the business logic and data of the application. It is an object that carries data and can also contain the logic to update the Controller if the data changes. In simple terms, it handles the data and its manipulation.
 
@@ -119,7 +191,7 @@ The Model-View-Controller (MVC) is a widely-used design pattern in web developme
 
 3. **Controller**: The Controller acts as an intermediary between the Model and the View. It manages the flow of the application, handling user requests, and updating the View whenever there is a change in data. The Controller serves as the backbone of the MVC pattern.
 
-### How MVC Works in Java:
+#### How MVC Works in Java:
 
 The process of interaction in MVC can be summarized as follows:
 
@@ -131,7 +203,7 @@ The process of interaction in MVC can be summarized as follows:
 
 4. The View processes the data and generates the final output, which is sent back to the user/client (browser) for display.
 
-### Advantages of MVC Architecture:
+#### Advantages of MVC Architecture:
 
 MVC architecture offers several advantages, making it a popular choice for organizing web applications:
 
@@ -151,7 +223,7 @@ MVC architecture offers several advantages, making it a popular choice for organ
 
 In conclusion, the MVC architecture in Java separates concerns and improves maintainability, reusability, and scalability of web applications. By dividing the application into Model, View, and Controller, developers can work efficiently and create more organized and manageable codebases.
 
-# Demonstrate the usage of inter-thread communication in Java with a suitable example.
+## Demonstrate the usage of inter-thread communication in Java with a suitable example.
 
 Inter-thread communication or cooperation is a mechanism that allows synchronized threads in Java to communicate with each other. It involves pausing a thread in its critical section and allowing another thread to enter the same critical section for execution. This is implemented using the following methods of the Object class: wait(), notify(), and notifyAll().
 
@@ -207,7 +279,7 @@ class Test {
 In this example, we have a `Customer` class with two synchronized methods `withdraw` and `deposit`. When the `withdraw` method is called, it checks if the amount to be withdrawn is greater than the current balance. If so, it waits for a `notify` signal. Meanwhile, the `deposit` method is called from another thread, which deposits money into the account and then sends a `notify` signal to wake up the waiting thread. This way, the `withdraw` and `deposit` methods are synchronized and communicate with each other to manage the customer's balance.
 
 
-# Explain about Event classes, Event sources, Event listeners and the relationship among them.
+## Explain about Event classes, Event sources, Event listeners and the relationship among them.
 
 Event classes, event sources, and event listeners are essential concepts in programming that allow different parts of a program to communicate with each other when certain actions or events happen. Let's understand each concept in simpler terms:
 
@@ -231,7 +303,7 @@ The event source and event listener work together to make a program interactive.
 By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
 
 
-# What is a Layout manager? Explain the different types of Layout managers in detail.
+## What is a Layout manager? Explain the different types of Layout managers in detail.
 
 A Layout Manager in Java enables us to control how visual components are arranged in GUI forms by determining their size and position within containers. There are six types of Layout Managers in Java:
 
@@ -273,7 +345,7 @@ public class LayoutExample {
 ```
 
 
-# Give the steps involved in developing and running an applet.
+## Give the steps involved in developing and running an applet.
 
 An applet is a Java program that runs in a Java-compatible browser such as Internetexplorer. This feature allows users to display graphics and to run programs over the Internet. An applet allows web documents to be both animated and interactive.
 
@@ -328,7 +400,7 @@ public class MyApplet extends Applet {
 
 2. Using web browser: Open the web browser, type in the full address of html file.
 
-# Explain any 4 Swing components along with its methods.
+## Explain any 4 Swing components along with its methods.
 
 1. **JButton**:
    - Description: JButton is a simple button that users can click to perform an action.
@@ -363,7 +435,7 @@ public class MyApplet extends Applet {
      - `void setText(String text)`: Sets the text displayed next to the check box.
 
 
-# Demonstrate the usage of thread synchronization in Java with a suitable example?
+## Demonstrate the usage of thread synchronization in Java with a suitable example?
 
 In Java, synchronization is used to control the access of multiple threads to shared resources. It ensures that only one thread can access the shared resource at a time, preventing thread interference and consistency problems.
 
@@ -405,7 +477,7 @@ The concept of locks in Java revolves around the monitor associated with each ob
 Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
 
 
-# Distinguish Event Listeners from Event Adapters.
+## Distinguish Event Listeners from Event Adapters.
 
 Event Listeners are interfaces used for specific event handling, requiring implementations of all methods. They are suitable when you need to handle a single type of event.  
 On the other hand, Event Adapters are classes that provide default implementations for event listener methods. They are useful when you want to implement multiple event listener interfaces but handle only a few specific events. They enhance code readability and reduce redundancy by allowing selective method overrides.
@@ -427,7 +499,7 @@ On the other hand, Event Adapters are classes that provide default implementatio
 
 
 
-# Illustrate the life cycle methods of an applet with a suitable program.
+## Illustrate the life cycle methods of an applet with a suitable program.
 
 Applet Life Cycle in Java
 
@@ -484,7 +556,7 @@ public class MyApplet extends Applet {
 ```
 
 
-# Swing provides platform-independent and lightweight components. Justify.
+## Swing provides platform-independent and lightweight components. Justify.
 
 **Swing: Platform-Independent and Lightweight Components**
 
@@ -506,7 +578,7 @@ Its pure Java implementation, consistent behavior, and efficient performance mak
 
 
 
-# How many types of ways are there for creating threads?  Explain each with an example.
+## How many types of ways are there for creating threads?  Explain each with an example.
 
 There are two main ways to create threads in Java: 
 
@@ -566,7 +638,7 @@ public class ThreadExample2 {
 ```
 
 
-# How do you handle the Key events using java AWT. Explain.
+## How do you handle the Key events using java AWT. Explain.
 
 In Java AWT (Abstract Window Toolkit), key event handling is used to respond to user interactions with the keyboard. Key events occur when a user presses or releases a key on the keyboard while the focus is on a component that can receive keyboard input, such as a text field or a button.
 
@@ -622,7 +694,7 @@ public class KeyEventsExample extends Frame implements KeyListener {
 ```
 
 
-# Illustrate the ways of passing parameters to applets.
+## Illustrate the ways of passing parameters to applets.
 
 In Java applets, parameters can be passed from the HTML file to the applet. This allows us to customize the behavior or appearance of the applet based on the values provided in the HTML code. To pass parameters to an applet, we use the `<param>` tag in the HTML file, and then the applet can access these parameters using the `getParameter()` method.
 
@@ -662,7 +734,7 @@ When the HTML file is executed in a web browser, the applet will be displayed wi
 Using parameters in applets allows us to make our applets more versatile and dynamic, as we can change their behavior simply by modifying the values of the parameters in the HTML code.
 
 
-# Compare and contrast any 4 AWT and Swing components
+## Compare and contrast any 4 AWT and Swing components
 
 1. **AWT Button vs. Swing JButton:**
    - AWT Button: AWT provides the `Button` class to create clickable buttons. It uses the native platform's appearance for rendering.
