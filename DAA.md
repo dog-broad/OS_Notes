@@ -815,3 +815,44 @@ Consider a graph with vertices 1, 2, 3, 4, and weighted edges as follows:
 The A table stores the shortest distances between all pairs of vertices:
 - A[1][2] = 3, A[1][3] = 5, A[1][4] = 6
 - A[2][3] = 2, A[2][4] = 8, A[3][4] = 1.
+
+
+
+# Satisfiability Problem
+
+The **Satisfiability Problem** (often referred to as SAT) is a fundamental problem in computer science and mathematics that deals with determining whether a given Boolean formula can be satisfied by assigning appropriate truth values to its variables. The problem asks whether there exists an assignment of true or false values to the variables such that the entire formula evaluates to true.
+
+In symbolic logic terms, given a Boolean formula in conjunctive normal form (CNF), the Satisfiability Problem aims to find a truth assignment to the variables that makes the entire formula true. The formula is composed of clauses, each of which is a disjunction (logical OR) of literals (variables or their negations). Mathematically, a CNF formula can be represented as:
+
+$$
+C_1 \land C_2 \land \ldots \land C_i \land \ldots \land C_m
+$$
+
+where $C_i$ is the $i$ th clause and can be written as:
+
+$$
+C_i = L_{i1} \lor L_{i2} \lor \ldots \lor L_{ij} \lor \ldots \lor L_{in}
+$$
+
+Each $L_{ij}$ is a literal and can be either a variable or its negation.
+
+**Example:**
+
+Consider the following CNF formula:
+
+$$
+(C_1) \land (C_2) \land (C_3) \land (C_4)
+$$
+
+Where the clauses are:
+
+1. $C_1 = \neg x_1 \lor x_2$
+2. $C_2 = x_1 \lor x_2$
+3. $C_3 = \neg x_2 \lor x_3$
+4. $C_4 = \neg x_1 \lor \neg x_3$
+
+The Satisfiability Problem is to determine if there exists a truth assignment to \(x_1\), \(x_2\), and \(x_3\) that satisfies all clauses simultaneously. In this case, there is a satisfying assignment: \(x_1 = \text{false}\), \(x_2 = \text{true}\), and \(x_3 = \text{true}\), which makes all clauses true.
+
+Solving the Satisfiability Problem involves exploring different truth assignments systematically to determine if there exists a combination that satisfies the entire formula. The problem is important in various areas of computer science, such as formal verification, automated reasoning, and artificial intelligence.
+
+However, the general Satisfiability Problem is known to be NP-complete, meaning that it becomes significantly harder to solve as the size of the formula increases. As a result, it is one of the most well-studied problems in theoretical computer science, and efficient algorithms (like the Davis-Putnam-Logemann-Loveland algorithm) have been developed to handle practical instances.
