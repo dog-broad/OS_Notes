@@ -329,7 +329,7 @@ Example:
 
 ```java
 public class MethodOverloadingDemo {
-    
+
     // Method to add two integers
     public int add(int a, int b) {
         return a + b;
@@ -367,7 +367,7 @@ In this example:
 
 When calling the methods, Java uses the number and types of arguments to determine which method to execute. This is known as compile-time polymorphism or method overloading.
 
-Method overloading enhances code readability and reusability, as it allows developers to use the same method name for similar tasks without having to remember different method names for slight variations in input parameters.
+
 
 ## Distinguish Multithreading and Multitasking.
 
