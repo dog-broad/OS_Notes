@@ -70,6 +70,62 @@ public class VariableScope {
 ```
 
 
+## POP vs OOP (Procedural vs Object Oriented Programming)
+
+Sure, here's a comparison between procedural-oriented programming and object-oriented programming paradigms in Java:
+
+| Aspect                          | Procedural Programming       | Object-Oriented Programming    |
+|---------------------------------|------------------------------|--------------------------------|
+| Approach                        | Focuses on functions and procedures. | Focuses on objects and classes. |
+| Data Handling                   | Uses data structures like arrays and records. | Uses objects to encapsulate data and behavior. |
+| Code Organization               | Organizes code around procedures/functions. | Organizes code around objects and classes. |
+| Reusability                    | Limited reusability, as functions are tightly coupled with data. | High reusability, as objects can be reused in different contexts. |
+| Modularity                      | Low modularity, functions operate on global data. | High modularity, objects encapsulate their own data and behavior. |
+| Data Security                  | Less secure due to global data access. | More secure as data is encapsulated within objects. |
+| Code Maintenance               | Code maintenance can be challenging. | Easier code maintenance due to encapsulation and modularity. |
+
+Procedural-Oriented Example:
+```java
+// Procedural approach
+public class ProceduralExample {
+    public static void main(String[] args) {
+        int radius = 5;
+        double area = calculateCircleArea(radius); // Function call
+        System.out.println("Circle Area: " + area);
+    }
+
+    // Function to calculate circle area
+    static double calculateCircleArea(int r) {
+        return 3.14 * r * r;
+    }
+}
+```
+
+Object-Oriented Example:
+```java
+// Object-oriented approach
+class Circle {
+    private int radius; // Encapsulated data
+
+    public Circle(int r) {
+        radius = r;
+    }
+    // Method to calculate circle area
+    public double calculateArea() {
+        return 3.14 * radius * radius;
+    }
+}
+
+public class OOPExample {
+    public static void main(String[] args) {
+        Circle circle = new Circle(5); // Object creation
+        double area = circle.calculateArea(); // Method call using object
+        System.out.println("Circle Area: " + area);
+    }
+}
+```
+
+
 ## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
