@@ -321,6 +321,54 @@ public class Main {
 }
 ```
 
+## Method Overloading 
+
+Method overloading in Java refers to the ability to define multiple methods in the same class with the same name but different parameter lists. This allows developers to create methods that perform similar tasks but with varying input parameters. Java determines which overloaded method to invoke based on the number and types of arguments passed during method calls.
+
+Example:
+
+```java
+public class MethodOverloadingDemo {
+    
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    // Method to concatenate two strings
+    public String add(String s1, String s2) {
+        return s1 + s2;
+    }
+
+    public static void main(String[] args) {
+        MethodOverloadingDemo demo = new MethodOverloadingDemo();
+
+        int sum1 = demo.add(5, 10); // Call method add(int a, int b) with two arguments
+        int sum2 = demo.add(5, 10, 15); // Call method add(int a, int b, int c) with three arguments
+        String combinedStrings = demo.add("Hello, ", "Java!");  // Call method add(String s1, String s2) with two arguments of type String
+
+        System.out.println("Sum of integers: " + sum1);
+        System.out.println("Sum of three integers: " + sum2);
+        System.out.println("Concatenated strings: " + combinedStrings);
+    }
+}
+```
+
+In this example:
+
+1. The `add(int a, int b)` method takes two integer arguments and returns their sum.
+2. The `add(int a, int b, int c)` method takes three integer arguments and returns their sum.
+3. The `add(String s1, String s2)` method takes two string arguments and returns their concatenation.
+
+When calling the methods, Java uses the number and types of arguments to determine which method to execute. This is known as compile-time polymorphism or method overloading.
+
+Method overloading enhances code readability and reusability, as it allows developers to use the same method name for similar tasks without having to remember different method names for slight variations in input parameters.
+
 ## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
