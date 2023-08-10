@@ -948,7 +948,80 @@ public class Main {
 **Note:** In the above examples, the `Circle` class implements the `Shape` abstract class and the `Drawable` interface, respectively. The `draw` method is implemented to fulfill the contract defined by the abstract class and the interface.
 
 
+## Final Keyword in Java:
 
+In Java, the `final` keyword is used to restrict the modification of classes, methods, and variables. Once something is marked as `final`, it cannot be changed or overridden.
+
+**1. Final Classes:**
+A final class is a class that cannot be extended or subclassed. It's used to prevent further inheritance and modification of the class's behavior.
+
+Example:
+
+```java
+final class Shape {
+    // Class code
+}
+
+// Cannot create a subclass of Shape
+// class Circle extends Shape { // Error: Cannot extend final class
+// }
+```
+
+**2. Final Methods:**
+A final method is a method that cannot be overridden by subclasses. It's used to prevent subclasses from altering the behavior of the method defined in the parent class.
+
+Example:
+
+```java
+class Vehicle {
+    final void start() {
+        System.out.println("Vehicle started.");
+    }
+}
+
+class Car extends Vehicle {
+    // Cannot override final method
+    // void start() { // Error: Cannot override final method
+    //     System.out.println("Car started.");
+    // }
+}
+```
+
+**3. Final Variables:**
+A final variable is a constant variable whose value cannot be changed after initialization. It must be assigned a value when declared or in the constructor.
+
+Example:
+
+```java
+class MathUtil {
+    final double PI = 3.14159;
+    // Cannot reassign PI
+    // void changePI() { // Error: Cannot assign a value to final variable
+    //     PI = 3.14;
+    // }
+}
+```
+
+**Usage Considerations:**
+- Use final classes when you want to prevent further subclassing for security or design reasons.
+- Use final methods when you want to ensure that a method's behavior remains consistent across subclasses.
+- Use final variables for constants or values that should not be changed after initialization.
+
+**Characteristics:**
+
+The final keyword in Java is employed to signify immutability and restriction. It is used with variables, methods, and classes. Here are its key attributes:
+
+1. **Final Variables:** Once declared as final, a variable's value cannot be altered after initialization. This property is beneficial for creating constants or maintaining unmodifiable values.
+
+2. **Final Methods:** A final method cannot be overridden by subclasses. This feature is advantageous for maintaining consistent behavior in methods that form part of a class's public interface.
+
+3. **Final Classes:** Declaring a class as final prevents it from being extended by subclasses. This characteristic ensures the class's integrity and usage as intended.
+
+4. **Initialization:** Final variables must be assigned a value during declaration or within the constructor. This enforces that their values remain fixed.
+
+5. **Performance:** The use of final can lead to performance improvements since the compiler can optimize code more effectively, knowing that certain elements are unchangeable.
+
+6. **Security:** Final contributes to security by thwarting malicious code from tampering with crucial data or behavior, adding a layer of protection.
 
 
 
