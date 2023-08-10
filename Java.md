@@ -1430,12 +1430,6 @@ In this example:
 
 
 
-
-
-
-
-
-
 ## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
@@ -1457,6 +1451,64 @@ Multi-tasking and multi-threading are two techniques used in operating systems. 
 | 13.  | Each process has its memory space and resources.            | Threads share the memory space and resources of the parent process. |
 | 14.  | Used to manage multiple processes and improve efficiency.   | Used to manage multiple processes and improve efficiency.           |
 | 15.  | Examples: running multiple applications, servers on a network. | Examples: splitting a video encoding task, responsive UI in an app. |
+
+
+
+## Demonstrate the usage of inter-thread communication in Java with a suitable example.
+
+Inter-thread communication or cooperation is a mechanism that allows synchronized threads in Java to communicate with each other. It involves pausing a thread in its critical section and allowing another thread to enter the same critical section for execution. This is implemented using the following methods of the Object class: wait(), notify(), and notifyAll().
+
+1. **wait() method**: The wait() method causes the current thread to release the lock and wait until either another thread invokes the notify() method or notifyAll() method for this object, or a specified amount of time has elapsed. It must be called from a synchronized method, otherwise, it will throw an exception.
+
+2. **notify() method**: The notify() method wakes up a single waiting thread that is waiting on this object's monitor. If multiple threads are waiting, one of them is chosen arbitrarily and awakened.
+
+3. **notifyAll() method**: The notifyAll() method wakes up all threads that are waiting on this object's monitor.
+
+**Example of Inter Thread Communication in Java**:
+
+Let's see a simple example of inter-thread communication:
+
+```java
+class Customer {    
+    int amount = 10000;    
+    
+    synchronized void withdraw(int amount) {    
+        System.out.println("going to withdraw...");    
+        if (this.amount < amount) {    
+            System.out.println("Less balance; waiting for deposit...");    
+            try { wait(); } catch (Exception e) {}    
+        }    
+        this.amount -= amount;    
+        System.out.println("withdraw completed...");    
+    }    
+    
+    synchronized void deposit(int amount) {    
+        System.out.println("going to deposit...");    
+        this.amount += amount;    
+        System.out.println("deposit completed... ");    
+        notify();    
+    }    
+}    
+    
+class Test {    
+    public static void main(String args[]) {    
+        final Customer c = new Customer();    
+        
+        // Thread to withdraw
+        new Thread() {    
+            public void run() { c.withdraw(15000); }    
+        }.start();    
+        
+        // Thread to deposit
+        new Thread() {    
+            public void run() { c.deposit(10000); }    
+        }.start();    
+    }    
+}
+```
+
+In this example, we have a `Customer` class with two synchronized methods `withdraw` and `deposit`. When the `withdraw` method is called, it checks if the amount to be withdrawn is greater than the current balance. If so, it waits for a `notify` signal. Meanwhile, the `deposit` method is called from another thread, which deposits money into the account and then sends a `notify` signal to wake up the waiting thread. This way, the `withdraw` and `deposit` methods are synchronized and communicate with each other to manage the customer's balance.
+
 
 ## How do you handle the mouse events using java AWT. Explain.
 
@@ -1588,61 +1640,6 @@ MVC architecture offers several advantages, making it a popular choice for organ
 7. **Easier Extension and Testing**: The modularity of MVC makes it easier to extend the application's functionality and perform unit testing on individual components.
 
 In conclusion, the MVC architecture in Java separates concerns and improves maintainability, reusability, and scalability of web applications. By dividing the application into Model, View, and Controller, developers can work efficiently and create more organized and manageable codebases.
-
-## Demonstrate the usage of inter-thread communication in Java with a suitable example.
-
-Inter-thread communication or cooperation is a mechanism that allows synchronized threads in Java to communicate with each other. It involves pausing a thread in its critical section and allowing another thread to enter the same critical section for execution. This is implemented using the following methods of the Object class: wait(), notify(), and notifyAll().
-
-1. **wait() method**: The wait() method causes the current thread to release the lock and wait until either another thread invokes the notify() method or notifyAll() method for this object, or a specified amount of time has elapsed. It must be called from a synchronized method, otherwise, it will throw an exception.
-
-2. **notify() method**: The notify() method wakes up a single waiting thread that is waiting on this object's monitor. If multiple threads are waiting, one of them is chosen arbitrarily and awakened.
-
-3. **notifyAll() method**: The notifyAll() method wakes up all threads that are waiting on this object's monitor.
-
-**Example of Inter Thread Communication in Java**:
-
-Let's see a simple example of inter-thread communication:
-
-```java
-class Customer {    
-    int amount = 10000;    
-    
-    synchronized void withdraw(int amount) {    
-        System.out.println("going to withdraw...");    
-        if (this.amount < amount) {    
-            System.out.println("Less balance; waiting for deposit...");    
-            try { wait(); } catch (Exception e) {}    
-        }    
-        this.amount -= amount;    
-        System.out.println("withdraw completed...");    
-    }    
-    
-    synchronized void deposit(int amount) {    
-        System.out.println("going to deposit...");    
-        this.amount += amount;    
-        System.out.println("deposit completed... ");    
-        notify();    
-    }    
-}    
-    
-class Test {    
-    public static void main(String args[]) {    
-        final Customer c = new Customer();    
-        
-        // Thread to withdraw
-        new Thread() {    
-            public void run() { c.withdraw(15000); }    
-        }.start();    
-        
-        // Thread to deposit
-        new Thread() {    
-            public void run() { c.deposit(10000); }    
-        }.start();    
-    }    
-}
-```
-
-In this example, we have a `Customer` class with two synchronized methods `withdraw` and `deposit`. When the `withdraw` method is called, it checks if the amount to be withdrawn is greater than the current balance. If so, it waits for a `notify` signal. Meanwhile, the `deposit` method is called from another thread, which deposits money into the account and then sends a `notify` signal to wake up the waiting thread. This way, the `withdraw` and `deposit` methods are synchronized and communicate with each other to manage the customer's balance.
 
 
 ## Explain about Event classes, Event sources, Event listeners and the relationship among them.
