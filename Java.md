@@ -1367,7 +1367,66 @@ In this example:
 - The program uses a `try-catch` block to catch the exception and print an error message.
 - The catch block can catch the specific `NumberFormatException` or the general `Exception`.
 
+## Custom Exceptions / User Defined Exceptions
 
+**Custom Exceptions in Java:**
+Custom exceptions, also known as user-defined exceptions, allow you to create your own exception types to handle specific scenarios that are not covered by the built-in exceptions. This enables you to design exception handling that aligns with your application's requirements.
+
+**Creating Custom Exceptions:**
+To create a custom exception, you need to extend the `Exception` class or one of its subclasses. You can then add constructors and methods as needed for your specific use case.
+
+- The `Exception` class is the root of the exception hierarchy. It's used to create checked exceptions.
+- The class extending `Exception` is used to create custom checked exceptions.
+- This class must have at least one constructor that takes a `String` argument, which is used to set the error message.
+- It then needs to call the `super()` method to pass the error message to the `Exception` class.
+
+**Example: AgeToVoteException**
+Let's consider an example where we want to create a custom exception called `AgeToVoteException` to handle situations where a person is not of eligible voting age.
+
+```java
+class AgeToVoteException extends Exception {
+    public AgeToVoteException(String s) {
+        super(s);
+    }
+}
+
+class Voter {
+    public void validate(int age) throws AgeToVoteException {
+        if (age < 18) {
+            throw new AgeToVoteException("You are not eligible to vote.");
+        } else {
+            System.out.println("You are eligible to vote.");
+        }
+    }
+}
+
+public class CustomExceptionExample {
+    public static void main(String[] args) {
+        Voter voter = new Voter();
+        try {
+            int age = 15;
+            voter.validate(age);
+        } catch (AgeToVoteException e) {
+            System.err.println("Exception: " + e.getMessage());
+        }
+    }
+}
+```
+> Output:
+> ```
+> Exception: You are not eligible to vote.
+> ```
+> If the age was 20:
+> ```
+> You are eligible to vote.
+> ```
+
+In this example:
+- We create a custom exception `AgeToVoteException` by extending the `Exception` class.
+- The `Voter` class has a method `validate()` that checks whether a person's age is eligible for voting.
+- If the age is less than 18, the method throws an `AgeToVoteException` with a message.
+- In the `main()` method, we create an instance of `Voter` and try to check the eligibility for voting.
+- We catch the `AgeToVoteException` if it occurs and print the error message.
 
 
 
