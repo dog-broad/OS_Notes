@@ -689,6 +689,104 @@ Due to the complexity and potential ambiguity associated with multiple inheritan
 
 
 
+## Polymorphism
+
+Polymorphism is the ability of an object to take on many forms. The most common use of polymorphism in OOP occurs when a parent class reference is used to refer to a child class object.
+
+Polymorphism in Java is a powerful concept that allows an object to take on different forms, depending on the context in which it's used. It enables us to write more flexible and reusable code. 
+
+There are two main types of polymorphism: 
+- compile-time polymorphism 
+- runtime polymorphism. 
+
+Compile-time polymorphism is achieved through method overloading, where multiple methods with the same name, but different parameter lists are defined within a class. 
+
+```java
+class Calculator {
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    double add(double a, double b) {
+        return a + b;
+    }
+}
+
+public class CompileTimePolymorphismExample {
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(5, 10));          // Invokes int add method
+        System.out.println(calc.add(3.5, 7.2));       // Invokes double add method
+    }
+}
+```
+> Output:
+> ```
+> 15
+> 10.7
+> ```
+
+
+Runtime polymorphism, also known as dynamic method dispatch, involves method overriding, where a subclass provides a specific implementation for a method defined in its superclass.
+
+```java
+class Animal {
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Cat extends Animal {
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+class Dog extends Animal {
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class RuntimePolymorphismExample {
+    public static void main(String[] args) {
+        Animal animal1 = new Cat(); // Upcasting
+        Animal animal2 = new Dog(); // Upcasting
+        
+        animal1.makeSound(); // Calls Cat's makeSound method
+        animal2.makeSound(); // Calls Dog's makeSound method
+    }
+}
+```
+> Output:
+> ```
+> Cat meows
+> Dog barks
+> ```
+
+> Upscasting: Converting a subclass reference to a superclass reference is known as upcasting. It's done implicitly, and therefore, it doesn't require any special syntax. In simple terms, upcasting is casting a variable to a superclass type.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
