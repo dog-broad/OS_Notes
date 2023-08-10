@@ -1658,7 +1658,60 @@ The event source and event listener work together to make a program interactive.
 
 By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
 
+## Delegation Event Model in Java
 
+The Delegation Event Model is a design pattern used for managing events and event-driven programming in graphical user interfaces (GUIs). This model separates the responsibilities of event generation and event handling, promoting modularity and flexibility in GUI programming.
+
+**How Delegation Event Model Works:**
+
+1. **Event Sources**: Objects like buttons or menu items are event sources that can generate events.
+2. **Event Occurrence**: When an event occurs, the event source creates an event object that holds event details (e.g., type, data).
+3. **Event Listeners**: Event listeners (also known as event handlers) are objects that are registered with event sources to respond to specific events.
+4. **Event Handling**: When an event is generated, the associated listeners are notified, and the appropriate event handler methods are executed.
+
+
+**Advantages of Delegation Event Model:**
+
+- **Modularity**: Separation of event generation and handling enhances program modularity.
+- **Flexibility**: Changing the behavior of a GUI component doesn't impact other parts of the program.
+- **Multiple Listeners**: Supports multiple listeners for a single event source, allowing customization.
+
+**Disadvantages of Delegation Event Model:**
+- **Complexity**: The delegation event model is more complex than the traditional event model.
+- **Performance**: The delegation event model is slower than the traditional event model.
+- **Memory**: The delegation event model consumes more memory than the traditional event model.
+
+Example of Delegation Event Model in Java:
+
+```java
+import java.awt.*;
+import java.awt.event.*;
+
+public class DelegationAWTEventExample {
+    public static void main(String[] args) {
+        // Create a frame using AWT
+        Frame frame = new Frame("Delegation Event Model (AWT)");
+
+        // Create a button as the event source
+        Button button = new Button("Click Me");
+        button.setBounds(100, 100, 100, 40);
+
+        // Register the button with an action listener (event handler)
+        button.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("Button Clicked!");
+            }
+        });
+
+        frame.add(button);          // Add the button to the frame
+        frame.setSize(300, 300);    // Set the frame size
+        frame.setLayout(null);      // Set the layout
+        frame.setVisible(true);     // Make the frame visible
+    }
+}
+```
+
+In this example, an AWT `Frame` is created with a `Button` as the event source. When the button is clicked, it generates an `ActionEvent` and notifies the registered action listener (event handler). The anonymous class implements the `ActionListener` interface and contains the `actionPerformed()` method, which prints a message to the console when the button is clicked. The Delegation Event Model allows the event generation and handling to be separated, enhancing modularity and flexibility in GUI programming.
 
 
 
