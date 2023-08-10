@@ -1219,6 +1219,100 @@ graph TD
 7. **User Experience:** For applications with user interfaces, proper exception handling can provide meaningful error messages to users, improving their experience.
 
 
+## Keyword of Exception Handling:
+
+In Java, the combination of `try`, `catch`, `throw`, `throws`, and `finally` forms the foundation of exception handling. These keywords allow you to manage and control exceptions, ensuring that your program can gracefully handle errors.
+
+**1. `try` and `catch` Blocks:**
+The `try` block is used to enclose code that might throw exceptions. The `catch` block follows the `try` block and specifies how to handle exceptions that are thrown within the `try` block.
+
+```java
+try {
+    // Code that might throw exceptions
+} catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+**2. `throw` Keyword:**
+The `throw` keyword is used to manually throw exceptions. You can create and throw your own exception objects or throw predefined exceptions to signal errors.
+
+```java
+if (condition) {
+    throw new CustomException("Custom error message");
+}
+```
+
+**3. `throws` Keyword:**
+The `throws` keyword is used in a method signature to indicate that the method might throw exceptions. It specifies the type of exceptions that the method might throw, allowing callers to handle these exceptions.
+
+```java
+public void myMethod() throws CustomException {
+    // Code that might throw CustomException
+}
+```
+
+**4. `finally` Block:**
+The `finally` block is used to define code that should be executed regardless of whether an exception was thrown or not. It's typically used for cleanup operations like closing resources.
+
+```java
+try {
+    // Code that might throw exceptions
+} catch (Exception e) {
+    // Code to handle the exception
+} finally {
+    // Code that always executes
+}
+```
+
+**Example:**
+
+```java
+public class ExceptionExample {
+
+    public static void main(String[] args) {
+        // Try block, contains code that might throw exceptions
+        try {
+            int result = divide(10, 0);
+            System.out.println("Result: " + result);
+        } 
+        // Catch block, catches ArithmeticException
+        catch (ArithmeticException e) {
+            System.err.println("Error: " + e.getMessage());
+        } 
+        // Finally block, always executed
+        finally {
+            System.out.println("Finally block executed.");
+        }
+    }
+
+    // throws keyword indicates that this method might throw an ArithmeticException
+    public static int divide(int numerator, int denominator) throws ArithmeticException {
+        if (denominator == 0) {
+            // manually throw an ArithmeticException
+            throw new ArithmeticException("Division by zero");
+        }
+        return numerator / denominator;
+    }
+}
+```
+> Output:
+> ```
+> Error: Division by zero   
+> Finally block executed.
+> ```
+> If divide(10, 2) was used:
+> ```
+> Result: 5
+> Finally block executed.
+> ```
+
+In this example:
+- The `divide` method throws an `ArithmeticException` if the denominator is zero.
+- In the `main` method, we call the `divide` method within a `try` block.
+- If an exception occurs, the `catch` block catches the exception and prints an error message.
+- The `finally` block is executed regardless of whether an exception occurred or not.
+- The `throws` keyword is used to indicate that the `divide` method might throw an `ArithmeticException`.
 
 
 
