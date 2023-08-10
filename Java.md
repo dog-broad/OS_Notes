@@ -1430,7 +1430,7 @@ In this example:
 
 
 
-## Creation of Threads and Thread Life Cycle in Java:
+## Creation of Threads and Thread Life Cycle in Java
 
 Thread is a lightweight process that can be executed concurrently with other threads. It is a unit of a process that can be scheduled for execution. A thread is created by extending the `Thread` class or implementing the `Runnable` interface.
 
