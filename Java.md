@@ -1315,8 +1315,57 @@ In this example:
 - The `throws` keyword is used to indicate that the `divide` method might throw an `ArithmeticException`.
 
 
+## Built-in Exceptions
 
+**Built-in Exceptions in Java:**
+Java provides a set of pre-defined exceptions that cover various types of runtime errors or exceptional conditions that might occur during program execution. These built-in exceptions are organized in a hierarchy, with the `Throwable` class at the root. There are two main categories of exceptions: checked exceptions and unchecked exceptions.
 
+**Checked Exceptions:** These exceptions are checked at compile-time, meaning that the compiler enforces the programmer to handle these exceptions using `try-catch` blocks or declare them using the `throws` keyword.
+
+**Unchecked Exceptions:** Also known as runtime exceptions, these exceptions are not checked at compile-time. They typically indicate programming errors or issues that cannot be anticipated beforehand.
+
+Here are some common built-in exceptions in Java:
+
+1. `ArithmeticException`: Occurs when an arithmetic operation results in an error.
+2. `NullPointerException`: Occurs when you attempt to access or manipulate an object that is null.
+3. `ArrayIndexOutOfBoundsException`: Occurs when an invalid index is used for array access.
+4. `FileNotFoundException`: Occurs when an attempt to open a file that doesn't exist.
+5. `NumberFormatException`: Occurs when an incorrect format is used for converting a string to a numeric value.
+
+Example Program:
+
+```java
+public class ExceptionExample {
+
+    public static void main(String[] args) {
+        try {
+            String numberStr = "123abc";
+            // parseInt() is a method converts a string to an integer
+            int number = Integer.parseInt(numberStr);
+            System.out.println("Number: " + number);
+        } 
+        // we check if there was a NumberFormatException i.e. the string was not a number
+        catch (NumberFormatException e) {
+            System.err.println("Number Format Exception: " + e);
+        } 
+        // we catch any other exception that might occur
+        catch (Exception e) {
+            System.err.println("Exception: " + e);
+        }
+    }
+}
+```
+> Output:
+> ```
+> Number Format Exception: java.lang.NumberFormatException: For input string: "123abc"
+> ```
+
+**Note:** If you do not want to print the `java.lang.NumberFormatException` in the output, you can use `e.getMessage()` instead of `e` in the `catch` block.
+
+In this example:
+- We attempt to parse a string `"123abc"` into an integer using `Integer.parseInt()`, which results in a `NumberFormatException`.
+- The program uses a `try-catch` block to catch the exception and print an error message.
+- The catch block can catch the specific `NumberFormatException` or the general `Exception`.
 
 
 
