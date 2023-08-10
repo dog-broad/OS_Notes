@@ -69,6 +69,7 @@ public class VariableScope {
 }
 ```
 
+
 ## Constructor and its types
 
 A constructor in Java is a special method that gets called when an object of a class is created. It's used to initialize the instance variables and set up the initial state of the object.
@@ -109,7 +110,6 @@ In the example above:
 - `Student()` is a default constructor that initializes `name` to "John Doe" when an object is created without any arguments.
 - `Student(String n)` is a parameterized constructor that initializes `name` to the value passed as an argument when an object is created with an argument.
 - `student1` and `student2` are objects created using different constructors.
-
 
 Types of Constructors:
 1. **Default Constructor**: It's a constructor with no parameters. If you don't provide any constructor in your class, the Java compiler adds a default constructor automatically.
@@ -227,6 +227,7 @@ public class OOPExample {
 ```
 > Output:
 > ```Circle Area: 78.5```
+
 
 ## OOP Concepts
 
@@ -383,6 +384,7 @@ public class Main {
 > Circle Area: 78.53981633974483
 > ```
 
+
 ## Method Overloading 
 
 Method overloading in Java refers to the ability to define multiple methods in the same class with the same name but different parameter lists. This allows developers to create methods that perform similar tasks but with varying input parameters. Java determines which overloaded method to invoke based on the number and types of arguments passed during method calls.
@@ -482,7 +484,6 @@ public class MethodOverridingDemo {
 > Dog barks
 > ```
 
-
 In this example:
 
 1. The `Animal` class has a method named `makeSound()` with a generic implementation.
@@ -519,7 +520,6 @@ Some key features of JVM are:
 - **Class Loading**: JVM loads classes as needed, allowing dynamic loading of classes during runtime.
 
 - **Execution of Bytecode**: JVM executes the bytecode and handles exceptions, ensuring consistent behavior across platforms.
-
 
 
 ## Inheritance
@@ -717,7 +717,6 @@ public class HierarchicalInheritanceExample {
 Hybrid inheritance is a combination of the above types. It's a complex form of inheritance that involves multiple inheritance paths.
 
 Due to the complexity and potential ambiguity associated with multiple inheritance, Java avoids direct support for it. Instead, it provides interfaces and other mechanisms to achieve similar functionality while maintaining code clarity and avoiding conflicts.
-
 
 
 ## Polymorphism
@@ -1429,7 +1428,6 @@ In this example:
 - We catch the `AgeToVoteException` if it occurs and print the error message.
 
 
-
 ## Creation of Threads and Thread Life Cycle in Java
 
 Thread is a lightweight process that can be executed concurrently with other threads. It is a unit of a process that can be scheduled for execution. A thread is created by extending the `Thread` class or implementing the `Runnable` interface.
@@ -1676,6 +1674,9 @@ public class ThreadExample2 {
 
 # <p align=center>Unit 4</p>
 
+> Missing Topics: Class Hierarchy, User Interface Components
+
+
 ## Events and Event Handling in Java
 
 In the world of programming, an **event** signifies a change in the state of a source. It could be the click of a button, pressing a key, moving the mouse, or other user interactions with graphical components in a graphical user interface (GUI). Essentially, events are actions that lead to some kind of response within a program.
@@ -1718,6 +1719,7 @@ The event source and event listener work together to make a program interactive.
 
 By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
 
+
 ## Delegation Event Model in Java
 
 The Delegation Event Model is a design pattern used for managing events and event-driven programming in graphical user interfaces (GUIs). This model separates the responsibilities of event generation and event handling, promoting modularity and flexibility in GUI programming.
@@ -1728,7 +1730,6 @@ The Delegation Event Model is a design pattern used for managing events and even
 2. **Event Occurrence**: When an event occurs, the event source creates an event object that holds event details (e.g., type, data).
 3. **Event Listeners**: Event listeners (also known as event handlers) are objects that are registered with event sources to respond to specific events.
 4. **Event Handling**: When an event is generated, the associated listeners are notified, and the appropriate event handler methods are executed.
-
 
 **Advantages of Delegation Event Model:**
 
@@ -1891,6 +1892,7 @@ public class KeyEventsExample extends Frame implements KeyListener {
 }
 ```
 
+
 ## Layout manager, Different types of Layout managers
 
 A Layout Manager in Java enables us to control how visual components are arranged in GUI forms by determining their size and position within containers. There are six types of Layout Managers in Java:
@@ -1952,9 +1954,6 @@ On the other hand, Event Adapters are classes that provide default implementatio
 | Suitability for different events       | Suitable for handling a single type of event. | Suitable when you have multiple event types but only want to handle a few of them.                        |
 | Code readability                      | May result in a longer and cluttered code.   | Improves code readability and reduces clutter, especially when handling multiple events.                  |
 | Event handling when listener changes  | Requires changes in all implementing classes. | Does not affect existing classes if new event methods are added.                                          |
-
-
-
 
 
 # <p align=center>Unit 5</p>
@@ -2119,9 +2118,6 @@ public class MyApplet extends Applet {
      - `void setText(String text)`: Sets the text displayed next to the check box.
 
 
-
-
-
 ## Illustrate the life cycle methods of an applet with a suitable program.
 
 Applet Life Cycle in Java
@@ -2198,13 +2194,6 @@ Its pure Java implementation, consistent behavior, and efficient performance mak
 5. **Performance**: The lightweight nature of Swing contributes to its superior performance. By minimizing reliance on the operating system's windowing system, Swing components efficiently manage painting, event handling, and rendering. The use of double-buffering techniques also helps to eliminate flickering, resulting in smoother animations and user interactions.
 
 6. **Extensibility**: Swing offers a rich set of components that can be easily customized and extended. Developers can create their own custom components or extend existing ones to suit specific application requirements. This level of extensibility empowers developers to craft unique user interfaces that cater to their application's needs.
-
-
-
-
-
-
-
 
 
 ## Illustrate the ways of passing parameters to applets.
