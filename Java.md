@@ -280,6 +280,7 @@ class BankAccount {
 public class Main {
     public static void main(String[] args) {
         BankAccount account = new BankAccount(); // Creating a new BankAccount object
+        // Here the variable 'balance' is not directly accessible as it is private
         account.deposit(1000); // Depositing 1000 into the account
         System.out.println("Balance: " + account.getBalance()); // Printing the current balance of the account
     }
