@@ -1178,7 +1178,45 @@ Despite their similarities, classes and interfaces have distinct characteristics
 
 # <p align=center>Unit 3</p>
 
+## Exception Handling:
 
+Exception Handling in Java is a crucial aspect that helps manage and control runtime errors and exceptional situations that can occur during program execution. It is a mechanism that prevents abrupt termination of programs by providing a way to gracefully handle errors. Exceptions are objects that encapsulate information about errors, and Java offers a well-structured framework to handle these exceptions effectively.
+
+**Exception Handling Concepts:**
+
+1. **Try-Catch Blocks:** Java uses the try-catch block to handle exceptions. The code that might throw an exception is enclosed within the try block, while the code that handles the exception is placed within the catch block.
+
+2. **Throwing Exceptions:** Java allows you to manually throw exceptions using the `throw` keyword. This can be useful for signaling errors or exceptional conditions in your code.
+
+3. **Checked and Unchecked Exceptions:** Java divides exceptions into two categories - checked exceptions and unchecked exceptions. Checked exceptions are checked at compile-time, while unchecked exceptions are checked at runtime. Checked exceptions must be handled using try-catch blocks or declared using the `throws` keyword, while unchecked exceptions don't need to be handled.
+
+4. **Exception Hierarchy:** Java provides a hierarchy of exception classes. All exceptions inherit from the `Throwable` class. The two main subtypes are `Exception` and `Error`. `Exception` represents recoverable exceptions, while `Error` represents unrecoverable errors.
+
+```mermaid
+graph TD
+    Throwable --> Exception
+    Throwable --> Error
+    Exception --> RuntimeException
+    Exception --> IOException
+    Exception --> SQLException
+```
+
+
+**Benefits of Exception Handling:**
+
+1. **Maintains Flow:** Exception handling ensures that program execution doesn't abruptly stop when an error occurs. It allows the program to continue executing and provides meaningful information about the error.
+
+2. **Code Readability:** Properly handling exceptions makes code more readable and understandable. It separates normal code logic from error-handling code.
+
+3. **Debugging:** Exception messages contain information about the error, making it easier to identify and debug problems. It helps developers quickly locate the root cause of issues.
+
+4. **Graceful Termination:** Even if an error occurs, the program can take appropriate actions and terminate gracefully, closing resources and performing cleanup operations.
+
+5. **Fail-Safe Mechanism:** Exception handling helps prevent unexpected application crashes by addressing various scenarios that can lead to runtime errors.
+
+6. **Robust Software:** Well-implemented exception handling enhances the robustness of software. It reduces the chances of unexpected behaviors and downtime.
+
+7. **User Experience:** For applications with user interfaces, proper exception handling can provide meaningful error messages to users, improving their experience.
 
 
 
