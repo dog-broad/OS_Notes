@@ -1150,11 +1150,11 @@ import java.util.*;
 
 **Note:** The asterisk (*) is a wildcard that imports all classes in the package.
 
-## Classes Vs. Interfaces:
+## Abstract Classes Vs. Interfaces:
 
-Despite their similarities, classes and interfaces have distinct characteristics that set them apart. The following table summarizes the differences between classes and interfaces:
+Despite their similarities, abstract classes and interfaces have distinct characteristics that set them apart. The following table summarizes the differences between abstract classes and interfaces:
 
-| **Aspect**             | **Classes**                                                     | **Interfaces**                                        |
+| **Aspect**             | **Abstract Classes**                                           | **Interfaces**                                        |
 |-----------------------|-----------------------------------------------------------------|-------------------------------------------------------|
 | **Inheritance**       | Supports single inheritance only.                             | Supports multiple inheritance through multiple interfaces. |
 | **Method Definition** | Can define methods with or without implementation.          | Can only declare methods; implementation is provided by implementing classes. |
@@ -1162,18 +1162,18 @@ Despite their similarities, classes and interfaces have distinct characteristics
 | **Constructor**       | Can have constructors that are called when an object is created. | Cannot have constructors; interfaces have no instances. |
 | **Access Modifiers**  | Can have various access modifiers (public, private, protected). | Methods are implicitly public, fields are implicitly public static final. |
 | **Multiple Implem.**  | A class can implement multiple interfaces.                   | A class can extend only one class but implement multiple interfaces. |
-| **Object Creation**   | Objects are created using constructors with the 'new' keyword. | No objects are created directly from interfaces. |
-| **Type**              | Can be a concrete class (with implementation) or an abstract class. | Always abstract; cannot be instantiated directly. |
+| **Object Creation**   | Objects are not created using constructors of abstract classes. | No objects are created directly from interfaces. |
+| **Type**              | Can be an abstract class, a concrete class, or a mix.       | Always abstract; cannot be instantiated directly. |
 | **Abstract Methods**  | Can have abstract or concrete methods.                      | All methods are implicitly abstract; no method bodies. |
 | **Default Methods**   | Cannot have default implementations for methods.             | Can have default method implementations in Java 8 onwards. |
 | **Extensibility**     | Can be extended to add new features or behaviors.           | Implementing classes can provide multiple behaviors. |
 | **Dependencies**      | Can create strong dependencies due to inheritance.          | Promotes loose coupling as classes can implement multiple interfaces. |
 | **Usage**             | Used for defining real-world entities and their behaviors. | Used for defining common behaviors and contracts. |
-| **Abstract Classes**  | Can have methods with or without implementation.           | Cannot contain method bodies until Java 8 (default methods). |
+| **Abstract Methods**  | Can have methods with or without implementation.           | Cannot contain method bodies until Java 8 (default methods). |
 | **Fields Visibility** | Can have fields with different access modifiers.           | Fields are implicitly public static final. |
 | **Final**             | Can be declared final to prevent further extension.        | Cannot be declared final as interfaces are meant to be implemented. |
 | **Implementation**    | Inheritance enforces method implementation.                 | Classes need to provide implementations for all methods defined in the interface. |
-| **Usage in Java**     | Classes are fundamental building blocks of Java.           | Interfaces define contracts and support multiple inheritance. |
+| **Usage in Java**     | Abstract classes provide a mix of implementation and contracts. | Interfaces define contracts and support multiple inheritance. |
 
 
 # <p align=center>Unit 3</p>
