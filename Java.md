@@ -1836,7 +1836,7 @@ public class MouseEventsExample extends Frame implements MouseListener, MouseMot
 
 In this example, we create a simple Java AWT Frame and implement both MouseListener and MouseMotionListener interfaces. We override their respective methods to print messages when various mouse events occur. The `main` method creates an instance of our custom class `MouseEventsExample`, and the program displays the frame. When you run the program and interact with the window using the mouse, you will see the corresponding messages in the console.
 
-## How do you handle the Key events using java AWT. Explain.
+## Handling Keyboard Events / Key Events in AWT
 
 In Java AWT (Abstract Window Toolkit), key event handling is used to respond to user interactions with the keyboard. Key events occur when a user presses or releases a key on the keyboard while the focus is on a component that can receive keyboard input, such as a text field or a button.
 
@@ -1891,6 +1891,73 @@ public class KeyEventsExample extends Frame implements KeyListener {
 }
 ```
 
+## Layout manager, Different types of Layout managers
+
+A Layout Manager in Java enables us to control how visual components are arranged in GUI forms by determining their size and position within containers. There are six types of Layout Managers in Java:
+
+1. **FlowLayout**: Components are arranged from left to right and top to bottom like words on a page. If the container is not wide enough, components wrap around to the next line. Vertical and horizontal gaps between components can be controlled, and components can be left, center, or right-aligned.
+
+2. **BorderLayout**: Components are placed along the edges or in the middle of the container (top, bottom, right, left). Components added to the top or bottom get their preferred height and fill the width of the container. Those added to the left or right get their preferred width and fill the remaining height. The center component covers the remaining area.
+
+3. **GridLayout**: Components are arranged in a grid of equally sized cells, added from left to right and top to bottom. Each cell can hold only one component, and all cells have the same size. When the container is resized, cells are automatically resized. Components are placed based on the order they were added.
+
+4. **GridBagLayout**: This powerful layout arranges components in a grid of cells and maintains the aspect ratio of objects when the container is resized. Cells may have different sizes, and the layout allows for consistent gaps between components. Default alignments can be specified for components within columns or rows.
+
+5. **BoxLayout**: Components are arranged either vertically or horizontally, but not both. For horizontal alignment, all components have the same height (equal to the largest component's height). For vertical alignment, all components have the same width (equal to the largest component's width).
+
+6. **CardLayout**: It arranges components with the same size in a deck-like manner, where only the top component is visible at any time. Components are displayed either horizontally or vertically, and the first component added is kept at the top.
+
+Example:
+
+Suppose we have a simple Java Swing program with three buttons, and we want to arrange them horizontally using the FlowLayout manager:
+
+```java
+import javax.swing.*;
+
+public class LayoutExample {
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Layout Example");
+        JPanel panel = new JPanel();
+
+        panel.setLayout(new FlowLayout());
+        panel.add(new JButton("Button 1"));
+        panel.add(new JButton("Button 2"));
+        panel.add(new JButton("Button 3"));
+
+        frame.add(panel);
+        frame.setSize(300, 100);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setVisible(true);
+    }
+}
+```
+
+
+## Event Listeners Vs. Event Adapters
+
+Event Listeners are interfaces used for specific event handling, requiring implementations of all methods. They are suitable when you need to handle a single type of event.  
+On the other hand, Event Adapters are classes that provide default implementations for event listener methods. They are useful when you want to implement multiple event listener interfaces but handle only a few specific events. They enhance code readability and reduce redundancy by allowing selective method overrides.
+
+| **Feature**                           | **Event Listeners**                            | **Event Adapters**                                                                                         |
+|---------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|
+| Purpose                               | Interface used to handle specific events.   | Class that provides empty implementations for all methods in an event listener interface.                  |
+| Methods to implement                  | Must implement all methods in the interface.| Can extend an adapter class and override only the required methods, leaving others with empty implementations.|
+| Interface suffix                      | Ends with "Listener"                         | Ends with "Adapter"                                                                                        |
+| Functionality                         | Provides callbacks for events.              | Provides default implementations for event listener methods.                                              |
+| Usage                                 | Useful when specific event handling is needed.| Useful when you need to implement multiple event listener interfaces but handle only a few specific events. |
+| Code redundancy                       | May result in repetitive code for unused methods. | Helps reduce code redundancy as you only override the necessary methods.                                   |
+| Extensibility                         | Not easily extendable to add more methods.   | Easily extendable, can add more methods without changing the event listener interface.                    |
+| Efficiency                            | More efficient when handling specific events.| Slightly less efficient as it involves method call overhead for each event method.                         |
+| Type of class                         | Interface                                     | Class                                                                                                      |
+| Suitability for different events       | Suitable for handling a single type of event. | Suitable when you have multiple event types but only want to handle a few of them.                        |
+| Code readability                      | May result in a longer and cluttered code.   | Improves code readability and reduces clutter, especially when handling multiple events.                  |
+| Event handling when listener changes  | Requires changes in all implementing classes. | Does not affect existing classes if new event methods are added.                                          |
+
+
+
+
+
+# <p align=center>Unit 5</p>
 
 ## Differentiate applets from application programs.
 | Parameters                  | Java Application                             | Java Applet                                     |
@@ -1960,50 +2027,6 @@ MVC architecture offers several advantages, making it a popular choice for organ
 7. **Easier Extension and Testing**: The modularity of MVC makes it easier to extend the application's functionality and perform unit testing on individual components.
 
 In conclusion, the MVC architecture in Java separates concerns and improves maintainability, reusability, and scalability of web applications. By dividing the application into Model, View, and Controller, developers can work efficiently and create more organized and manageable codebases.
-
-
-
-
-## What is a Layout manager? Explain the different types of Layout managers in detail.
-
-A Layout Manager in Java enables us to control how visual components are arranged in GUI forms by determining their size and position within containers. There are six types of Layout Managers in Java:
-
-1. **FlowLayout**: Components are arranged from left to right and top to bottom like words on a page. If the container is not wide enough, components wrap around to the next line. Vertical and horizontal gaps between components can be controlled, and components can be left, center, or right-aligned.
-
-2. **BorderLayout**: Components are placed along the edges or in the middle of the container (top, bottom, right, left). Components added to the top or bottom get their preferred height and fill the width of the container. Those added to the left or right get their preferred width and fill the remaining height. The center component covers the remaining area.
-
-3. **GridLayout**: Components are arranged in a grid of equally sized cells, added from left to right and top to bottom. Each cell can hold only one component, and all cells have the same size. When the container is resized, cells are automatically resized. Components are placed based on the order they were added.
-
-4. **GridBagLayout**: This powerful layout arranges components in a grid of cells and maintains the aspect ratio of objects when the container is resized. Cells may have different sizes, and the layout allows for consistent gaps between components. Default alignments can be specified for components within columns or rows.
-
-5. **BoxLayout**: Components are arranged either vertically or horizontally, but not both. For horizontal alignment, all components have the same height (equal to the largest component's height). For vertical alignment, all components have the same width (equal to the largest component's width).
-
-6. **CardLayout**: It arranges components with the same size in a deck-like manner, where only the top component is visible at any time. Components are displayed either horizontally or vertically, and the first component added is kept at the top.
-
-Example:
-
-Suppose we have a simple Java Swing program with three buttons, and we want to arrange them horizontally using the FlowLayout manager:
-
-```java
-import javax.swing.*;
-
-public class LayoutExample {
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Layout Example");
-        JPanel panel = new JPanel();
-
-        panel.setLayout(new FlowLayout());
-        panel.add(new JButton("Button 1"));
-        panel.add(new JButton("Button 2"));
-        panel.add(new JButton("Button 3"));
-
-        frame.add(panel);
-        frame.setSize(300, 100);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-    }
-}
-```
 
 
 ## Give the steps involved in developing and running an applet.
@@ -2096,25 +2119,6 @@ public class MyApplet extends Applet {
      - `void setText(String text)`: Sets the text displayed next to the check box.
 
 
-## Distinguish Event Listeners from Event Adapters.
-
-Event Listeners are interfaces used for specific event handling, requiring implementations of all methods. They are suitable when you need to handle a single type of event.  
-On the other hand, Event Adapters are classes that provide default implementations for event listener methods. They are useful when you want to implement multiple event listener interfaces but handle only a few specific events. They enhance code readability and reduce redundancy by allowing selective method overrides.
-
-| **Feature**                           | **Event Listeners**                            | **Event Adapters**                                                                                         |
-|---------------------------------------|-----------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Purpose                               | Interface used to handle specific events.   | Class that provides empty implementations for all methods in an event listener interface.                  |
-| Methods to implement                  | Must implement all methods in the interface.| Can extend an adapter class and override only the required methods, leaving others with empty implementations.|
-| Interface suffix                      | Ends with "Listener"                         | Ends with "Adapter"                                                                                        |
-| Functionality                         | Provides callbacks for events.              | Provides default implementations for event listener methods.                                              |
-| Usage                                 | Useful when specific event handling is needed.| Useful when you need to implement multiple event listener interfaces but handle only a few specific events. |
-| Code redundancy                       | May result in repetitive code for unused methods. | Helps reduce code redundancy as you only override the necessary methods.                                   |
-| Extensibility                         | Not easily extendable to add more methods.   | Easily extendable, can add more methods without changing the event listener interface.                    |
-| Efficiency                            | More efficient when handling specific events.| Slightly less efficient as it involves method call overhead for each event method.                         |
-| Type of class                         | Interface                                     | Class                                                                                                      |
-| Suitability for different events       | Suitable for handling a single type of event. | Suitable when you have multiple event types but only want to handle a few of them.                        |
-| Code readability                      | May result in a longer and cluttered code.   | Improves code readability and reduces clutter, especially when handling multiple events.                  |
-| Event handling when listener changes  | Requires changes in all implementing classes. | Does not affect existing classes if new event methods are added.                                          |
 
 
 
