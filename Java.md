@@ -1518,7 +1518,7 @@ Multi-tasking and multi-threading are two techniques used in operating systems. 
 | 15.  | Examples: running multiple applications, servers on a network. | Examples: splitting a video encoding task, responsive UI in an app. |
 
 
-## Demonstrate the usage of inter-thread communication in Java with a suitable example.
+## Inter-thread Communication in Java
 
 Inter-thread communication or cooperation is a mechanism that allows synchronized threads in Java to communicate with each other. It involves pausing a thread in its critical section and allowing another thread to enter the same critical section for execution. This is implemented using the following methods of the Object class: wait(), notify(), and notifyAll().
 
@@ -1614,6 +1614,62 @@ The concept of locks in Java revolves around the monitor associated with each ob
 Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
 
 
+# <p align=center>Unit 4</p>
+
+## Events and Event Handling in Java
+
+In the world of programming, an **event** signifies a change in the state of a source. It could be the click of a button, pressing a key, moving the mouse, or other user interactions with graphical components in a graphical user interface (GUI). Essentially, events are actions that lead to some kind of response within a program.
+
+In Java, event handling is the mechanism that manages and controls these events. It allows a program to respond to various user actions by executing appropriate code when an event occurs. Java provides a robust and well-defined event handling mechanism through its event handling framework.
+
+**Significance of Event Handling:**
+Event handling is pivotal for creating interactive and dynamic programs, especially graphical applications. By capturing user interactions and responding to them, applications can provide a seamless user experience. Events enable programs to perform actions like validating input, updating data, triggering animations, and more, based on user actions.
+
+**Event Handling Mechanism in Java:**
+Java's event handling mechanism uses the **Delegation Event Model**. This model defines a standard way for objects (known as **listeners**) to register their interest in certain events and be notified when those events occur.
+
+The key participants in this model are:
+1. **Source**: An object that generates events.
+2. **Listener**: An object that waits for and processes events.
+
+Java achieves event handling through interfaces like `ActionListener`, `MouseListener`, `KeyListener`, etc. When an event occurs, the source object generates the event, and listeners that have registered with that source are notified. The appropriate method in the listener's interface is invoked to handle the event.
+
+
+## Event classes, Event sources, Event listeners and the relationship among them
+
+Event classes, event sources, and event listeners are essential concepts in programming that allow different parts of a program to communicate with each other when certain actions or events happen. Let's understand each concept in simpler terms:
+
+1. **Event Sources**:
+An event source is like a signal sender in a program. It generates signals or events when something important happens. Imagine it as a button that you press, and it tells other parts of the program that the button was pressed. These events can be things like clicking a button, pressing a key, or moving the mouse.
+
+2. **Event Listeners**:
+An event listener is like a signal receiver in a program. It waits and listens for specific events from the event source. It's like an attentive person who keeps an eye on the button and reacts when it is pressed. When an event occurs, the listener does something in response to that event. For example, if the button is clicked, the listener may perform a particular action, like opening a new window.
+
+3. **Event Classes**:
+An event class is like a message that carries information about the event. It helps the event listener to understand what exactly happened. For example, the event class might say, "ButtonClickedEvent" or "KeyPressedEvent," so the listener knows which event occurred and can respond accordingly.
+
+**Relationship among them**:
+The event source and event listener work together to make a program interactive. Here's how it works:
+1. The event source generates an event when something happens, like a button being clicked.
+2. The event class describes the event, saying it's a button click event.
+3. The event source sends this event to the event listener.
+4. The event listener receives the event and knows what kind of event it is.
+5. The event listener performs a specific action based on the event, like displaying a message when the button is clicked.
+
+By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## How do you handle the mouse events using java AWT. Explain.
 
@@ -1706,7 +1762,7 @@ The Model-View-Controller (MVC) is a widely-used design pattern in web developme
 
 ![](2023-08-03-18-48-19.png)
 
-#### Components of MVC Architecture:
+**Components of MVC Architecture:**
 
 1. **Model**: The Model represents the business logic and data of the application. It is an object that carries data and can also contain the logic to update the Controller if the data changes. In simple terms, it handles the data and its manipulation.
 
@@ -1714,7 +1770,7 @@ The Model-View-Controller (MVC) is a widely-used design pattern in web developme
 
 3. **Controller**: The Controller acts as an intermediary between the Model and the View. It manages the flow of the application, handling user requests, and updating the View whenever there is a change in data. The Controller serves as the backbone of the MVC pattern.
 
-#### How MVC Works in Java:
+**How MVC Works in Java:**
 
 The process of interaction in MVC can be summarized as follows:
 
@@ -1726,7 +1782,7 @@ The process of interaction in MVC can be summarized as follows:
 
 4. The View processes the data and generates the final output, which is sent back to the user/client (browser) for display.
 
-#### Advantages of MVC Architecture:
+**Advantages of MVC Architecture:**
 
 MVC architecture offers several advantages, making it a popular choice for organizing web applications:
 
@@ -1747,28 +1803,6 @@ MVC architecture offers several advantages, making it a popular choice for organ
 In conclusion, the MVC architecture in Java separates concerns and improves maintainability, reusability, and scalability of web applications. By dividing the application into Model, View, and Controller, developers can work efficiently and create more organized and manageable codebases.
 
 
-## Explain about Event classes, Event sources, Event listeners and the relationship among them.
-
-Event classes, event sources, and event listeners are essential concepts in programming that allow different parts of a program to communicate with each other when certain actions or events happen. Let's understand each concept in simpler terms:
-
-1. **Event Sources**:
-An event source is like a signal sender in a program. It generates signals or events when something important happens. Imagine it as a button that you press, and it tells other parts of the program that the button was pressed. These events can be things like clicking a button, pressing a key, or moving the mouse.
-
-2. **Event Listeners**:
-An event listener is like a signal receiver in a program. It waits and listens for specific events from the event source. It's like an attentive person who keeps an eye on the button and reacts when it is pressed. When an event occurs, the listener does something in response to that event. For example, if the button is clicked, the listener may perform a particular action, like opening a new window.
-
-3. **Event Classes**:
-An event class is like a message that carries information about the event. It helps the event listener to understand what exactly happened. For example, the event class might say, "ButtonClickedEvent" or "KeyPressedEvent," so the listener knows which event occurred and can respond accordingly.
-
-**Relationship among them**:
-The event source and event listener work together to make a program interactive. Here's how it works:
-1. The event source generates an event when something happens, like a button being clicked.
-2. The event class describes the event, saying it's a button click event.
-3. The event source sends this event to the event listener.
-4. The event listener receives the event and knows what kind of event it is.
-5. The event listener performs a specific action based on the event, like displaying a message when the button is clicked.
-
-By using event sources, event listeners, and event classes, programs can respond to user actions and external events in a flexible and organized way. This allows for more interactive and user-friendly applications.
 
 
 ## What is a Layout manager? Explain the different types of Layout managers in detail.
