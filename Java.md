@@ -794,9 +794,87 @@ public class RuntimePolymorphismExample {
 > Dog barks
 > ```
 
-> Upscasting: Converting a subclass reference to a superclass reference is known as upcasting. It's done implicitly, and therefore, it doesn't require any special syntax. In simple terms, upcasting is casting a variable to a superclass type.
+> **Upscasting:** Converting a subclass reference to a superclass reference is known as upcasting. It's done implicitly, and therefore, it doesn't require any special syntax. In simple terms, upcasting is casting a variable to a superclass type.
 
 
+## Access Modifiers (public, private, protected)
+
+Access specifiers (public, protected, and private) play a crucial role in inheritance by determining the visibility and accessibility of members (fields, methods, nested classes) of a class in its subclasses. They control how these members are inherited and accessed from subclasses.
+
+1. **Public Access Specifier**: Members with the `public` access specifier are accessible from any class, whether it's in the same package or a different package. They can be inherited and accessed without restrictions.
+
+```java
+// Base class
+public class Vehicle {
+    public String brand = "Generic";
+
+    public void honk() {
+        System.out.println("Honk!");
+    }
+}
+
+// Subclass inheriting from Vehicle
+public class Car extends Vehicle {
+    public void displayBrand() {
+        System.out.println("Car brand: " + brand); // Public member inherited and accessed
+    }
+}
+```
+
+2. **Protected Access Specifier**: Members with the `protected` access specifier are accessible within the same package and also in subclasses, even if they are in a different package.
+
+```java
+// Base class
+public class Animal {
+    protected String sound = "Generic sound";
+
+    protected void makeSound() {
+        System.out.println(sound);
+    }
+}
+
+// Subclass inheriting from Animal
+public class Dog extends Animal {
+    public void bark() {
+        System.out.println("Barking: " + sound); // Protected member inherited and accessed
+    }
+}
+```
+
+3. **Private Access Specifier**: Members with the `private` access specifier are only accessible within the same class. They cannot be accessed or inherited by subclasses.
+
+```java
+// Base class
+public class Employee {
+    private int salary = 50000;
+
+    private void showSalary() {
+        System.out.println("Salary: " + salary);
+    }
+}
+
+// Subclass attempting to access private members (compilation error)
+public class Manager extends Employee {
+    public void displaySalary() {
+        // Private members cannot be accessed in subclasses
+        // System.out.println("Manager's salary: " + salary); // Compilation error
+        // showSalary(); // Compilation error
+    }
+}   
+```
+
+Where they can be used | `public` | `protected` | `private`
+--- | --- | --- | ---
+Same class | Yes | Yes | Yes
+Same package | Yes | Yes | No
+Subclass in different package | Yes | Yes | No
+Non-subclass in different package | Yes | No | No
+
+**Summarized:**
+
+- `public` members are accessible everywhere, including subclasses.
+- `protected` members are accessible within the same package and subclasses, even in different packages. Not accessible in unrelated classes outside the package
+- `private` members are only accessible within the same class and cannot be inherited by subclasses i.e. not accessible anywhere outside the declaring class.
 
 
 
