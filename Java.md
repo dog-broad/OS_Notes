@@ -952,6 +952,9 @@ public class Main {
 
 In Java, the `final` keyword is used to restrict the modification of classes, methods, and variables. Once something is marked as `final`, it cannot be changed or overridden.
 
+**Final in Inheritance:**
+The `final` keyword can be used with classes, methods, and variables. When used with classes, it prevents the class from being extended. When used with methods, it prevents the method from being overridden. When used with variables, it prevents the variable from being reassigned.
+
 **1. Final Classes:**
 A final class is a class that cannot be extended or subclassed. It's used to prevent further inheritance and modification of the class's behavior.
 
@@ -1002,6 +1005,7 @@ class MathUtil {
 }
 ```
 
+
 **Usage Considerations:**
 - Use final classes when you want to prevent further subclassing for security or design reasons.
 - Use final methods when you want to ensure that a method's behavior remains consistent across subclasses.
@@ -1024,6 +1028,126 @@ The final keyword in Java is employed to signify immutability and restriction. I
 6. **Security:** Final contributes to security by thwarting malicious code from tampering with crucial data or behavior, adding a layer of protection.
 
 
+## Super Keyword in Java:
+
+In Java, the `super` keyword is used to refer to the superclass, which is the class that is extended by a subclass. It is used to access members (fields, methods, and constructors) of the superclass from within the subclass. The `super` keyword is especially useful when there is a name conflict between the members of the superclass and the subclass.
+
+**Usage of `super` keyword:**
+
+1. **Accessing superclass members:** If a subclass has a member with the same name as a member in its superclass, you can use the `super` keyword to explicitly refer to the superclass member.
+
+2. **Calling superclass constructor:** When creating an object of a subclass, the constructor of the superclass is implicitly called. However, you can use the `super` keyword to call a specific constructor of the superclass with required arguments.
+
+**Example:**
+
+```java
+class Animal {
+    String name = "Animal";
+
+    void eat() {
+        System.out.println("Animal is eating.");
+    }
+}
+
+class Dog extends Animal {
+    String name = "Dog";
+
+    void display() {
+        System.out.println("Name: " + name); // Accessing subclass name
+        System.out.println("Superclass Name: " + super.name); // Accessing superclass name
+    }
+
+    void eat() {
+        super.eat(); // Calling superclass method
+        System.out.println("Dog is eating.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.display(); // Calls the display method in Dog class
+        dog.eat(); // Calls the overridden eat method in Dog class
+    }
+}
+```
+> Output:
+> ```
+> Name: Dog
+> Superclass Name: Animal
+> Animal is eating.
+> Dog is eating.
+> ```
+
+In this example, the `super` keyword is used in the `display()` method of the `Dog` class to differentiate between the subclass and superclass `name` members. The `super` keyword is also used in the `eat()` method to call the `eat()` method of the superclass (`Animal`) before executing the subclass code.
+
+**Note:** The `super` keyword can only be used in non-static methods and constructors.
+
+
+## Packages in Java:
+
+A package in Java is a way to organize related classes, interfaces, and sub-packages. It provides a hierarchical structure that helps in managing and categorizing code components. Packages also allow access control through the use of access modifiers.
+ 
+**Usage:**
+Packages are used to group related classes, interfaces, and sub-packages. They provide a way to organize code components and prevent naming conflicts. They also allow access control through the use of access modifiers.
+
+**Benefits:**
+- **Organization:** Packages provide a way to organize code components into a hierarchical structure.
+- **Access Control:** Packages allow access control through the use of access modifiers.
+- **Naming Conflicts:** Packages prevent naming conflicts by grouping related classes, interfaces, and sub-packages.
+- **Reusability:** Packages allow code to be reused across multiple projects.
+
+**Creating a Package:**
+To create a package, you need to follow these steps:
+
+1. Organize your classes into a directory structure that corresponds to the package hierarchy.
+2. Add the package declaration at the beginning of each Java source file, indicating the package name.
+3. Compile the Java files using the `javac` command.
+
+For example, if you want to create a package named "myPackage" with a class named "MyClass" inside it:
+
+```java
+// MyClass.java
+package myPackage;
+
+public class MyClass {
+    // class implementation
+}
+```
+
+**Note:** The package declaration must be the first line in the Java source file.
+
+**Accessing a Package:**
+To access a package, you need to follow these steps:
+
+1. Import the package using the `import` keyword.
+2. To access a class or interface in the package, use the fully qualified name.
+
+For example, if you want to access the "myPackage" package and the "MyClass" class inside it:
+
+```java
+// Main.java
+import myPackage.MyClass;
+
+public class Main {
+    public static void main(String[] args) {
+        MyClass myClass = new MyClass();
+        // use myClass
+    }
+}
+```
+
+**Importing a Java Package:**
+
+The JRE (Java Runtime Environment) comes with a set of standard packages that are automatically imported into every Java program. These packages are known as the Java API (Application Programming Interface) and contain classes for performing common tasks such as input/output operations, networking, and database access.
+
+To use these packages, you need to import them into your program using the `import` keyword. For example, if you want to use the `java.util` package:
+
+```java
+import java.util.*;
+```
+
+**Note:** The asterisk (*) is a wildcard that imports all classes in the package.
 
 
 
