@@ -55,7 +55,7 @@ Example:
 ```java
 public class VariableScope {
     // Member variable
-    String name = "Andrew";
+    String name = "Jang's Mama";
     static double height = 5.9;
 
     public static void main(String[] args) {
