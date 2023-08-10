@@ -489,7 +489,203 @@ In this example:
 3. When an object of the `Dog` class is created and used to call `makeSound()`, the overridden method in the `Dog` class is executed instead of the one in the `Animal` class.
 
 
+# <p align=center>Unit 2</p>
 
+## Inheritance
+
+Inheritance in Java is a fundamental concept of Object-Oriented Programming (OOP) that allows a new class (subclass or derived class) to inherit properties and behaviors (methods and fields) from an existing class (superclass or base class). The subclass can reuse and extend the functionalities of the superclass.
+
+Benefits of Inheritance:
+
+1. **Code Reuse**: Inheritance facilitates code reuse by allowing a subclass to inherit the methods and fields of its superclass. This reduces redundancy and promotes efficient use of code.
+
+2. **Time and Effort Savings**: Inherited methods and fields can be used without re-writing them in the subclass, saving development time and effort.
+
+3. **Clear Model Structure**: Inheritance provides a clear hierarchical structure in which classes are organized based on their relationships. This makes the codebase easier to understand and manage.
+
+4. **Method Overriding**: Subclasses can override methods from the superclass to provide specialized implementations. This allows customization of behavior in derived classes.
+
+5. **Less Development and Maintenance Costs**: By reusing existing code, the need to write and maintain new code is reduced, leading to lower development and maintenance costs.
+
+6. **Encapsulation and Accessibility**: The base class can control the access to its methods and fields, allowing encapsulation and data hiding in the derived class.
+
+Costs of Inheritance:
+
+1. **Execution Speed**: Inheritance may decrease execution speed due to the additional time and effort required for the program to navigate through the levels of inheritance.
+
+2. **Tight Coupling**: Inheritance can result in tight coupling between classes, where changes in the base class might impact the behavior of the derived class and vice versa.
+
+3. **Limited Independence**: Subclasses are dependent on the structure and behavior of their superclasses, limiting their independence and reusability.
+
+4. **Complexity**: Overuse of inheritance can lead to complex class hierarchies, making the code harder to understand and maintain.
+
+Preventing a Class from Inheritance:
+
+In Java, you can prevent a class from being inherited (subclassed) by using the `final` keyword. When a class is declared as `final`, it cannot be extended by any other class. Here's an example:
+
+```java
+final class FinalClass {
+    // Class members and methods
+}
+
+// The following line would result in a compilation error
+class SubClass extends FinalClass {
+    // Error: Cannot inherit from final class
+}
+```
+
+
+## Types of Inheritance
+
+There are five types of inheritance: 
+- Single Inheritance 
+- Multiple Inheritance  [x]
+- Multilevel Inheritance
+- Hierarchical Inheritance 
+- Hybrid Inheritance    [x]
+
+![](2023-08-09-23-33-57.png)
+
+1. **Single Inheritance**:
+Single inheritance involves one class inheriting from only one superclass. It forms a linear hierarchy of classes.
+
+```java
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+public class SingleInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Call inherited method
+        dog.bark(); // Call subclass method
+    }
+}
+```
+
+2. **Multiple Inheritance**:
+Multiple inheritance involves a subclass inheriting from more than one super class. Java does not support multiple inheritance directly, but it can be achieved using interfaces.
+
+```java
+// First superclass
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Second superclass
+interface Pet {
+    void play();
+}
+
+// Subclass inheriting from Animal and implementing Pet
+class Dog extends Animal implements Pet {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+    public void play() {
+        System.out.println("Dog is playing");
+    }
+}
+
+public class MultipleInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Call inherited method
+        dog.bark(); // Call subclass method
+        dog.play(); // Call implemented interface method
+    }
+}
+```
+
+3. **Multilevel Inheritance**:
+Multilevel inheritance involves a chain of inheritance where a subclass becomes the super class for another subclass.
+
+```java
+// Grandparent class
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Parent class inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+// Subclass inheriting from Dog
+class Puppy extends Dog {
+    void play() {
+        System.out.println("Puppy is playing");
+    }
+}
+
+public class MultilevelInheritanceExample {
+    public static void main(String[] args) {
+        Puppy puppy = new Puppy();
+        puppy.eat();  // Call grandparent's method
+        puppy.bark(); // Call parent's method
+        puppy.play(); // Call subclass method
+    }
+}
+```
+
+4. **Hierarchical Inheritance**:
+Hierarchical inheritance involves multiple subclasses inheriting from a single super class.
+
+```java
+// Superclass
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking");
+    }
+}
+
+// Another subclass inheriting from Animal
+class Cat extends Animal {
+    void meow() {
+        System.out.println("Cat is meowing");
+    }
+}
+
+public class HierarchicalInheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Call inherited method
+        dog.bark(); // Call subclass method
+        
+        Cat cat = new Cat();
+        cat.eat();  // Call inherited method
+        cat.meow(); // Call subclass method
+    }
+}
+```
+
+5. **Hybrid Inheritance**:
+Hybrid inheritance is a combination of the above types. It's a complex form of inheritance that involves multiple inheritance paths.
+
+Due to the complexity and potential ambiguity associated with multiple inheritance, Java avoids direct support for it. Instead, it provides interfaces and other mechanisms to achieve similar functionality while maintaining code clarity and avoiding conflicts.
 
 
 
