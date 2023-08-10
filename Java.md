@@ -1614,6 +1614,66 @@ The concept of locks in Java revolves around the monitor associated with each ob
 Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
 
 
+## Ways to Create a Thread 
+
+There are two main ways to create threads in Java: 
+
+1. **Extending the Thread class**:
+   - To create a thread by extending the `Thread` class, you need to override the `run()` method in the subclass. The `run()` method contains the code that will be executed when the thread is started.
+   - Once the `run()` method is defined, you can create an instance of the subclass and call the `start()` method on it to begin the execution of the thread.
+
+```java
+// Example of creating a thread by extending the Thread class
+
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 1: " + i);
+        }
+    }
+}
+
+public class ThreadExample1 {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        thread1.start();
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main Thread: " + i);
+        }
+    }
+}
+```
+
+2. **Implementing the Runnable interface**:
+   - To create a thread by implementing the `Runnable` interface, you need to implement the `run()` method in the class that implements `Runnable`. The `run()` method contains the code that will be executed when the thread is started.
+   - Once the `run()` method is defined, you can create an instance of the class that implements `Runnable`, and then pass it to a `Thread` object's constructor. Finally, call the `start()` method on the `Thread` object to begin the execution of the thread.
+
+```java
+// Example of creating a thread by implementing the Runnable interface
+
+class MyRunnable implements Runnable {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread 2: " + i);
+        }
+    }
+}
+
+public class ThreadExample2 {
+    public static void main(String[] args) {
+        MyRunnable myRunnable = new MyRunnable();
+        Thread thread2 = new Thread(myRunnable);
+        thread2.start();
+        
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main Thread: " + i);
+        }
+    }
+}
+```
+
+
 # <p align=center>Unit 4</p>
 
 ## Events and Event Handling in Java
@@ -1714,17 +1774,7 @@ public class DelegationAWTEventExample {
 In this example, an AWT `Frame` is created with a `Button` as the event source. When the button is clicked, it generates an `ActionEvent` and notifies the registered action listener (event handler). The anonymous class implements the `ActionListener` interface and contains the `actionPerformed()` method, which prints a message to the console when the button is clicked. The Delegation Event Model allows the event generation and handling to be separated, enhancing modularity and flexibility in GUI programming.
 
 
-
-
-
-
-
-
-
-
-
-
-## How do you handle the mouse events using java AWT. Explain.
+## Handling Mouse Events AWT
 
 In Java AWT (Abstract Window Toolkit), mouse events can be handled using two interfaces:
 
@@ -1785,6 +1835,62 @@ public class MouseEventsExample extends Frame implements MouseListener, MouseMot
 ```
 
 In this example, we create a simple Java AWT Frame and implement both MouseListener and MouseMotionListener interfaces. We override their respective methods to print messages when various mouse events occur. The `main` method creates an instance of our custom class `MouseEventsExample`, and the program displays the frame. When you run the program and interact with the window using the mouse, you will see the corresponding messages in the console.
+
+## How do you handle the Key events using java AWT. Explain.
+
+In Java AWT (Abstract Window Toolkit), key event handling is used to respond to user interactions with the keyboard. Key events occur when a user presses or releases a key on the keyboard while the focus is on a component that can receive keyboard input, such as a text field or a button.
+
+To handle key events in Java AWT, you need to follow these steps:
+
+1. Implement the KeyListener interface: The KeyListener interface provides three methods that need to be implemented to handle key events:
+   - `keyPressed(KeyEvent e)`: This method is called when a key is pressed down.
+   - `keyReleased(KeyEvent e)`: This method is called when a key is released.
+   - `keyTyped(KeyEvent e)`: This method is called when a key is typed (pressed and released).
+
+2. Register the listener with the component: Once you have implemented the KeyListener interface, you need to register the listener with the component that will receive the key events. You can do this using the `addKeyListener()` method.
+
+3. Override the key event handling methods: In the implementation of the KeyListener interface, you will override the three key event handling methods to specify the actions to be performed when a key is pressed, released, or typed.
+
+Here's a simple example demonstrating key event handling for a text field:
+
+```java
+import java.awt.*;
+import java.awt.event.*;
+
+public class KeyEventsExample extends Frame implements KeyListener {
+    TextField textField;
+
+    public KeyEventsExample() {
+        setTitle("Key Events Example");
+        setSize(300, 200);
+        setLayout(new FlowLayout());
+
+        textField = new TextField(20);
+        textField.addKeyListener(this);
+
+        add(textField);
+
+        setVisible(true);
+    }
+
+    public void keyPressed(KeyEvent e) {
+        System.out.println("Key Pressed: " + e.getKeyChar());
+    }
+
+    public void keyReleased(KeyEvent e) {
+        System.out.println("Key Released: " + e.getKeyChar());
+    }
+
+    public void keyTyped(KeyEvent e) {
+        System.out.println("Key Typed: " + e.getKeyChar());
+    }
+
+    public static void main(String[] args) {
+        new KeyEventsExample();
+    }
+}
+```
+
 
 ## Differentiate applets from application programs.
 | Parameters                  | Java Application                             | Java Applet                                     |
@@ -2091,120 +2197,10 @@ Its pure Java implementation, consistent behavior, and efficient performance mak
 
 
 
-## How many types of ways are there for creating threads?  Explain each with an example.
-
-There are two main ways to create threads in Java: 
-
-1. **Extending the Thread class**:
-   - To create a thread by extending the `Thread` class, you need to override the `run()` method in the subclass. The `run()` method contains the code that will be executed when the thread is started.
-   - Once the `run()` method is defined, you can create an instance of the subclass and call the `start()` method on it to begin the execution of the thread.
-
-```java
-// Example of creating a thread by extending the Thread class
-
-class MyThread extends Thread {
-    public void run() {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Thread 1: " + i);
-        }
-    }
-}
-
-public class ThreadExample1 {
-    public static void main(String[] args) {
-        MyThread thread1 = new MyThread();
-        thread1.start();
-        
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Main Thread: " + i);
-        }
-    }
-}
-```
-
-2. **Implementing the Runnable interface**:
-   - To create a thread by implementing the `Runnable` interface, you need to implement the `run()` method in the class that implements `Runnable`. The `run()` method contains the code that will be executed when the thread is started.
-   - Once the `run()` method is defined, you can create an instance of the class that implements `Runnable`, and then pass it to a `Thread` object's constructor. Finally, call the `start()` method on the `Thread` object to begin the execution of the thread.
-
-```java
-// Example of creating a thread by implementing the Runnable interface
-
-class MyRunnable implements Runnable {
-    public void run() {
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Thread 2: " + i);
-        }
-    }
-}
-
-public class ThreadExample2 {
-    public static void main(String[] args) {
-        MyRunnable myRunnable = new MyRunnable();
-        Thread thread2 = new Thread(myRunnable);
-        thread2.start();
-        
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Main Thread: " + i);
-        }
-    }
-}
-```
 
 
-## How do you handle the Key events using java AWT. Explain.
 
-In Java AWT (Abstract Window Toolkit), key event handling is used to respond to user interactions with the keyboard. Key events occur when a user presses or releases a key on the keyboard while the focus is on a component that can receive keyboard input, such as a text field or a button.
 
-To handle key events in Java AWT, you need to follow these steps:
-
-1. Implement the KeyListener interface: The KeyListener interface provides three methods that need to be implemented to handle key events:
-   - `keyPressed(KeyEvent e)`: This method is called when a key is pressed down.
-   - `keyReleased(KeyEvent e)`: This method is called when a key is released.
-   - `keyTyped(KeyEvent e)`: This method is called when a key is typed (pressed and released).
-
-2. Register the listener with the component: Once you have implemented the KeyListener interface, you need to register the listener with the component that will receive the key events. You can do this using the `addKeyListener()` method.
-
-3. Override the key event handling methods: In the implementation of the KeyListener interface, you will override the three key event handling methods to specify the actions to be performed when a key is pressed, released, or typed.
-
-Here's a simple example demonstrating key event handling for a text field:
-
-```java
-import java.awt.*;
-import java.awt.event.*;
-
-public class KeyEventsExample extends Frame implements KeyListener {
-    TextField textField;
-
-    public KeyEventsExample() {
-        setTitle("Key Events Example");
-        setSize(300, 200);
-        setLayout(new FlowLayout());
-
-        textField = new TextField(20);
-        textField.addKeyListener(this);
-
-        add(textField);
-
-        setVisible(true);
-    }
-
-    public void keyPressed(KeyEvent e) {
-        System.out.println("Key Pressed: " + e.getKeyChar());
-    }
-
-    public void keyReleased(KeyEvent e) {
-        System.out.println("Key Released: " + e.getKeyChar());
-    }
-
-    public void keyTyped(KeyEvent e) {
-        System.out.println("Key Typed: " + e.getKeyChar());
-    }
-
-    public static void main(String[] args) {
-        new KeyEventsExample();
-    }
-}
-```
 
 
 ## Illustrate the ways of passing parameters to applets.
