@@ -1430,6 +1430,71 @@ In this example:
 
 
 
+## Creation of Threads and Thread Life Cycle in Java:
+
+Thread is a lightweight process that can be executed concurrently with other threads. It is a unit of a process that can be scheduled for execution. A thread is created by extending the `Thread` class or implementing the `Runnable` interface.
+
+In simple terms, a thread is a sequence of instructions within a program that can be executed independently of other code. It is a lightweight process that can be scheduled and executed by the Java Virtual Machine (JVM). Threads are used to achieve parallelism in Java programs.
+
+The creation and execution of threads are managed by the Java Virtual Machine (JVM). The JVM schedules the threads to run on the available CPU cores. The JVM uses a thread scheduler to determine which thread should run at a given time.
+
+**Thread Creation:**
+In Java, threads can be created by either extending the `Thread` class or implementing the `Runnable` interface. Extending the `Thread` class involves directly subclassing it and overriding its `run()` method to define the thread's behavior. Implementing the `Runnable` interface requires creating a separate class that implements the `run()` method, which is then passed to a `Thread` constructor.
+
+**Thread Life Cycle:**
+Threads in Java go through several stages during their life cycle, which can be summarized as follows:
+
+1. **New**: A thread is in this state when it is first created but not yet started. The `start()` method is called to transition it to the "Runnable" state.
+
+2. **Runnable**: In this state, the thread is ready to run and is waiting for the CPU. It is placed in a queue to be executed by the CPU when its turn comes.
+
+3. **Running**: The thread is executing its tasks in this state. It can transition back to the "Runnable" state after its time quantum is complete or when it voluntarily releases the CPU.
+
+4. **Blocked/Waiting**: A thread enters this state when it's waiting for a particular condition (e.g., I/O operations, synchronization) to be satisfied. It can't proceed until the condition is met.
+
+5. **Terminated**: A thread can enter this state when it has completed its execution or when an unhandled exception occurs.
+
+![](2023-08-10-12-32-07.png)
+
+Example Program:
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Thread " + Thread.currentThread().getId() + ": Count " + i);
+        }
+    }
+}
+
+public class ThreadExample {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+> Output:
+> ```
+> Thread 11: Count 1
+> Thread 11: Count 2
+> Thread 11: Count 3
+> Thread 11: Count 4
+> Thread 11: Count 5
+> Thread 12: Count 1
+> Thread 12: Count 2
+> Thread 12: Count 3
+> Thread 12: Count 4
+> Thread 12: Count 5
+> ```
+> Note: The thread IDs may be different in your output. And the order of execution may also vary.
+
+In this example, two threads (`thread1` and `thread2`) are created by extending the `Thread` class. When the `start()` method is called on each thread, they transition to the "Runnable" state and start executing their `run()` methods concurrently.
+
+
 ## Distinguish Multithreading and Multitasking.
 
 Multi-tasking and multi-threading are two techniques used in operating systems. Multi-tasking allows the CPU to execute multiple independent processes or tasks concurrently, sharing the same processor and resources. On the other hand, multi-threading involves dividing a single process into multiple threads that can execute concurrently, sharing the same memory space and resources of the parent process.
@@ -1453,7 +1518,6 @@ Multi-tasking and multi-threading are two techniques used in operating systems. 
 | 15.  | Examples: running multiple applications, servers on a network. | Examples: splitting a video encoding task, responsive UI in an app. |
 
 
-
 ## Demonstrate the usage of inter-thread communication in Java with a suitable example.
 
 Inter-thread communication or cooperation is a mechanism that allows synchronized threads in Java to communicate with each other. It involves pausing a thread in its critical section and allowing another thread to enter the same critical section for execution. This is implemented using the following methods of the Object class: wait(), notify(), and notifyAll().
@@ -1465,8 +1529,6 @@ Inter-thread communication or cooperation is a mechanism that allows synchronize
 3. **notifyAll() method**: The notifyAll() method wakes up all threads that are waiting on this object's monitor.
 
 **Example of Inter Thread Communication in Java**:
-
-Let's see a simple example of inter-thread communication:
 
 ```java
 class Customer {    
@@ -1508,6 +1570,49 @@ class Test {
 ```
 
 In this example, we have a `Customer` class with two synchronized methods `withdraw` and `deposit`. When the `withdraw` method is called, it checks if the amount to be withdrawn is greater than the current balance. If so, it waits for a `notify` signal. Meanwhile, the `deposit` method is called from another thread, which deposits money into the account and then sends a `notify` signal to wake up the waiting thread. This way, the `withdraw` and `deposit` methods are synchronized and communicate with each other to manage the customer's balance.
+
+
+## Thread Synchronization in Java
+
+In Java, synchronization is used to control the access of multiple threads to shared resources. It ensures that only one thread can access the shared resource at a time, preventing thread interference and consistency problems.
+
+Thread synchronization in Java is achieved through mutual exclusion, which comes in two forms: synchronized methods and synchronized blocks.
+
+1. **Synchronized Method**:
+A method can be marked as synchronized, meaning only one thread can execute it at a time. When a thread enters a synchronized method, it automatically acquires the lock associated with the object and releases it when the method is complete.
+
+```java
+class Counter {
+    private int count = 0;
+
+    public synchronized void increment() {
+        count++;
+    }
+}
+```
+
+2. **Synchronized Block**:
+A block of code can be synchronized, allowing only one thread to execute that block at a time. The synchronized block must specify an object on which the lock will be acquired.
+
+```java
+class Counter {
+    private int count = 0;
+    private final Object lock = new Object();
+
+    public void increment() {
+        synchronized (lock) {
+            count++;
+        }
+    }
+}
+```
+
+Both synchronized methods and synchronized blocks provide mutual exclusion and help prevent thread interference when multiple threads access shared resources.
+
+The concept of locks in Java revolves around the monitor associated with each object. Threads that require consistent access to an object's fields must acquire the object's lock before accessing them and release it when done.
+
+Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
+
 
 
 ## How do you handle the mouse events using java AWT. Explain.
@@ -1796,48 +1901,6 @@ public class MyApplet extends Applet {
      - `boolean isSelected()`: Returns whether the check box is selected or not.
      - `void setSelected(boolean selected)`: Sets whether the check box is selected or not.
      - `void setText(String text)`: Sets the text displayed next to the check box.
-
-
-## Demonstrate the usage of thread synchronization in Java with a suitable example?
-
-In Java, synchronization is used to control the access of multiple threads to shared resources. It ensures that only one thread can access the shared resource at a time, preventing thread interference and consistency problems.
-
-Thread synchronization in Java is achieved through mutual exclusion, which comes in two forms: synchronized methods and synchronized blocks.
-
-1. **Synchronized Method**:
-A method can be marked as synchronized, meaning only one thread can execute it at a time. When a thread enters a synchronized method, it automatically acquires the lock associated with the object and releases it when the method is complete.
-
-```java
-class Counter {
-    private int count = 0;
-
-    public synchronized void increment() {
-        count++;
-    }
-}
-```
-
-2. **Synchronized Block**:
-A block of code can be synchronized, allowing only one thread to execute that block at a time. The synchronized block must specify an object on which the lock will be acquired.
-
-```java
-class Counter {
-    private int count = 0;
-    private final Object lock = new Object();
-
-    public void increment() {
-        synchronized (lock) {
-            count++;
-        }
-    }
-}
-```
-
-Both synchronized methods and synchronized blocks provide mutual exclusion and help prevent thread interference when multiple threads access shared resources.
-
-The concept of locks in Java revolves around the monitor associated with each object. Threads that require consistent access to an object's fields must acquire the object's lock before accessing them and release it when done.
-
-Thread synchronization is essential when dealing with concurrent programming, where multiple threads run simultaneously. It ensures data consistency and prevents race conditions.
 
 
 ## Distinguish Event Listeners from Event Adapters.
