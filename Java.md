@@ -876,7 +876,76 @@ Non-subclass in different package | Yes | No | No
 - `protected` members are accessible within the same package and subclasses, even in different packages. Not accessible in unrelated classes outside the package
 - `private` members are only accessible within the same class and cannot be inherited by subclasses i.e. not accessible anywhere outside the declaring class.
 
+## Abstract Classes and Interfaces
 
+**Abstract Classes:**
+An abstract class in Java is a class that cannot be instantiated directly but can be used as a base for other classes. It can have both abstract (without implementation) and concrete methods. Abstract classes are often used to define a common structure for subclasses.
+
+Example:
+
+```java
+// Abstract class
+abstract class Shape {
+    // Abstract method (no implementation)
+    abstract void draw();
+    
+    // Concrete method
+    void printInfo() {
+        System.out.println("This is a shape.");
+    }
+}
+
+// Concrete subclass
+class Circle extends Shape {
+    // Implementing the abstract method
+    void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shape shape = new Circle(); // Upcasting
+        shape.draw(); // Polymorphic call
+        shape.printInfo();
+    }
+}
+```
+
+**Interfaces:**
+An interface in Java is a collection of abstract methods. It defines a contract that implementing classes must adhere to. An interface can't have instance variables but can have constants. A class can implement multiple interfaces.
+
+Example:
+
+```java
+// Interface
+interface Drawable {
+    // Abstract method
+    void draw();
+    
+    // Constant (implicitly public, static, and final)
+    int WIDTH = 800;
+    int HEIGHT = 600;
+}
+
+// Class implementing the interface
+class Circle implements Drawable {
+    // Implementing the abstract method
+    public void draw() {
+        System.out.println("Drawing a circle.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Drawable drawable = new Circle();
+        drawable.draw(); // Polymorphic call
+        System.out.println("Width: " + Drawable.WIDTH + ", Height: " + Drawable.HEIGHT);
+    }
+}
+```
+
+**Note:** In the above examples, the `Circle` class implements the `Shape` abstract class and the `Drawable` interface, respectively. The `draw` method is implemented to fulfill the contract defined by the abstract class and the interface.
 
 
 
