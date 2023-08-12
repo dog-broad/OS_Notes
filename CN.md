@@ -44,7 +44,7 @@ CRC stands for Cyclic Redundancy Check. It is a method of error detection in dat
 
 
 
-## TCP/IP Model: Simplified Explanation
+## TCP/IP Model
 
 The TCP/IP model, where TCP stands for Transmission Control Protocol and IP stands for Internet Protocol, is a network model designed to facilitate communication across diverse computer systems. It's a practical framework tailored to meet the original design of the Internet. TCP/IP comprises two primary protocols and encompasses numerous sub-protocols across four layers.
 
@@ -94,3 +94,41 @@ The Data Link and Physical layers are often combined into a single layer in the 
 Hence, the TCP/IP model has four layers:
 
 ![](2023-08-12-12-12-58.png)
+
+
+
+## OSI Model
+
+The OSI Reference Model, developed by the International Standards Organization (ISO), is a structured framework for understanding how different systems communicate. It comprises seven layers, each with specific responsibilities, enabling seamless communication across networks.
+
+<img src="2023-08-12-12-19-20.png" alt="OSI Model" width=50%>
+
+**1. Physical Layer:**
+
+The bottom layer focuses on transmitting raw data bits across the network. It encompasses transmission media like cables and wireless signals, ensuring reliable propagation of binary data (0s and 1s). It's the layer where data is converted into binary bits and transmitted over the network. Furthermore, it's also responsible for defining the electrical and physical specifications for devices.
+
+**2. Data-Link Layer:**
+
+The second layer ensures error-free communication over physical links. It forms frames from raw data, handles error detection and correction, manages flow control, and decides which device controls the shared communication channel. 
+
+**3. Network Layer:**
+
+Layer three facilitates routing across interconnected networks. Routers and software work here to determine the optimal path for data, addressing, and delivering packets between devices, even when multiple networks are involved. It also handles congestion control to prevent network overload i.e. in situations where there's too much data to handle.
+
+**4. Transport Layer:**
+
+The fourth layer ensures end-to-end data integrity. It segments and reassembles messages, ensures reliable data transfer, establishes flow control, and handles error recovery by retransmitting damaged segments. It also manages data congestion to prevent network overload.
+
+**5. Session Layer:**
+
+This layer establishes and maintains communication channels between devices. It handles session initiation, maintenance, and termination, along with data checkpointing for resuming interrupted transfers. It also manages security and authentication. This layer is responsible for establishing, managing, and terminating connections between applications.
+
+**6. Presentation Layer:**
+
+Layer six prepares data for transmission. It encodes, encrypts, compresses, and translates data formats, ensuring proper representation for transmission between devices. It also handles data decryption and decompression at the receiving end.
+
+**7. Application Layer:**
+
+The topmost layer provides access to network services. It manages communication between applications and users, using protocols like HTTP, FTP, POP, SMTP, and DNS to deliver meaningful data and control the sequence of activities within applications. It's the layer where users interact with the network.
+
+In summary, the OSI Reference Model is a structured representation of how communication occurs in a network. It encompasses seven layers, each with its unique role, working together to enable efficient, error-free, and meaningful communication between devices and applications.
