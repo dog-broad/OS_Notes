@@ -1,152 +1,89 @@
-# Explain three way handshaking connection mechanisms in TCP(connection establishment,Data Transfer, connection Relase)
+# <p align="center"> Unit 1 </p>
 
-The three-way handshake is a method used by TCP to establish a connection between a client and a server. It involves three steps:
+## Basics
 
-### 1. Connection Establishment
+**Computer Network:**
 
-1. **Step 1: Client sends SYN (Synchronize) to Server**
-   - The client initiates the connection by sending a SYN packet to the server.
-   - The SYN packet contains a random initial sequence number (ISN) chosen by the client to start the communication.
+A computer network is like a digital community where computers and devices are connected, allowing them to communicate and share resources. Think of it as a virtual neighborhood where devices like computers, smartphones, and printers can talk to each other. Networks have some key features:
 
-2. **Step 2: Server Responds with SYN-ACK (Synchronize-Acknowledge) to Client**
-   - Upon receiving the SYN packet, the server responds with a SYN-ACK packet back to the client.
-   - The SYN-ACK packet contains its own random initial sequence number (ISN) as well as an acknowledgment number equal to the client's ISN incremented by 1.
-   - The server also reserves buffer space and resources to handle the upcoming connection.
+- **Communication Speed:** Networks allow devices to exchange information quickly, ranging from local networks in your home to global networks like the internet. Faster communication speed means quicker data transfer.
 
-3. **Step 3: Client Sends ACK (Acknowledge) to Server**
-   - Finally, the client acknowledges the server's response by sending an ACK packet.
-   - The ACK packet contains the acknowledgment number equal to the server's ISN incremented by 1.
-   - At this point, the connection is considered established, and both the client and server can begin exchanging data.
+- **File Sharing:** Networks enable devices to share files and data. This is useful for collaborative work, sharing documents, or sending pictures between devices.
 
-At this point, the connection is considered established, and both client and server are ready to exchange data.
+- **Security:** Networks need security measures to protect data from unauthorized access. Just like locking your front door, networks use firewalls and encryption to keep your data safe.
 
-### 2. Data Transfer
+- **Scalability:** Networks can grow to include more devices as needed. Whether you're connecting a few computers at home or building a large corporate network, scalability allows for expansion.
 
-After the connection establishment, the client and server can exchange data using TCP. Here's how data transfer works:
+- **Reliability:** Networks strive to stay operational without disruptions. Reliable networks ensure that devices can consistently communicate and access resources.
 
-1. **Sending Data (Client to Server)**
-   - The client sends data in segments, each segment containing a sequence number.
-   - The server receives the segments and sends an acknowledgment (ACK) back to the client, acknowledging the receipt of data.
-   - If the client doesn't receive an ACK for a segment within a timeout period, it retransmits the data to ensure reliability.
+**Components of a Computer Network:**
 
-2. **Receiving Data (Server to Client)**
-   - The server sends data in segments to the client, each segment with its own sequence number.
-   - The client acknowledges the received segments by sending ACK packets back to the server.
-   - If the server doesn't receive an ACK for a segment within a timeout period, it retransmits the data to ensure reliability.
+- **Network Interface Cards (NICs):** These are like the passports of devices to enter the network. NICs are hardware components that allow devices to physically connect to the network, enabling communication.
 
-### 3. Connection Release
+- **Hubs:** Imagine a hub as a central meeting place where devices connect. However, hubs are quite basic and tend to send data to all devices connected to them, which can lead to inefficiencies.
 
-When either the client or the server wants to close the connection, a connection release process is initiated:
+- **Switches:** Switches are like smart hubs. They only send data to the device it's intended for, making communication more efficient. It's like sending a private message to a specific person in a room full of people.
 
-**Step 1: Initiating Connection Release**
-1. The client or server that wants to close the connection sends a FIN (Finish) packet to the other side.
-2. The FIN packet indicates the party's intention to terminate the connection.
+- **Router:** Routers are like postal workers of the network. They direct data between different networks. They decide the best path for data to travel so it reaches its intended destination, even if it's across the globe.
 
-**Step 2: Acknowledgment of FIN**
-1. The receiving party acknowledges the FIN packet by sending an ACK packet back.
+- **Modem:** If the router is like a postal worker, the modem is like the translator between the digital world and the analog world. It converts data from your devices into a form that can be transmitted over the internet (and vice versa).
 
-**Step 3: Finalizing Connection Release**
-1. The receiving party may also send its own FIN packet to indicate its intention to close the connection.
-2. The other party acknowledges the FIN packet with an ACK.
 
-Once both sides have exchanged FIN and ACK packets, the connection is considered closed gracefully.
+**Internet:**
 
-The three-way handshake and connection release mechanisms in TCP ensure reliable and orderly communication between client and server, while the data transfer process guarantees that data is successfully delivered and received.
+The internet is a vast global network of interconnected computers and servers. It enables people to access and share information, communicate, and use various online services through websites and applications.
+
+
+**World Wide Web:**
+
+The World Wide Web (WWW) is a collection of web pages and resources that are accessible over the internet. It's like a library of information that you can access from anywhere in the world. The WWW is just one of many services that the internet provides.
+
+**CRC:**
+
+CRC stands for Cyclic Redundancy Check. It is a method of error detection in data transmission. It is used to detect accidental changes to raw data. It's a hash function that detects accidental changes to raw computer data commonly used in digital telecommunications networks and storage devices such as hard disk drives.
 
 
 
-# Discuss in detail about TCP Connection Management Modeling
+## TCP/IP Model: Simplified Explanation
 
-![](2023-08-04-04-30-48.png)
+The TCP/IP model, where TCP stands for Transmission Control Protocol and IP stands for Internet Protocol, is a network model designed to facilitate communication across diverse computer systems. It's a practical framework tailored to meet the original design of the Internet. TCP/IP comprises two primary protocols and encompasses numerous sub-protocols across four layers.
 
-![](2023-08-04-04-31-05.png)
+<img src="2023-08-12-12-08-04.png" alt="TCP/IP Model" width=50%/>
 
-In each of the 11 states shown in above table, some specific events are legal.
+**Application Layer:**
 
-Corresponding to every legal event some action may be taken, but if some other event happens, then error is reported.
+The Application layer protocols serve applications on computers, acting as an interface between software and the network. It's the layer where users interact with the network. It's responsible for identifying and establishing the availability of intended communication partners and determining resource availability. Furthermore, it also synchronizes communication and establishes privacy and security boundaries. Some protocols used in this layer are:
 
-Each Connection is always in the CLOSED State Initially.
+- **HTTP:** Hypertext Transfer Protocol is used for transmitting data between clients (like web browsers) and servers, forming the basis for web communication.
+- **FTP:** File Transfer Protocol ensures secure data exchange between devices, often used in large organizations and institutions.
+- **SMTP:** Simple Mail Transfer Protocol standardizes email transmission on the Internet, facilitating communication between servers for sending messages.
+- **DNS:** Domain Name Server maps host names to numerical addresses, crucial for Internet functionality.
 
-It comes out of this state when it does either the passive open (LISTEN) or an active open (CONNECT).
+**Transport Layer:**
 
-A connection is established, if the other side does the opposite and the state becomes ESTABLISHED.
+This layer maintains communication between sender and receiver. At the Transport layer, data is divided into smaller units called segments.  It employs either TCP or UDP. TCP supporting segmentation for large data and UDP being more straightforward for smaller data. 
 
-When the both the sides initiate a connection release the connection is terminated and the state returns to CLOSED state.
+- **TCP:** Transmission Control Protocol breaks down large messages into smaller segments with headers for efficient delivery.
+- **UDP:** User Datagram Protocol is used for simpler, smaller data transfers.
 
+There's also a third protocol called SCTP, which is less common.
 
-# DHCP - Dynamic Host Configuration Protocol
+- **SCTP:** Stream Control Transmission Protocol offers reliable, message-oriented communication. It divides messages into chunks, providing error-checking, reordering, and multiplexing for enhanced data transfer in a more versatile manner than TCP.
 
-**Notes on DHCP**
+**Network Layer:**
 
-- DHCP stands for Dynamic Host Configuration Protocol.
-- It is a network protocol used to automatically assign IP addresses and other network configuration parameters to devices on a network.
-- DHCP is widely used in local area networks (LANs) to simplify the process of IP address management.
-- It operates on the client-server model, where a DHCP server manages a pool of IP addresses and leases them to DHCP clients.
-- The DHCP process involves four main steps: Discover, Offer, Request, and Acknowledge (DORA).
+This layer establishes connections between source and destination computers, with routers helping determine the best path for each packet. It's responsible for logical addressing and routing.
 
-**Understanding DHCP**
+- **Logical Addressing:** IP addresses are assigned to segments to ensure proper routing across networks.
+- **Routing:** Determines the path for packets to reach their destination, not necessary within the same network.
 
-DHCP is essential for the proper functioning of modern networks. Without DHCP, network administrators would need to manually assign IP addresses to each device, which can be time-consuming and prone to errors. DHCP automates this process, making it easier to manage IP address allocation and configuration.
+**Data Link Layer:**
 
-**What DHCP Does:**
+This layer is responsible for the physical transmission of data. It's responsible for the node-to-node delivery of messages. It's also responsible for error detection and correction. It's divided into two sublayers:
 
-1. **IP Address Allocation:** DHCP dynamically assigns IP addresses to devices on a network. When a device joins the network, it sends a DHCP Discover message to find an available IP address. The DHCP server responds with a DHCP Offer, providing the client with an IP address lease.
+- **Logical Link Control (LLC):** This sublayer is responsible for error checking and flow control.
+- **Media Access Control (MAC):** This sublayer is responsible for controlling how devices in a network gain access to a medium and permission to transmit data.
 
-2. **Subnet Mask and Default Gateway:** DHCP not only provides IP addresses but also supplies subnet masks and default gateway information to clients. These parameters are crucial for proper routing of data packets within the network.
+**Physical Layer:**
 
-3. **DNS Server Configuration:** DHCP can also provide clients with the IP addresses of Domain Name System (DNS) servers. This ensures that devices can resolve domain names into IP addresses for internet connectivity and name resolution.
-
-4. **Lease Management:** IP addresses assigned by DHCP are not permanent. Instead, they are leased for a specific duration. Before the lease expires, the client can request a lease renewal from the DHCP server. This allows the network to efficiently manage IP address allocation and adapt to changes in the network.
-
-**How DHCP Works:**
-
-The DHCP process involves the following steps:
-
-1. **Discover:** When a device connects to a network and needs an IP address, it broadcasts a DHCP Discover message on the network. The Discover message asks for an available DHCP server.
-
-2. **Offer:** When a DHCP server receives the Discover message, it checks its pool of available IP addresses. If an address is available, the DHCP server sends a DHCP Offer message to the requesting client, offering the available IP address for lease.
-
-3. **Request:** Upon receiving the DHCP Offer, the client may receive multiple offers from different DHCP servers. It then selects one of the offers and sends a DHCP Request message to the chosen server, indicating its acceptance of the offered IP address.
-
-4. **Acknowledge:** The DHCP server that receives the DHCP Request message acknowledges the client's acceptance by sending a DHCP Acknowledge (ACK) message. This message confirms the IP address lease and provides additional configuration information, such as subnet mask, default gateway, and DNS server addresses.
-
-5. **Lease Renewal:** As the IP address lease approaches its expiration time, the client may request a lease renewal from the DHCP server. If the DHCP server approves the renewal, the client's IP address lease is extended.
-
-6. **Release:** When a device disconnects from the network or no longer needs an IP address, it sends a DHCP Release message to the DHCP server, indicating that it is relinquishing the leased IP address.
-
-
-# Working Principle of FTP
-
-File Transfer Protocol (FTP) is an internet tool provided by TCP/IP that enables the transfer of files between computers. It was first developed by Abhay Bhushan in 1971. FTP allows users to access directories or folders on remote computers and transfer data, software, and text files between different kinds of computers. The end-user in the connection is known as localhost and the server which provides data is known as the remote host. 
-
-### Goals of FTP
-
-- Encourages direct use of remote computers.
-- Shields users from system variations (operating system, directory structures, file structures, etc.).
-- Promotes sharing of files and other types of data.
-
-### FTP Clients
-
-FTP works on a client-server model. The FTP client is a program that runs on the user's computer, enabling them to interact with remote computers and retrieve files. FTP clients use various commands to establish connections, transfer files, and manage the process. Some common commands include `get` (retrieve a file from the server), `mget` (retrieve multiple files), and `ls` (list files available in the current directory of the server).
-
-### Types of FTP Connections
-
-FTP connections can be of two types:
-
-1. **Active FTP Connection:** In this type, the client establishes the command channel, and the server establishes the data channel. When the client requests data, the server initiates the transfer to the client. Active FTP is not the default connection and may encounter issues with firewalls.
-
-2. **Passive FTP Connection:** Here, the client establishes both the data and command channels. When the client requests data, the server sends a random port number to the client, which then establishes the data channel. Passive FTP is the default connection and works better with firewalls.
-
-### Anonymous FTP
-
-Some FTP sites offer anonymous access, where users can access files without providing a username or password. Instead, the username is set to "anonymous," and the password is typically set to the guest's email address. However, anonymous users usually have limited access and cannot navigate through directories.
-
-### How FTP Works
-
-1. FTP connection is established between two systems using the network.
-2. Two communication channels are established: the command channel and the data channel.
-3. The command channel is used to transfer commands and responses between the client and server using the NVT ASCII character set. It uses port number 21.
-4. The data channel is used for actual data transfer and uses port number 20.
-5. The user logs in using credentials or anonymous login (email address).
-6. Once connected, the client can access and transfer files from the server.
-7. The client exits the connection after transferring desired files.
+This layer physically carries bits within frames across links. It's the lowest layer in TCP/IP, with communication occurring via transmission media like cables or airwaves. It's responsible for the physical connection between devices. Likewise, it also defines the electrical and physical specifications for devices. It's the layer where data is converted into binary bits and transmitted over the network.
