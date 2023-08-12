@@ -1,5 +1,7 @@
 # <p align="center"> Unit 1 </p>
 
+> Missing topics: CRC, Sliding Window Protocol, Data Link Layer Protocols
+
 ## Basics
 
 **Computer Network:**
