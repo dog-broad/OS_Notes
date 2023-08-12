@@ -87,3 +87,10 @@ This layer is responsible for the physical transmission of data. It's responsibl
 **Physical Layer:**
 
 This layer physically carries bits within frames across links. It's the lowest layer in TCP/IP, with communication occurring via transmission media like cables or airwaves. It's responsible for the physical connection between devices. Likewise, it also defines the electrical and physical specifications for devices. It's the layer where data is converted into binary bits and transmitted over the network.
+
+
+The Data Link and Physical layers are often combined into a single layer in the TCP/IP model as the Link layer or Network Interface layer/ Network Access layer.
+
+Hence, the TCP/IP model has four layers:
+
+![](2023-08-12-12-12-58.png)
