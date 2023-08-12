@@ -151,3 +151,47 @@ The topmost layer provides access to network services. It manages communication 
 | **Ease of Implementation**     | Practical and directly applicable for Internet-based systems. | Offers a more theoretical framework that may require adaptation for real-world use. |
 | **Adoption and Use**          | Actively used in the operation of the Internet and many modern networks. | Used for educational purposes, standardizing communication concepts across industries. |
 | **Original Intent**           | Addressing real-world Internet communication challenges and needs. | Intended to provide a universal, structured approach to network communication understanding. |
+
+
+
+## Types of Transmission Media
+
+In networking, communication channels / Transmission media are categorized into two main types: guided media and unguided media. These terms refer to the physical pathways through which data signals are transmitted from one point to another. Each type has distinct characteristics that affect their applications and performance in network communication.
+
+**Guided Media:**
+
+Guided media, also known as wired or bounded media, are physical channels that use physical connectors or conductors to transmit signals. 
+
+In simpler terms guided media is a physical medium that uses physical connectors or conductors to transmit signals. These media provide a dedicated pathway for the signals, resulting in more controlled and reliable transmission. Some common types of guided media include:
+
+1. **Twisted Pair Cable:** This is a widely used guided medium for local area networks (LANs). It consists of pairs of insulated copper wires twisted together to reduce interference. Twisted pair cables are further categorized into unshielded twisted pair (UTP) and shielded twisted pair (STP), with varying levels of protection against external interference.
+
+<img src="2023-08-12-12-36-29.png" alt="Twisted Pair Cable" width=40% />
+
+2. **Coaxial Cable:** Coaxial cables consist of a central copper conductor surrounded by layers of insulation, metallic shield, and an outer protective sheath. They are often used for cable television and broadband internet connections.
+
+<img src="2023-08-12-12-38-10.png" alt="Coaxial Cable" width=40% />
+
+3. **Fiber Optic Cable:** Fiber optic cables use thin strands of glass or plastic to transmit data using light signals. They offer high bandwidth, low signal loss, and resistance to electromagnetic interference. Fiber optics are commonly used for long-distance communication and high-speed data transmission.
+
+<img src="2023-08-12-12-39-35.png" alt="Fiber Optic Cable" width=40% />
+
+**Unguided Media:**
+
+Unguided media, also known as wireless or unbounded media, use the air or atmosphere as a medium for signal transmission. These media provide mobility and flexibility but can be more susceptible to interference and attenuation. Some common types of unguided media include:
+
+1. **Radio Waves:** Radio waves are electromagnetic signals used for wireless communication, including radio broadcasts, Wi-Fi networks, and cellular networks. They have varying frequencies, with longer wavelengths for broadcasting and shorter wavelengths for data transmission.
+
+2. **Microwaves:** Microwaves have higher frequencies than radio waves and are commonly used for point-to-point communication in microwave towers. They are also utilized in satellite communication and microwave ovens.
+
+3. **Infrared Waves:** Infrared waves are used for short-range wireless communication, such as remote controls, infrared data transfer between devices, and some wireless LAN technologies.
+
+4. **Light Waves:** Visible light can be modulated to transmit data, a concept known as Visible Light Communication (VLC). LEDs (Light Emitting Diodes) are used to send data using light waves, offering secure and high-speed data transfer within a limited area.
+
+**Comparison:**
+
+- **Propagation:** Guided media have a defined physical pathway, while unguided media rely on air or space for signal propagation.
+- **Interference:** Guided media generally experience less interference compared to unguided media, which are prone to atmospheric and environmental factors.
+- **Distance:** Guided media often have distance limitations due to signal degradation, while unguided media can cover larger distances depending on the frequency used.
+- **Mobility:** Unguided media offer more mobility and flexibility since they are not constrained by physical cables.
+- **Bandwidth:** Fiber optic cables among guided media and certain radio frequency ranges in unguided media offer high bandwidth capabilities.
