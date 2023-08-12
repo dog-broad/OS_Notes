@@ -237,7 +237,7 @@ The design issues within the data link layer are as follows:
 
 
 
-<p align="center"> Unit 2 </p>
+# <p align="center"> Unit 2 </p>
 
 
 ## Preliminary Explanation
