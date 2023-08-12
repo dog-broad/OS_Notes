@@ -302,3 +302,42 @@ The channel utilization factor (G) is the ratio of the time slots when the chann
 
 **Conclusion:**
 ALOHA offers a simple and decentralized approach to sharing a communication channel. Pure Aloha lacks efficiency due to potential collisions, while Slotted Aloha improves efficiency by introducing time slots. Both variations have their advantages and limitations, making them suitable for different network scenarios based on collision probabilities and channel utilization.
+
+
+## CSMA
+
+**Carrier Sense Multiple Access (CSMA)**
+
+Carrier Sense Multiple Access (CSMA) is a media access protocol used to manage access to a shared communication channel by multiple stations. It employs carrier sensing, where stations check the channel's status (idle or busy) before attempting to transmit data. CSMA aims to reduce the likelihood of collisions on the transmission medium, thereby improving overall network efficiency.
+
+**CSMA Access Modes:**
+
+1. **1-Persistent:**
+   In this mode, each node continuously senses the channel. If the channel is idle, the station immediately sends data. If the channel is busy, the station waits and continues to monitor the channel until it becomes idle, then broadcasts the frame unconditionally.
+
+2. **Non-Persistent:**
+   In this mode, before transmitting data, each node checks the channel's status. If the channel is inactive, the station immediately sends the data. If the channel is busy, the station waits for a random time and then rechecks the channel to transmit frames.
+
+3. **P-Persistent:**
+   A combination of 1-Persistent and Non-Persistent modes, where stations sense the channel. If the channel is inactive, a station has a probability 'P' to send a frame immediately. If the frame is not sent, the station waits for a probability 'q' (where q = 1 - p) of random time before retrying.
+
+4. **O-Persistent:**
+   In this method, stations determine their priority before transmitting. If the channel is inactive, each station waits for its turn to retransmit the data, maintaining a sense of order.
+
+### CSMA/CD
+
+**CSMA/CD (Carrier Sense Multiple Access/Collision Detection):**
+CSMA/CD is a protocol used in Ethernet networks. Stations first sense the channel to check for its availability. If the channel is idle, a station begins transmitting. While transmitting, the station continues to monitor the channel for collisions. If a collision is detected, the station sends a jam or stop signal, terminates transmission, waits for a random time, and then retransmits.
+
+### CSMA/CA
+
+**CSMA/CA (Carrier Sense Multiple Access/Collision Avoidance):**
+CSMA/CA is another Ethernet protocol, aiming to avoid collisions. Stations transmit data frames and wait for acknowledgments. If only their own acknowledgment is received, it indicates successful transmission. If multiple acknowledgments (including their own and others due to collisions) are received, a collision is detected.
+
+**CSMA/CA Collision Avoidance Methods:**
+
+1. **Interframe Space (IFS):** Stations wait for the channel to be idle, then wait for an additional time (IFS) before sending data. IFS time can define priority.
+
+2. **Contention Window:** Time is divided into slots. When a station is ready to transmit, it selects a random slot as wait time. If the channel remains busy, the station waits and retries using the same mechanism.
+
+3. **Acknowledgment:** If no acknowledgment is received, the sender retries the transmission.
