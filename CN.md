@@ -131,4 +131,23 @@ Layer six prepares data for transmission. It encodes, encrypts, compresses, and 
 
 The topmost layer provides access to network services. It manages communication between applications and users, using protocols like HTTP, FTP, POP, SMTP, and DNS to deliver meaningful data and control the sequence of activities within applications. It's the layer where users interact with the network.
 
-In summary, the OSI Reference Model is a structured representation of how communication occurs in a network. It encompasses seven layers, each with its unique role, working together to enable efficient, error-free, and meaningful communication between devices and applications.
+
+
+## TCP/IP vs OSI Model
+
+| **Aspect**                     | **TCP/IP Model**                               | **OSI Model**                                   |
+|-------------------------------|-----------------------------------------------|------------------------------------------------|
+| **Definition**                | Practical, real-world model designed for the original Internet design, directly used in the Internet.  | Conceptual model, providing a theoretical framework for understanding network communication. |
+| **Number of Layers**          | Four layers: Application, Transport, Network, and Physical. | Seven layers: Physical, Data Link, Network, Transport, Session, Presentation, and Application. |
+| **Layers' Alignment**         | Not a perfect match with OSI layers. | Aligned more closely with theoretical communication functions. |
+| **Development**               | Evolved from real-world Internet needs. | Developed as a standardized, conceptual framework for universal understanding. |
+| **Scope**                     | Primarily focused on practical Internet communication and networking. | Theoretical model applicable to any network communication environment. |
+|**Approach**                   | It is horizontally approached.| It is vertically approached.| 
+|**Reliability**                | It is more reliable than OSI Model.| It is less reliable than TCP/IP Model.| 
+| **Rigor**                     | Less formal and theoretical. | More structured and theoretical. |
+| **Protocols**                 | Fewer explicitly defined protocols, but commonly used ones like TCP, UDP, and IP. | Each layer has specific, standardized protocols. |
+| **Layer Nomenclature**        | Named after the protocols at those layers. | Named with descriptive functions to enhance understanding. |
+| **Conceptual Emphasis**       | Emphasizes practical implementation of Internet communication and networking. | Focuses on the theoretical concept of communication and network layers. |
+| **Ease of Implementation**     | Practical and directly applicable for Internet-based systems. | Offers a more theoretical framework that may require adaptation for real-world use. |
+| **Adoption and Use**          | Actively used in the operation of the Internet and many modern networks. | Used for educational purposes, standardizing communication concepts across industries. |
+| **Original Intent**           | Addressing real-world Internet communication challenges and needs. | Intended to provide a universal, structured approach to network communication understanding. |
