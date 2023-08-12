@@ -195,3 +195,39 @@ Unguided media, also known as wireless or unbounded media, use the air or atmosp
 - **Distance:** Guided media often have distance limitations due to signal degradation, while unguided media can cover larger distances depending on the frequency used.
 - **Mobility:** Unguided media offer more mobility and flexibility since they are not constrained by physical cables.
 - **Bandwidth:** Fiber optic cables among guided media and certain radio frequency ranges in unguided media offer high bandwidth capabilities.
+
+
+## Data Link Layer and its Issues
+
+The data link layer, the second layer after the physical layer, plays a crucial role in maintaining the data link between two hosts or nodes. Before delving into the design issues within the data link layer, it's important to understand its sub-layers and their functions.
+
+The data link layer is divided into two sub-layers:
+
+**Logical Link Control Sub-layer (LLC):**
+The LLC provides the logical framework for the data link, encompassing synchronization, flow control, and error checking functions. Its functions include:
+- **Error Recovery:** Handling errors that occur during transmission.
+- **Flow Control Operations:** Managing the pace of data transfer to prevent congestion.
+- **User Addressing:** Enabling proper addressing of users within the network.
+
+**Media Access Control Sub-layer (MAC):**
+As the second sub-layer, the MAC controls flow and multiplexing for the transmission medium, meaning it decides which device controls the shared communication channel. Its functions include:
+- **Access Control:** Regulating access to the shared transmission medium.
+- **Unique Addressing:** Assigning unique addresses to devices connected to the Local Area Network (LAN).
+- **Error Detection:** Identifying errors that occur during transmission.
+
+
+The data link layer acts as an intermediary between the network layer. It primarily facilitates the transfer of data from the network layer on the sending machine to the network layer on the destination machine. This transfer occurs via the Data Link Layer (DLL), ensuring seamless communication between the two layers.
+
+The design issues within the data link layer are as follows:
+
+1. **Frame Synchronization:**
+   In data communication, the source machine transmits data in the form of frames to the destination machine. Ensuring effective communication requires accurate identification of the beginning and end of each frame. This synchronization is crucial for the destination machine to recognize and process frames correctly.
+
+2. **Flow Control:**
+   Flow control mechanisms are vital to prevent data frame overflow at the receiver's end. To maintain efficient communication, the source machine must regulate its data frame transmission rate based on the capacity of the destination machine to accept and process the incoming frames.
+
+3. **Error Control:**
+   Error control mechanisms focus on detecting and preventing frame duplication during transmission. Since errors may be introduced during data transfer from the source to the destination machine, it's essential for the destination machine to identify and correct these errors to ensure accurate data reception.
+
+4. **Congestion Control:**
+   Congestion control mechanisms are crucial for preventing network congestion, which occurs when the network is unable to handle the volume of data being transmitted. Congestion control mechanisms help regulate the flow of data to prevent network overload and ensure efficient communication.
