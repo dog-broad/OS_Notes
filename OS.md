@@ -182,6 +182,8 @@ All these system calls are used to perform various operations on the system. The
 
 ## Types of System Programs
 
+System Programs are programs that provide essential functionality to the operating system. They bridge the gap between the user interface and the underlying hardware and system services.
+
 System programs provide essential functionality that enhances the user experience and enables efficient interaction between users and the computer system. These programs bridge the gap between the user interface and the underlying hardware and system services. There are several types of system programs, each serving specific purposes:
 
 **1. File Manipulation Programs**
