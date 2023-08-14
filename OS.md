@@ -305,3 +305,9 @@ A real-time operating system guarantees timely execution of tasks, critical for 
 **Demerits:**
 - Limited flexibility and adaptability due to stringent timing requirements.
 - Complexity in design and debugging real-time applications.
+
+Different types of Real-Time Operating Systems:
+
+- **Hard Real-Time Operating System:** A hard real-time operating system guarantees that critical tasks are executed within a specified time frame. It is suitable for applications that require precise timing and execution of tasks. In simple words, it guarantees that all tasks will be completed within the specified time frame.
+- **Soft Real-Time Operating System:** A soft real-time operating system guarantees that critical tasks are executed within a specified time frame, but it allows some flexibility. It is suitable for applications that require precise timing and execution of tasks, but can tolerate occasional delays. In simple words, it guarantees that critical tasks will be completed within the specified time frame, but it allows some flexibility.
+- **Firm Real-Time Operating System:** A firm real-time operating system guarantees that critical tasks are executed within a specified time frame, but it allows some flexibility. It is suitable for applications that require precise timing and execution of tasks, but can tolerate occasional delays. However, it does not guarantee that all tasks will be completed within the specified time frame. In simple words, it guarantees that critical tasks will be completed within the specified time frame, but it does not guarantee that all tasks will be completed within the specified time frame.
