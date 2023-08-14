@@ -177,3 +177,37 @@ Communication system calls facilitate inter-process communication (IPC) between 
 - `connect()`: Initiate a connection to another socket.
 
 All these system calls are used to perform various operations on the system. They are used to create, manage, and terminate processes, perform file operations, interact with devices, retrieve and set system information, and communicate with other processes.
+
+
+
+## Types of System Programs
+
+System programs provide essential functionality that enhances the user experience and enables efficient interaction between users and the computer system. These programs bridge the gap between the user interface and the underlying hardware and system services. There are several types of system programs, each serving specific purposes:
+
+**1. File Manipulation Programs**
+
+File manipulation programs manage system files and perform operations such as creation, deletion, copying, renaming, and printing of files. They provide users with the ability to organize and manage their data. Examples of file manipulation programs include file managers, file browsers, and command-line utilities like `cp`, `mv`, and `rm`.
+
+**2. Status Information Programs**
+
+Status information programs provide users with current or historical system status details. These programs offer data about the system's date, time, available memory, disk space usage, and currently logged-in users. Users can access this information to monitor and manage system resources effectively.
+
+**3. File Modification Programs**
+
+File modification programs are used to edit or modify the content of files. Text editors and other document editing tools fall under this category. These programs enable users to create, edit, and save various types of documents, ensuring data flexibility and user-friendly document management.
+
+**4. Programming Language Support Programs**
+
+Programming language support programs assist developers in creating and managing software applications. Compilers, interpreters, debuggers, and development environments fall into this category. They help developers write, debug, and optimize code in various programming languages, making software development more efficient.
+
+**5. Program Loading and Execution Programs**
+
+Program loading and execution programs handle the loading of programs into memory and their execution. Loaders and linkers are examples of such programs. They ensure that programs are correctly loaded into memory, linked with libraries, and executed according to the user's intent.
+
+**6. Communication Programs**
+
+Communication programs facilitate interaction between the computer system and external networks or devices. Web browsers, email clients, FTP clients, and messaging applications fall under this category. These programs enable users to access and exchange information over the internet or other communication channels.
+
+**7. Application Programs**
+
+Application programs are diverse and cater to various user needs. These programs provide specific functionalities, such as word processing, spreadsheet creation, database management, gaming, graphics editing, and more. They serve as tools for users to accomplish specific tasks or activities efficiently.
