@@ -97,7 +97,7 @@ The modular approach involves designing an operating system with a modular kerne
 The microkernel approach involves designing an operating system by moving non-essential kernel components into user-space and implementing them as separate user programs and services. in simple words, the microkernel approach involves moving non-essential services into user-level processes.
 The microkernel itself provides only essential services, such as process management, memory management, and inter-process communication.
 
-## Key Differences:
+**Key Differences:**
 
 1. **Kernel Size:** In the modular approach, the kernel contains essential modules and services, while in the microkernel approach, the kernel is minimal and contains only core functions.
    
