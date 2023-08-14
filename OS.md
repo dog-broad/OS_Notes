@@ -36,6 +36,48 @@ An operating system orchestrates the various components of a computer system, en
 
 8. **Error Detection:** Operating systems identify and respond to errors, including hardware and software faults, minimizing damage to ongoing programs and ensuring system stability.
 
-## Conclusion
 
-Operating systems fulfill critical objectives by providing efficiency, hardware abstraction, convenience, and resource management. They perform functions like processor, device, memory, and file management, ensuring system security, accounting, performance monitoring, and error handling. These functions collectively allow users to interact seamlessly with computer systems while maximizing performance and stability.
+
+## Design Approaches in Operating System
+
+Operating systems can be implemented using various design structures that dictate how common components are integrated and merged into the kernel. The design approaches in operating systems include the following structures:
+
+### Simple Structure
+Simple structured operating systems are small, uncomplicated, and lack a well-defined structure. There is minimal separation between interfaces and functionality levels. An example of such an operating system is MS-DOS. In this structure, application programs can directly access basic I/O functions. However, if a user program fails, the entire system crashes due to the lack of isolation between modules.
+
+![Simple Structure](2023-08-14-22-45-09.png)
+
+**Advantages:**
+- Superior application performance due to limited interfaces.
+- Simplicity for kernel development.
+
+**Disadvantages:**
+- Complex structure due to lack of clear module boundaries.
+- No data concealment in the operating system.
+
+### Micro-Kernel Structure
+The micro-kernel structure involves eliminating non-essential kernel components and implementing them as user programs and systems. This results in a smaller kernel known as a micro-kernel. New services are added to userspace instead of the kernel, making it more secure and reliable. If a service fails, the rest of the OS remains unaffected. Mac OS is an example of an operating system following this structure.
+
+**Advantages:**
+- Portability across platforms.
+- Effective testing due to small microkernels.
+
+**Disadvantages:**
+- Performance degradation with increased inter-module communication.
+
+### Layered Structure
+The layered structure divides an operating system into sections, or layers, with control retained over the system. Hardware resides in the bottom layer (layer 0), while the user interface is in the top layer (layer N). Each layer only relies on functions from lower-level layers, simplifying debugging and testing. UNIX is an example of an operating system using the layered structure.
+
+![](2023-08-14-22-47-46.png)
+
+**Advantages:**
+- Easy OS improvement by changing a layer's implementation without affecting others.
+- Simplified debugging and system verification.
+
+**Disadvantages:**
+- Reduced application performance compared to a simple structure.
+- Requires careful planning of layers.
+
+### Modular Structure or Approach
+The modular structure, considered the best approach, involves designing a modular kernel. It resembles a layered structure with specified and protected interfaces for each kernel module. Modules can call any other module, making it more flexible. The kernel contains only essential components, and additional services are dynamically loaded into the kernel as modules during runtime or boot time.
+
