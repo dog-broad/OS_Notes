@@ -68,7 +68,7 @@ The micro-kernel structure involves eliminating non-essential kernel components 
 ### Layered Structure
 The layered structure divides an operating system into sections, or layers, with control retained over the system. Hardware resides in the bottom layer (layer 0), while the user interface is in the top layer (layer N). Each layer only relies on functions from lower-level layers, simplifying debugging and testing. UNIX is an example of an operating system using the layered structure.
 
-![](2023-08-14-22-47-46.png)
+<img src="2023-08-14-22-47-46.png" alt="Layered Structure" width="50%"/>
 
 **Advantages:**
 - Easy OS improvement by changing a layer's implementation without affecting others.
