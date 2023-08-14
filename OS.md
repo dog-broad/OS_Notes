@@ -116,3 +116,64 @@ The microkernel itself provides only essential services, such as process managem
 8. **Development:** The modular approach is easier to develop due to its simple design, while the microkernel approach is more complex to develop due to its minimalistic design.
 
 In summary, the modular approach focuses on flexible module interactions within the kernel, while the microkernel approach prioritizes isolating non-essential services into separate user-level processes for enhanced security and system stability. Both approaches have their advantages and trade-offs, and the choice depends on the specific goals and requirements of the operating system being designed.
+
+
+
+## Types of System Calls
+
+A system call is a mechanism that allows a program to request services from the kernel of an operating system. These services can include operations such as creating, managing processes, file operations, device operations, and communication. System calls provide an interface between user-level programs and the kernel. Here are the various types of system calls:
+
+**1. Process Control System Calls**
+
+Process control system calls are used to manage processes, which are running instances of programs. These system calls allow programs to create new processes, terminate existing ones, and manage their execution states. Some examples of process control system calls include:
+
+- `fork()`: Create a new process.
+- `exec()`: Replace the current process with a new process.
+- `exit()`: Terminate the calling process.
+- `wait()`: Wait for a child process to terminate.
+- `kill()`: Send a signal to a specified process.
+- `nice()`: Change the priority of a process.
+
+**2. File Management System Calls**
+
+File management system calls enable programs to perform various operations on files and directories. These operations include creating, opening, reading, writing, and closing files. Some examples of file management system calls are:
+
+- `open()`: Open a file for reading or writing.
+- `read()`: Read data from an open file.
+- `write()`: Write data to an open file.
+- `close()`: Close an open file.
+- `create()`: Create a new file.
+- `delete()`: Delete an existing file.
+- `seek()`: Change the current position in a file.
+
+**3. Device Management System Calls**
+
+Device management system calls are used to interact with devices attached to the computer, such as printers, disks, and network interfaces. These system calls allow programs to perform input and output operations on devices. Examples of device management system calls include:
+
+- `read()`: Read data from a device.
+- `write()`: Write data to a device.
+- `ioctl()`: Control various device parameters.
+- `open()`: Open a device for communication.
+- `close()`: Close a device.
+
+**4. Information Maintenance System Calls**
+
+Information maintenance system calls provide ways to retrieve and set system information, such as time and date settings, system configuration, and process-related information. Examples of information maintenance system calls include:
+
+- `getpid()`: Get the process ID of the current process.
+- `getppid()`: Get the parent process ID.
+- `time()`: Get the current time.
+- `setuid()`: Set the user ID of the calling process.
+- `getuid()`: Get the user ID of the calling process.
+
+**5. Communication System Calls**
+
+Communication system calls facilitate inter-process communication (IPC) between different processes. These system calls are used to establish connections, send messages, and synchronize processes. Examples of communication system calls include:
+
+- `socket()`: Create a new communication endpoint (socket).
+- `bind()`: Bind a name to a socket.
+- `send()`: Send data to another process.
+- `receive()`: Receive data from another process.
+- `connect()`: Initiate a connection to another socket.
+
+All these system calls are used to perform various operations on the system. They are used to create, manage, and terminate processes, perform file operations, interact with devices, retrieve and set system information, and communicate with other processes.
