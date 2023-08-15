@@ -488,3 +488,56 @@ Message passing allows processes to communicate without shared memory. It is par
   - The client process sends a request to the server process, which processes the request and sends a response back to the client process.
   - The client process can be a user process or another server process.
   - The server process can be a user process or a system process.
+
+
+
+## Process Scheduling
+
+Process scheduling is a mechanism that allows the operating system to allocate CPU time to processes. It determines which process will run next when multiple processes are ready to run. The goal of process scheduling is to maximize CPU utilization and system throughput while ensuring fairness and responsiveness.
+
+**Types of Process Scheduling:**
+
+1. **Long-Term Scheduling:**
+   - Also known as job scheduling, it determines which processes should be admitted to the system for processing.
+   - It selects processes from the pool of processes residing on the disk and loads them into memory for execution.
+   - It is performed when a new process is created or an existing process is terminated.
+   - It is a relatively slow process as it involves I/O operations and memory allocation.
+
+2. **Short-Term Scheduling:**
+   - Also known as CPU scheduling, it determines which process should be executed next.
+   - It selects processes from the pool of processes residing in memory and allocates CPU time to them.
+   - It is performed when a process is blocked, terminated, or switches from running to waiting state.
+   - It is a relatively fast process as it does not involve I/O operations or memory allocation.
+
+3. **Medium-Term Scheduling:**
+    - Also known as swapping, it determines which processes should be swapped out of memory and onto the disk.
+    - It selects processes from the pool of processes residing in memory and moves them to the disk.
+    - It is performed when the system is low on memory.
+    - It is a relatively slow process as it involves I/O operations and memory allocation.
+
+
+**Scheduling Algorithms:**
+
+1. **First Come First Serve (FCFS):**
+   - Also known as FIFO (First In First Out), it allocates CPU time to processes in the order they arrive in the ready queue.
+   - It is a non-preemptive algorithm as the process currently using the CPU cannot be preempted. Preemeted means to stop the process.
+   - It is easy to implement and ensures fairness as processes are executed in the order they arrive.
+   - It is not suitable for time-sharing systems as it does not prioritize short processes.
+
+2.  **Shortest Job First (SJF):**
+   - Also known as Shortest Process Next (SPN), it allocates CPU time to the process with the shortest expected processing time.
+   - It is a non-preemptive algorithm as the process currently using the CPU cannot be preempted.
+   - It is optimal in terms of average waiting time as it minimizes the waiting time of short processes.
+   - It is not suitable for time-sharing systems as it does not prioritize short processes.
+
+3. **Priority Scheduling:**
+   - It allocates CPU time to processes based on their priority.
+   - It is a preemptive algorithm as the process currently using the CPU can be preempted.
+   - It is suitable for time-sharing systems as it prioritizes short processes.
+   - It can lead to starvation of low-priority processes if high-priority processes are continually added. Meaning, low-priority processes may not get CPU time when high-priority processes are added.
+
+4. **Round Robin (RR):**
+   - It allocates CPU time to processes in a circular fashion.
+   - It is a preemptive algorithm as the process currently using the CPU can be preempted.
+   - It is suitable for time-sharing systems as it prioritizes short processes.
+   - It can lead to high average waiting time if the time quantum is too large.
