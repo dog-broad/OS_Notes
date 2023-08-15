@@ -313,3 +313,43 @@ Different types of Real-Time Operating Systems:
 - **Hard Real-Time Operating System:** A hard real-time operating system guarantees that critical tasks are executed within a specified time frame. It is suitable for applications that require precise timing and execution of tasks. In simple words, it guarantees that all tasks will be completed within the specified time frame.
 - **Soft Real-Time Operating System:** A soft real-time operating system guarantees that critical tasks are executed within a specified time frame, but it allows some flexibility. It is suitable for applications that require precise timing and execution of tasks, but can tolerate occasional delays. In simple words, it guarantees that critical tasks will be completed within the specified time frame, but it allows some flexibility.
 - **Firm Real-Time Operating System:** A firm real-time operating system guarantees that critical tasks are executed within a specified time frame, but it allows some flexibility. It is suitable for applications that require precise timing and execution of tasks, but can tolerate occasional delays. However, it does not guarantee that all tasks will be completed within the specified time frame. In simple words, it guarantees that critical tasks will be completed within the specified time frame, but it does not guarantee that all tasks will be completed within the specified time frame.
+
+
+
+
+# <p align="center"> Unit 2 </p>
+
+## Process and Process Life Cycle
+
+A process in an operating system represents a program in execution, with its own memory space and resources. The process life cycle describes the various stages that a process goes through during its execution. While specific states and terminology may vary across different operating systems, the general process life cycle consists of the following stages:
+
+![](2023-08-15-07-31-35.png)
+
+1. **Start:**
+   - This is the initial state when a process is first created or launched.
+   - Resources such as memory space and system structures are allocated to the process.
+   - The process is prepared to execute its instructions.
+
+2. **Ready:**
+   - In the ready state, the process is waiting to be assigned to a processor for execution.
+   - The operating system's scheduler manages the process queue and determines which process will be allocated the CPU next.
+   - Processes in this state are capable of running but are waiting for CPU time.
+
+3. **Running:**
+   - Once a process is selected by the scheduler to run, it enters the running state.
+   - The processor executes the instructions of the selected process.
+   - The process uses the CPU to perform its operations and computations.
+   - If the process is interrupted, it moves back to the ready state.
+
+4. **Waiting:**
+   - A process moves to the waiting state if it needs to wait for a certain event or resource.
+   - This can include waiting for user input, waiting for a specific condition to be met, or waiting for I/O operations.
+   - While in this state, the process is blocked, and the operating system may allocate CPU time to another process.
+   - Once the event or resource is available, the process moves back to the ready state.
+
+5. **Terminated or Exit:**
+   - When a process completes its execution or is terminated by the operating system, it enters the terminated state.
+   - Resources used by the process, such as memory and open files, are released.
+   - The process waits to be removed from main memory and other system structures.
+
+It's important to note that the sequence of these states may not always be linear, as a process can transition between states based on its execution needs and the activities of other processes. The operating system's scheduler plays a crucial role in managing these transitions and determining which process to execute next.
