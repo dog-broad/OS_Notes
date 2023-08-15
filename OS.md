@@ -353,3 +353,72 @@ A process in an operating system represents a program in execution, with its own
    - The process waits to be removed from main memory and other system structures.
 
 It's important to note that the sequence of these states may not always be linear, as a process can transition between states based on its execution needs and the activities of other processes. The operating system's scheduler plays a crucial role in managing these transitions and determining which process to execute next.
+
+
+## Process Vs. Thread
+
+| **S.NO** | **Process**                                                | **Thread**                                                  |
+|----------|------------------------------------------------------------|-------------------------------------------------------------|
+| 1.       | A process refers to any program that is currently in execution. | A thread is a smaller unit of a process.                  |
+| 2.       | Processes take more time to terminate as they have their own resources and need to release them properly. | Threads take less time to terminate as they share resources with other threads in the same process. |
+| 3.       | Creating a process takes more time due to the allocation of separate resources. | Creating a thread takes less time as it shares resources with the parent process. |
+| 4.       | Context switching between processes is relatively slower, involving more overhead. | Context switching between threads is faster since they share resources and require fewer changes. |
+| 5.       | Processes are less efficient in terms of communication, often requiring inter-process communication mechanisms. | Threads are more efficient in terms of communication as they can directly share data within the process. |
+| 6.       | Multiprogramming involves managing multiple processes.    | Threads do not require multiple programs for execution; they can exist within a single process. |
+| 7.       | Processes are isolated from each other and do not share memory. | Threads within the same process share memory and resources. |
+| 8.       | Processes are considered heavyweight due to their resource allocation. | Threads are lightweight since they share code, data, and resources with other threads in the process. |
+| 9.       | Process switching involves using an interface in the operating system. | Thread switching does not require calling the operating system and causes fewer interrupts to the kernel. |
+| 10.      | If one process is blocked, it does not impact the execution of other processes. | If a user-level thread is blocked, it can block all other user-level threads within the same process. |
+| 11.      | A process has its own Process Control Block, Stack, and Address Space. | Threads within a process share the parent process's PCB, have their own Thread Control Block and Stack, and use the common address space. |
+| 12.      | Changes to the parent process do not affect child processes. | Threads within a process share resources, so changes to one thread can affect the behavior of other threads in the same process. |
+| 13.      | System calls are involved in creating, managing, and terminating processes. | Threads can be created using APIs and do not require system calls for management within a process. |
+| 14.      | Processes do not share data with each other.             | Threads can share data directly with other threads within the same process. |
+
+
+
+## Process Control Block (PCB)
+
+A Process Control Block (PCB) is a data structure used by the operating system to store information about a process. It contains information about the process's execution status, memory usage, and resource requirements. The PCB is also known as the Task Control Block (TCB).
+
+## Structure of the Process Control Block
+
+The Process Control Block (PCB) is a vital data structure in an operating system that holds various data items essential for efficient process management. The PCB's structure and content play a critical role in managing processes effectively. The diagram below illustrates the components of a PCB:
+
+![](2023-08-15-07-41-01.png)
+
+The PCB contains the following information about a process:
+
+1. **Process State:**
+   - Represents the current state of the process (new, ready, running, waiting, terminated).
+
+2. **Process Number:**
+   - Unique identifier assigned to each process, allowing the system to distinguish between processes.
+
+3. **Program Counter:**
+   - Holds the address of the next instruction to be executed within the process.
+
+4. **Registers:**
+   - Stores various registers used by the process, such as accumulators, index registers, stack pointers, and general-purpose registers.
+
+5. **List of Open Files:**
+   - Contains references to files that are associated with the process.
+
+6. **CPU Scheduling Information:**
+   - Includes details about process priority, pointers to scheduling queues, and other scheduling-related parameters.
+
+7. **Memory Management Information:**
+   - Holds memory-related information, such as page tables or segment tables (depending on the memory system used), base and limit registers, and more.
+
+8. **I/O Status Information:**
+   - Encompasses a list of I/O devices used by the process and information about open files.
+
+9. **Accounting Information:**
+   - Stores various accounting details, including time limits, process numbers, account numbers, and the amount of CPU time used.
+
+The location of the PCB is crucial for security and efficient management:
+
+- **Protected Memory Area:**
+  - The PCB is stored in a memory region that is protected from normal user access to prevent unauthorized modifications.
+  
+- **Kernel Stack:**
+  - In some operating systems, the PCB is placed at the beginning of the kernel stack allocated for the process. This positioning ensures the PCB's safety and accessibility during the process's execution.
