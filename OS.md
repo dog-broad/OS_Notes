@@ -422,3 +422,63 @@ The location of the PCB is crucial for security and efficient management:
   
 - **Kernel Stack:**
   - In some operating systems, the PCB is placed at the beginning of the kernel stack allocated for the process. This positioning ensures the PCB's safety and accessibility during the process's execution.
+
+
+
+## Inter-Process Communication (IPC)
+
+Inter-Process Communication (IPC) is a mechanism that enables processes to communicate and synchronize with each other within an operating system. It's essential for scenarios where multiple processes need to share information or collaborate on tasks. There are two primary types of processes:
+
+1. **Independent Processes:**
+   - These processes do not influence or get influenced by other processes.
+   
+2. **Cooperating Processes:**
+   - These processes can impact and be impacted by other processes. They engage in inter-process communication.
+
+The need for inter-process communication arises due to various factors:
+
+- Processes share data when multiple processes concurrently access a particular file or resource.
+- Dividing a large task into smaller tasks executed concurrently speeds up system functioning. Inter-process communication is crucial in a multiprocessor environment.
+- Modules within a system may require sharing information to accomplish tasks.
+- Running multiple processes simultaneously enhances user experience and system responsiveness.
+
+**Types of IPC:**
+
+1. **Shared Memory:**
+   - In this method, processes communicate through a shared memory area. Both processes can access and modify this shared memory.
+   - Useful for high-speed communication and data sharing.
+   - Commonly used in producer-consumer scenarios, where one process generates data and another consumes it.
+   - Requires synchronization to prevent data inconsistency issues.
+
+2. **Message Passing:**
+   - This method facilitates communication and synchronization between processes that do not share memory space.
+   - Utilized in distributed systems where processes are on separate computers connected by a network.
+   - Involves two fundamental operations: send(message) and receive(message).
+   - Messages can be of fixed or variable size.
+
+**Shared Memory IPC:**
+
+Shared memory communication involves two processes interacting with a common memory region. This region resides in the address space of the processes involved.
+
+- **Working:**
+  - Process P1 writes data into the shared memory region.
+  - Process P2 reads the data from the same shared memory region.
+  - Both processes can perform these actions concurrently.
+
+- **Example: Producer-Consumer Problem:**
+  - In scenarios where a producer creates goods consumed by a consumer, shared memory acts as a buffer for their interaction.
+  - Ensures synchronization between producer and consumer processes to avoid consuming empty buffer or overfilling it.
+
+**Message Passing IPC:**
+
+Message passing allows processes to communicate without shared memory. It is particularly suitable for distributed systems.
+
+- **Basic Operations:**
+  - `send(message)`: Used by a process to send a message to another process.
+  - `receive(message)`: Used by a process to receive a message from another process.
+
+- **Message Sizes:**
+  - Messages can be of fixed or variable size.
+
+- **Communication Link:**
+  - Implemented through communication links, serving as the medium for message exchange.
