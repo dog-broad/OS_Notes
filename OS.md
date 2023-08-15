@@ -541,3 +541,108 @@ Process scheduling is a mechanism that allows the operating system to allocate C
    - It is a preemptive algorithm as the process currently using the CPU can be preempted.
    - It is suitable for time-sharing systems as it prioritizes short processes.
    - It can lead to high average waiting time if the time quantum is too large.
+
+
+
+# <p align="center"> Unit 3 </p>
+
+## Deadlock
+
+A deadlock in an operating system refers to a situation where multiple processes are trapped in a state of waiting for an event that will never occur, leading to a standstill in their execution. Deadlocks can occur due to various reasons, including resource contention and circular wait. They can be prevented or mitigated using effective resource utilization and preemptive strategies.
+
+**Deadlock Scenario**
+
+Imagine two processes, Process_1 and Process_2, as depicted in Figure 1:
+
+<img src="2023-08-15-18-04-06.png" alt="Deadlock Scenario" width="50%"/>
+
+- Process_1 holds Resource_1 and is awaiting Resource_2.
+- Process_2 holds Resource_2 and is awaiting Resource_1.
+
+In this state, both the processes are waiting for resources held by each other, and neither can proceed. This situation is known as a deadlock.
+
+**Necessary Conditions for Deadlock**
+
+Deadlock arises due to four necessary conditions:
+
+1. **Mutual Exclusion:**
+   - Resources can only be used by one process at a time.
+   - Mutex (binary semaphore) ensures exclusive access to shared resources.
+   - Deadlocks commonly occur with resources that require exclusive access, like printers or tape drives.
+   - <img src="2023-08-15-18-05-26.png" alt="Mutual Exclusion" width="50%"/>
+
+2. **No Preemption:**
+   - Processes cannot forcibly take resources from others.
+   - A process that is blocked and waiting for resources will retain the ones it holds.
+   - Preemption can prevent deadlocks by forcing processes to relinquish resources.
+
+3. **Hold and Wait:**
+   - Processes hold resources while simultaneously waiting for others.
+   - A process can request resources while holding others.
+   - In the example above, Process_1 holds Resource_1 and requests Resource_2, while Process_2 holds Resource_2 and requests Resource_1.
+   - <img src="2023-08-15-18-05-45.png" alt="Hold and Wait" width="50%"/>
+
+4. **Circular Wait:**
+   - Processes form a circular chain of waiting.
+   - The last process in the chain is waiting for a resource held by the first process.
+   - In this example, Process_1 is waiting for Resource_2, which is held by Process_2, and Process_2 is waiting for Resource_1, which is held by Process_1 which is a circular chain of waiting.
+
+### Resource Utilization
+
+Resource utilization involves three key actions:
+
+- **Request:** Processes request resources; if unavailable, they wait until resources become free.
+- **Use:** Processes use the allocated resources to complete their tasks.
+- **Release:** Processes release resources once tasks are finished, making them available to other processes.
+
+**Real-World Example**
+
+- Imagine a bridge with a single lane that can only accommodate one vehicle at a time.
+- A deadlock can occur if two vehicles approach the bridge from opposite directions and both wait for the other to pass.
+
+- Imagine a printer that can only print one document at a time.
+- When two processes attempt to print documents simultaneously, a deadlock can occur if both processes wait for the printer to become available.
+
+
+
+## Methods to Handle Deadlocks in Operating Systems
+
+Deadlocks, a state where processes are indefinitely waiting for each other to release resources, can cripple system performance. Handling deadlocks requires effective strategies to either prevent or resolve them. Several methods are employed to manage deadlocks:
+
+**1. Deadlock Ignorance (Ostrich Method)**
+
+This method assumes that deadlocks never occur and ignores the possibility of their existence. It is suitable for single-user systems where the chances of deadlocks are minimal, and users perform routine tasks like browsing. This approach is commonly used by most Windows and Linux users.
+
+**2. Deadlock Prevention**
+
+Deadlock prevention aims to break one or more of the necessary conditions for deadlock formation, namely, mutual exclusion, hold and wait, no preemption, and circular wait.
+
+- **Mutual Exclusion Avoidance:** Allow multiple processes to access a resource simultaneously. This is not always feasible as some resources are inherently non-shareable, like printers.
+- **Hold and Wait Avoidance:** Mandate processes to request and acquire all necessary resources at the start, rather than acquiring them incrementally.
+- **No Preemption Avoidance:** Enable the OS to preempt resources from processes to allocate them to other waiting processes. This can lead to low resource utilization.
+- **Circular Wait Avoidance:** Impose a global ordering on resource requests to ensure that circular waits cannot occur.
+
+**3. Deadlock Avoidance**
+
+Deadlock avoidance employs a dynamic approach to assess whether the system is in a safe or unsafe state before granting resources to processes. It utilizes algorithms like the Banker's algorithm to ascertain whether resource allocation will lead to a safe state. Resources are allocated if a safe state is predicted; otherwise, the process waits. If a requested resource makes the system unsafe, the OS backtracks and avoids the allocation.
+
+**4. Deadlock Detection and Recovery**
+
+This method involves periodically checking the system for deadlock occurrences. If detected, the OS applies recovery strategies to remove the deadlock and restore the system to a safe state. Strategies can include process termination, resource preemption, and process rollback. This approach is more reactive but is useful in environments where preemption is not feasible or desired.
+
+**Advantages and Disadvantages of Deadlock Handling Methods**
+
+**Advantages:**
+
+- Methods like deadlock prevention and avoidance do not require forcefully taking resources from processes.
+- Methods like deadlock prevention and avoidance can conveniently save and restore the state of resources, ensuring consistency.
+- Deadlock avoidance can be performed using compile-time checks, avoiding runtime computational overhead.
+- Deadlock prevention is resolved during the system design phase, making it easier to manage.
+
+**Disadvantages:**
+
+- Deadlock prevention might delay process initiation due to the need to acquire all resources upfront.
+- Deadlock prevention and avoidance necessitate advance knowledge of a process's future resource needs.
+- Deadlock avoidance may result in frequent preemptions, affecting system performance.
+- Deadlock prevention's upfront resource acquisition prohibits incremental resource requests, leading to inefficiencies.
+- Deadlock avoidance may lead to resource preemption and loss, affecting process execution.
