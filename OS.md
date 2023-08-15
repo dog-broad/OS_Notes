@@ -466,8 +466,8 @@ Shared memory communication involves two processes interacting with a common mem
   - Both processes can perform these actions concurrently.
 
 - **Example: Producer-Consumer Problem:**
-  - In scenarios where a producer creates goods consumed by a consumer, shared memory acts as a buffer for their interaction.
-  - Ensures synchronization between producer and consumer processes to avoid consuming empty buffer or overfilling it.
+  - In scenarios where a producer creates goods consumed by a consumer, shared memory acts as a buffer for their interaction. In simple words, the producer produces goods and places them in the buffer, and the consumer consumes them from the buffer.
+  - Synchronization is maintained between producer and consumer processes to avoid consuming empty buffer or overfilling it.
 
 **Message Passing IPC:**
 
@@ -482,3 +482,9 @@ Message passing allows processes to communicate without shared memory. It is par
 
 - **Communication Link:**
   - Implemented through communication links, serving as the medium for message exchange.
+
+- **Example: Client-Server Model:**
+  - In this model, the server process provides services to the client process.
+  - The client process sends a request to the server process, which processes the request and sends a response back to the client process.
+  - The client process can be a user process or another server process.
+  - The server process can be a user process or a system process.
