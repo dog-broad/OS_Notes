@@ -33,3 +33,55 @@ Software process assessments can be categorized into three main types:
 2. **Second-Party Assessment:** A second-party assessment involves external parties, such as customers or other stakeholders, evaluating an organization's software development processes. Customers may perform these assessments to ensure that their suppliers or service providers meet their specific requirements and quality standards.
 
 3. **Third-Party Assessment:** In a third-party assessment, an external and independent organization assesses the software development processes of another organization. This type of assessment is often used in supplier evaluations to verify a supplier's capability to enter into contracts with customers or to meet industry standards.
+
+
+## Process Models
+
+**Process Models** are frameworks that guide how software is developed. They provide a set of guidelines and best practices for creating software. The most common process models are:
+
+1. **Waterfall Model:** A linear, sequential approach with phases like requirements, design, implementation, and testing following one after the other. No overlap between phases.
+
+2. **Incremental Models (Incremental, RAD):** These break the project into smaller parts and develop them individually, adding each part to the whole as it's completed. RAD (Rapid Application Development) emphasizes speedy development.
+
+3. **Iterative Models (Prototype, Spiral):** These models involve repeating cycles of development, evaluation, and refinement. Prototyping involves creating a basic version of the software for early feedback, while the Spiral model focuses on risk management.
+
+4. **Evolutionary Model:** This is about gradually refining the software based on user feedback. It starts with a basic version and evolves over time.
+
+5. **Unified Model:** A blend of different models to cater to the specific needs of a project. It's flexible and can be adapted as needed.
+
+
+
+## Waterfall Model
+
+The **Waterfall Model** is one of the earliest and simplest approaches to software development. It's like a step-by-step sequence for building software, with each phase following the previous one in a linear way. There's no overlap between the phases.
+
+![](2023-10-15-14-33-58.png)
+
+The Waterfall Model has six phases:
+
+1. **Requirement Analysis:** First, you collect and document all the requirements for the software you want to build.
+
+2. **System Design:** Once you know what's needed, you create a design for the software. This design specifies how the software will work and what it needs in terms of hardware and architecture.
+
+3. **Implementation:** This is where the actual coding happens. The software is developed in small pieces or units and tested to make sure each part works correctly (Unit Testing).
+
+4. **Integration and Testing:** After individual units are created, they're put together to form the complete software system. Then, rigorous testing is done to find any issues or faults.
+
+5. **Deployment:** Once everything is tested and works as expected, the software is deployed to the customer's environment or released to the market.
+
+6. **Maintenance:** After deployment, you may need to fix issues that arise in the customer's environment. Sometimes, you release patches or new versions to improve the software.
+
+The key idea is that you finish one phase before starting the next, like water flowing down a waterfall. This approach is suitable when requirements are clear, technology is stable, and you have ample resources for a short project.
+
+**Advantages:**
+- It's simple and easy to manage.
+- Phases are well-defined, making it easy to track progress.
+- Works well for smaller projects with clear requirements.
+- Stages are documented, making it easy to understand the project's history.
+
+**Disadvantages:**
+- You don't see working software until late in the process.
+- High risk and uncertainty, especially for complex projects.
+- Not suitable for long or changing projects.
+- Adjusting requirements mid-process can be problematic.
+- Integration and testing are done late, making it hard to identify issues early.
