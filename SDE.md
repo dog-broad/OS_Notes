@@ -166,3 +166,55 @@ An SRS document is essential for keeping your development teams on the same page
 <h1> <p align="center"> Unit 2 </p> </h1>
 
 <h1> <p align="center"> Software Design </p> </h1>
+
+## Golden rules of Software Design
+
+The three Golden Rules of User Interface Design:
+
+1. **Place the User in Control:**
+   - Define interaction modes that don't force users into unnecessary actions.
+   - Provide flexibility in interaction mechanisms, like keyboard, mouse, or touch screen.
+   - Allow users to interrupt and undo actions, so they can switch tasks without losing progress.
+   - Streamline interaction as users become more skilled and offer customization options.
+   - Shield casual users from technical complexities, allowing them to focus on their tasks.
+   - Enable direct interaction with on-screen objects for easier control and manipulation.
+
+2. **Reduce the User's Memory Load:**
+   - Minimize the demand on short-term memory by helping users keep track of their actions.
+   - Provide meaningful defaults to save time and offer the option to customize features.
+   - Use intuitive shortcuts (mnemonics) to perform actions quickly.
+   - Design the interface based on real-world metaphors, making it more relatable.
+
+3. **Make the Interface Consistent:**
+   - Create a meaningful context for the current task and provide clear indicators for navigation.
+   - Maintain consistency across a family of applications, ensuring a unified design approach.
+   - Avoid making changes to past interactive models if there's no compelling reason, as it may disrupt user expectations.
+
+
+## User Interface Design
+
+User Interface Design is the process of creating the front-end view that users interact with when using software. An effective user interface makes software more popular by being:
+
+1. **Attractive:** It should have a visually appealing design.
+2. **Simple to Use:** Users should easily understand how to navigate and interact with the software.
+3. **Responsive:** It should respond quickly to user actions.
+4. **Clear to Understand:** Information and functions should be presented in a straightforward manner.
+5. **Consistent:** The interface should maintain a uniform design across all screens.
+
+There are two main types of user interfaces:
+
+1. **Command Line Interface (CLI):** Users interact by typing commands, which requires memorizing command syntax and usage.
+
+2. **Graphical User Interface (GUI):** This interface provides a visually interactive way to interact with the system, making it easier for users to interpret the software.
+
+The User Interface Design Process involves several key activities:
+
+![](2023-10-15-18-49-28.png)
+
+1. **User, Task, Environmental Analysis, and Modeling:** This step focuses on understanding user profiles, their skills, knowledge, and requirements. It categorizes users based on their profiles and gathers their requirements. It also identifies the tasks users perform and analyzes the user's work environment, including physical and environmental factors.
+
+2. **Interface Design:** The goal of this phase is to define the set of interface objects and actions that allow users to perform tasks. It involves creating control mechanisms and user scenarios that specify how users interact with the system. Design principles like the three golden rules are followed, and aspects like response time, command structure, error handling, and help features are considered.
+
+3. **Interface Construction and Implementation:** The implementation phase begins with creating prototypes to evaluate usage scenarios. An interface toolkit is used to build windows, menus, error messages, commands, and other interactive elements. This phase is vital for building the actual interface based on the design.
+
+4. **Interface Validation:** The final phase focuses on testing the interface to ensure it performs tasks correctly, handles various scenarios, meets user requirements, and is user-friendly. It should be easy to use, easy to learn, and widely accepted by users as a valuable tool for their work.
