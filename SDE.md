@@ -97,6 +97,9 @@ The key idea is that you finish one phase before starting the next, like water f
 - **Continuous Representation:** Allows organizations to select specific process areas and determine their improvement order, offering flexibility in meeting objectives and eliminating risks.
 
 **CMMI Maturity Levels (Staged Representation):**
+
+![](2023-10-15-18-08-58.png)
+
 - **Initial:** Processes are poorly managed, unpredictable, and ad hoc. No defined Key Process Areas (KPAs). Lowest quality and highest risk.
 - **Managed:** Requirements are managed, processes are planned and controlled. Projects are implemented according to plans, with lower risk than the Initial level.
 - **Defined:** Processes are well-characterized, standardized, and described using standards, procedures, and tools. Medium quality and risk.
@@ -104,6 +107,9 @@ The key idea is that you finish one phase before starting the next, like water f
 - **Optimizing:** Emphasizes continuous improvement in processes and their performance, both incrementally and innovatively. Highest quality and lowest risk.
 
 **CMMI Capability Levels (Continuous Representation):**
+
+![](2023-10-15-18-11-57.png)
+
 - **Capability Level 0 (Incomplete):** Process is partially or not performed. One or more specific goals are not met. Equivalent to Maturity Level 1.
 - **Capability Level 1 (Performed):** Process performance may not be stable, and objectives for quality, cost, and schedule may not be met. All specific and generic practices for this level are expected to be performed.
 - **Capability Level 2 (Managed):** Processes are planned, monitored, and controlled to achieve objectives, including cost, quality, and schedule, using metrics.
