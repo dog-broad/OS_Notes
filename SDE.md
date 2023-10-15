@@ -123,6 +123,8 @@ The key idea is that you finish one phase before starting the next, like water f
 
 The **Spiral Model** is a software development approach that combines elements of iterative development with the controlled aspects of the waterfall model. It emphasizes risk analysis and allows incremental releases and refinement of the product through multiple iterations.
 
+![](2023-10-15-18-27-50.png)
+
 **Phases of the Spiral Model:**
 
 1. **Identification:** This phase begins with gathering business requirements in the baseline spiral. As the project progresses, it identifies system requirements, subsystem requirements, and unit requirements. Continuous communication with the customer is crucial in understanding system requirements. The product is deployed in the identified market at the end of the spiral.
@@ -159,3 +161,8 @@ A **Software Requirements Specification (SRS) Document** is like a blueprint for
 4. **Deliver for Approval:** Once you've completed the SRS, it needs to be reviewed and approved by key stakeholders. This document acts as a single source of truth for your entire development process, ensuring everyone is aligned and working toward the same goal.
 
 An SRS document is essential for keeping your development teams on the same page, meeting requirements, and making informed decisions throughout the product's lifecycle. It may be challenging to create, but the effort pays off in better understanding the product, its users, and the time needed for development. While you can use tools like Microsoft Word to create SRS documents, be cautious of versioning issues and the potential for documents to become out-of-date.
+
+
+<h1> <p align="center"> Unit 2 </p> </h1>
+
+<h1> <p align="center"> Software Design </p> </h1>
