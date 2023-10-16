@@ -50,6 +50,45 @@ Data mining can be applied to various types of data, including:
 - **Other Types of Data:** Data mining can be applied to various other data types, such as data streams, engineering design data, sequence data, graph data, spatial data, multimedia data, and more.
 
 
+## Types of Data (Descriptive version)
+
+**Types of Data Suitable for Data Mining:**
+
+Data mining is a versatile process that can be applied to various types of data, making it a valuable tool in extracting insights from different domains. Here's a closer look at the types of data suitable for data mining:
+
+**1. Data Stored in the Database:**
+   - This category includes data managed by a Database Management System (DBMS).
+   - Typically, this data is organized within a relational database, which uses tables to store information.
+   - Each table comprises attributes and unique keys that facilitate data retrieval and organization.
+   - **Example:** In a retail database, this could encompass customer information (e.g., name, address, and purchase history) or product data (e.g., product IDs, prices, and stock levels).
+
+**2. Data Warehouse:**
+![](img/2023-10-16-20-29-42.png)
+   - Data warehouses serve as a centralized repository that accumulates and stores data from various sources.
+   - Data in a warehouse is organized into a unified format, making it more accessible for analysis.
+   - Data within a warehouse is often subjected to cleaning, integration, and organization procedures to ensure consistency.
+   - **Example:** In a business setting, a data warehouse may contain sales data, customer data, and inventory data from multiple sources, enabling comprehensive business analytics.
+
+**3. Transactional Data:**  
+<div style="text-align:center;">
+    <img src="img/2023-10-16-20-31-00.png" alt="">
+</div>
+   - Transactional databases store records related to specific transactions.
+   - These transactions encompass a wide range of activities, such as customer purchases, flight reservations, online clicks, and more.
+   - Each transaction record typically has a unique identifier and lists the items or actions involved in the transaction.
+   - **Example:** In the context of an e-commerce website, transactional data would include individual customer orders, each listing the items purchased, their quantities, and the total amount spent.
+
+**4. Other Types of Data:**
+   - Data mining is not limited to traditional databases and data warehouses. It can be applied to a wide array of data types, each with its unique characteristics.
+   - Other data types include:
+      - **Data Streams:** Real-time, continuously flowing data, such as social media posts, sensor data, or financial market updates.
+      - **Engineering Design Data:** Data generated during the design and development of products, often structured around specifications and configurations.
+      - **Sequence Data:** Data organized as sequences, like DNA sequences in genomics, clickstream sequences in web analytics, or time-series data in financial analysis.
+      - **Graph Data:** Data that represents relationships and connections, commonly used in social network analysis, network infrastructure, and recommendation systems.
+      - **Spatial Data:** Geospatial information that includes coordinates, maps, and geographical features, often used in GIS (Geographic Information Systems).
+      - **Multimedia Data:** Rich and diverse data types, including images, audio, video, and other non-textual content.
+
+
 ## Data Mining Tasks and Functionalities
 
 **Data Mining Tasks and Functionalities:**
@@ -94,3 +133,82 @@ Data mining involves various tasks and functionalities aimed at extracting valua
 **9. Correlation Analysis:**
    - Determining the strength and nature of relationships between two attributes.
    - Assessing the correlation between continuous variables, helping researchers identify possible links between variables in their study.
+
+
+## Task Primitives
+
+**Data Mining Task Primitives:**
+
+Data mining tasks are defined through a set of data mining query primitives, allowing users to interact with the data mining system, guide the mining process, and examine findings in a flexible and interactive manner. These primitives encompass the following aspects:
+
+![](img/2023-10-16-20-44-51.png)
+
+**1. Set of Task-Relevant Data:**
+   - This primitive specifies the specific data subset of interest within a database or dataset. It identifies the relevant attributes or dimensions.
+   - Example: In an e-commerce database, task-relevant data might include customer purchase history and product information.
+
+**2. Kind of Knowledge to be Mined:**
+   - It defines the data mining functions to be performed, such as characterization, discrimination, association, classification, prediction, clustering, outlier analysis, or evolution analysis.
+   - Example: In healthcare, the kind of knowledge may involve predicting disease outbreaks based on historical data.
+
+**3. Background Knowledge:**
+   - This encompasses domain-specific knowledge that guides the data mining process and assists in pattern evaluation.
+   - Example: Concept hierarchies can provide background knowledge, helping to mine data at multiple levels of abstraction.
+
+**4. Interestingness Measures and Thresholds**
+
+Data mining patterns aren't all equally valuable, and interestingness measures help assess their significance. Here are key factors in pattern evaluation:
+
+  - **Simplicity:** Simplicity adds to a pattern's interest. Simple patterns, easy for humans to grasp, are more interesting. Complex structures, based on pattern size or the number of attributes, may be less appealing.
+
+  - **Certainty (Confidence):** Patterns need a measure of certainty. Confidence is vital for association rules like "A => B." It's calculated as:
+
+    - Confidence (A => B) = (Number of tuples containing both A and B) / (Number of tuples containing A)
+
+    Higher confidence signifies stronger associations, increasing interest.
+
+  - **Utility (Support):** A pattern's usefulness is critical. Support, a utility measure, indicates how often a pattern applies. Higher support means a more interesting pattern.
+
+    - Support (A => B) = (Number of tuples containing both A and B) / (Total number of tuples)
+
+  - **Novelty:** Novel patterns provide fresh insights. They may represent data exceptions. Removing redundant patterns can uncover novelty, focusing on unique information. 
+
+**5. Representation for Visualizing Patterns:**
+   - This primitive dictates how the discovered patterns will be displayed, whether as rules, tables, charts, graphs, decision trees, or other visual representations.
+   - Example: Visualizing customer segmentation through pie charts or displaying decision trees for product recommendations.
+
+
+
+## Data Preprocessing
+
+Data Preprocessing is a critical step in data mining, involving cleaning, transforming, and organizing data to prepare it for analysis. The primary objective is to enhance data quality and make it suitable for the specific data mining task. Below are the steps involved in data preprocessing:
+
+```mermaid
+graph TD
+A[Data Cleaning] --> B[Data Integration]
+B --> C[Data Transformation]
+C --> D[Data Reduction]
+```
+
+![](img/2023-10-16-20-58-04.png)
+
+1. **Data Cleaning:**
+   - **Missing Data:** This deals with handling data points that are missing. Options include ignoring the entire tuple or filling in missing values, either manually or through methods like using attribute mean or most probable value.
+   - **Noisy Data:** Noisy data is meaningless and can result from errors in data collection. Techniques to handle noisy data include binning, regression, and clustering.
+
+2. **Data Integration:**
+
+    - Data integration involves combining data from different sources, often stored in different formats or locations. It ensures that data is consistent and can be used cohesively in the subsequent steps of the data mining process.
+
+3. **Data Transformation:**
+   - **Normalization:** Scaling data values to a specific range (e.g., -1.0 to 1.0 or 0.0 to 1.0).
+   - **Attribute Selection:** Constructing new attributes from existing ones to aid in the mining process.
+   - **Discretization:** Replacing raw numeric values with intervals or conceptual levels.
+   - **Concept Hierarchy Generation:** Converting attributes from lower to higher levels in a hierarchy.
+
+4. **Data Reduction:**
+   - **Feature Selection:** Choosing a subset of relevant features, eliminating irrelevant or redundant ones, using techniques like correlation analysis, mutual information, or PCA.
+   - **Feature Extraction:** Transforming data into a lower-dimensional space while preserving critical information, suitable for high-dimensional and complex data.
+   - **Sampling:** Selecting a subset of data points to reduce dataset size while retaining essential information.
+   - **Clustering:** Grouping similar data points into clusters, replacing them with representative centroids.
+   - **Compression:** Compressing the dataset while preserving important information, commonly used for storage and transmission.
