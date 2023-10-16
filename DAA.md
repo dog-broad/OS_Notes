@@ -50,7 +50,7 @@ Algorithms analyze large datasets, extracting insights in fields like marketing,
 
 # Explain Algorithm Design steps
 
-![](2023-08-08-11-35-03.png)
+![](img/2023-08-08-11-35-03.png)
 
 Explanation of the Algorithm Design Steps:
 
@@ -198,7 +198,7 @@ Here, the count increases by `2mn + 2m + 1` for the nested loops and the initial
 
 Let's analyze a simple matrix multiplication algorithm:
 
-![](2023-08-08-12-33-12.png)
+![](img/2023-08-08-12-33-12.png)
 
 Total time of count = `2mnp + 3mp + 2m + 1`
 
@@ -279,14 +279,14 @@ The function f(n) = Θ(g(n)) if and only if there exist positive constants C₁,
 **Little-oh Notation (o-notation):**
 The function f(n) = o(g(n)) if and only if:
 
-![](2023-08-08-14-19-55.png)
+![](img/2023-08-08-14-19-55.png)
 
 where g(n) represents the upper bound function.
 
 **Little-omega Notation (ω-notation):**
 Similarly, the function f(n) = ω(g(n)) if and only if:
 
-![](2023-08-08-14-20-05.png)
+![](img/2023-08-08-14-20-05.png)
 
 where g(n) represents the lower bound function.
 

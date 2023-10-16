@@ -57,9 +57,9 @@ The three-way handshake and connection release mechanisms in TCP ensure reliable
 
 # Discuss in detail about TCP Connection Management Modeling
 
-![](2023-08-04-04-30-48.png)
+![](img/2023-08-04-04-30-48.png)
 
-![](2023-08-04-04-31-05.png)
+![](img/2023-08-04-04-31-05.png)
 
 In each of the 11 states shown in above table, some specific events are legal.
 

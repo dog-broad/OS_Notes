@@ -78,7 +78,7 @@ void main() {
 
 ```
 
-![](2023-08-01-23-40-03.png)
+![](img/2023-08-01-23-40-03.png)
 
 
 # FIFO Page Replacement
@@ -141,7 +141,7 @@ void main() {
 }
 ```
 
-![](2023-08-01-23-43-36.png)
+![](img/2023-08-01-23-43-36.png)
 
 # LRU Page Replacement
 
@@ -245,7 +245,7 @@ void main() {
 }
 ```
 
-![](2023-08-01-21-19-48.png)
+![](img/2023-08-01-21-19-48.png)
 
 
 # Optimal Page Replacement
@@ -416,7 +416,7 @@ void main() {
 }
 ```
 
-![](2023-08-02-00-29-17.png)
+![](img/2023-08-02-00-29-17.png)
 
 # Linked File Allocation
 
@@ -467,7 +467,7 @@ main() {
 }
 ```
 
-![](2023-08-02-00-44-02.png)
+![](img/2023-08-02-00-44-02.png)
 
 
 # Sequential File Allocation
@@ -516,7 +516,7 @@ int main() {
     return 0;
 }
 ```
-![](2023-08-02-01-04-49.png)
+![](img/2023-08-02-01-04-49.png)
 
 # Indexed File Allocation
 
@@ -562,7 +562,7 @@ int main() {
 }
 ```
 
-![](2023-08-02-06-40-16.png)
+![](img/2023-08-02-06-40-16.png)
 
 
 # SJF Scheduling
@@ -630,4 +630,4 @@ void main() {
 }
 ```
 
-![](2023-08-02-00-56-59.png)
+![](img/2023-08-02-00-56-59.png)

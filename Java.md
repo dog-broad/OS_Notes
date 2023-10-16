@@ -575,7 +575,7 @@ There are five types of inheritance:
 - Hierarchical Inheritance 
 - Hybrid Inheritance    [x]
 
-![](2023-08-09-23-33-57.png)
+![](img/2023-08-09-23-33-57.png)
 
 1. **Single Inheritance**:
 Single inheritance involves one class inheriting from only one superclass. It forms a linear hierarchy of classes.
@@ -1452,7 +1452,7 @@ Threads in Java go through several stages during their life cycle, which can be 
 
 5. **Terminated**: A thread can enter this state when it has completed its execution or when an unhandled exception occurs.
 
-![](2023-08-10-12-32-07.png)
+![](img/2023-08-10-12-32-07.png)
 
 Example Program:
 
@@ -1985,7 +1985,7 @@ On the other hand, Event Adapters are classes that provide default implementatio
 
 The Model-View-Controller (MVC) is a widely-used design pattern in web development to organize code effectively. It emphasizes the separation of concerns, dividing a program or application into three distinct components: Model, View, and Controller.
 
-![](2023-08-03-18-48-19.png)
+![](img/2023-08-03-18-48-19.png)
 
 **Components of MVC Architecture:**
 
@@ -2124,7 +2124,7 @@ Applet Life Cycle in Java
 
 In Java, an applet is a special type of program embedded in a web page to generate dynamic content. The applet has a life cycle consisting of five core methods: `init()`, `start()`, `stop()`, `paint()`, and `destroy()`. These methods are invoked by the web browser to execute and control the applet's behavior during its execution.
 
-![](2023-08-03-19-37-53.png)
+![](img/2023-08-03-19-37-53.png)
 
 1. **init()**: The `init()` method is the first method to run when the applet is initialized. It is invoked only once at the beginning of the applet's execution. The web browser creates the applet object and calls the `init()` method to initialize it. This method is commonly used for applet setup and resource allocation.
 

@@ -55,7 +55,7 @@ Software process assessments can be categorized into three main types:
 
 The **Waterfall Model** is one of the earliest and simplest approaches to software development. It's like a step-by-step sequence for building software, with each phase following the previous one in a linear way. There's no overlap between the phases.
 
-![](2023-10-15-14-33-58.png)
+![](img/2023-10-15-14-33-58.png)
 
 The Waterfall Model has six phases:
 
@@ -98,7 +98,7 @@ The key idea is that you finish one phase before starting the next, like water f
 
 **CMMI Maturity Levels (Staged Representation):**
 
-![](2023-10-15-18-08-58.png)
+![](img/2023-10-15-18-08-58.png)
 
 - **Initial:** Processes are poorly managed, unpredictable, and ad hoc. No defined Key Process Areas (KPAs). Lowest quality and highest risk.
 - **Managed:** Requirements are managed, processes are planned and controlled. Projects are implemented according to plans, with lower risk than the Initial level.
@@ -108,7 +108,7 @@ The key idea is that you finish one phase before starting the next, like water f
 
 **CMMI Capability Levels (Continuous Representation):**
 
-![](2023-10-15-18-11-57.png)
+![](img/2023-10-15-18-11-57.png)
 
 - **Capability Level 0 (Incomplete):** Process is partially or not performed. One or more specific goals are not met. Equivalent to Maturity Level 1.
 - **Capability Level 1 (Performed):** Process performance may not be stable, and objectives for quality, cost, and schedule may not be met. All specific and generic practices for this level are expected to be performed.
@@ -123,7 +123,7 @@ The key idea is that you finish one phase before starting the next, like water f
 
 The **Spiral Model** is a software development approach that combines elements of iterative development with the controlled aspects of the waterfall model. It emphasizes risk analysis and allows incremental releases and refinement of the product through multiple iterations.
 
-![](2023-10-15-18-27-50.png)
+![](img/2023-10-15-18-27-50.png)
 
 **Phases of the Spiral Model:**
 
@@ -209,7 +209,7 @@ There are two main types of user interfaces:
 
 The User Interface Design Process involves several key activities:
 
-![](2023-10-15-18-49-28.png)
+![](img/2023-10-15-18-49-28.png)
 
 1. **User, Task, Environmental Analysis, and Modeling:** This step focuses on understanding user profiles, their skills, knowledge, and requirements. It categorizes users based on their profiles and gathers their requirements. It also identifies the tasks users perform and analyzes the user's work environment, including physical and environmental factors.
 

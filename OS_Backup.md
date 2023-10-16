@@ -4,11 +4,11 @@ Fragmentation in an operating system refers to the inefficient use of memory, le
 
 1. **Internal Fragmentation:** Internal fragmentation occurs when a memory block is allocated to a process, but the block is larger than the process requires, wasting memory space.
 
-![](2023-08-04-18-16-46.png)
+![](img/2023-08-04-18-16-46.png)
 
 2. **External Fragmentation:** External fragmentation occurs when free memory space in a computer system is divided into small non-contiguous blocks, preventing larger programs from being allocated efficiently. This wastage reduces overall system performance and memory utilization.  
 
-![](2023-08-04-18-17-32.png)
+![](img/2023-08-04-18-17-32.png)
 
 | Aspect                | Internal Fragmentation                   | External Fragmentation                          |
 |-----------------------|-----------------------------------------|-----------------------------------------------|
@@ -31,11 +31,11 @@ Inverted Page Table is a global table managed by the Operating System for all pr
 
 The traditional page tables look like this:
 
-![](2023-08-04-18-32-29.png)
+![](img/2023-08-04-18-32-29.png)
 
 Each entry in the inverted page table reserves space for a page regardless of its presence in the main memory. However, this could lead to memory wastage if the page is not present. To save memory, the inverted page table only stores details for pages that are present in the main memory. The entries are indexed by frames, and inside each entry, we save the Process ID and the corresponding page number. This way, the inverted page table efficiently manages memory usage for all processes.
 
-![](2023-08-04-18-32-39.png)
+![](img/2023-08-04-18-32-39.png)
 
 
 ## What are the different Accessing Methods of a File?
@@ -45,12 +45,12 @@ File access methods are crucial for efficiently managing data in computer system
 1. **Sequential Access Method:**
    In this simple method, data is processed in order, one record after another. Read and write operations traverse records sequentially. It is widely used in applications like editors and compilers. However, its major drawback is inefficient random access, as each record must be crossed to reach the desired one.
    
-   ![](2023-08-04-18-41-23.png)
+   ![](img/2023-08-04-18-41-23.png)
 
 2. **Direct Access Method:**
    Also known as relative access, this method treats files as a sequence of blocks or records. It allows random access to any block, enabling quick data retrieval. Users provide a relative block number, and the operating system calculates the exact block address. This method is commonly used in database management systems and real-time applications.
 
-   ![](2023-08-04-18-41-37.png)
+   ![](img/2023-08-04-18-41-37.png)
 
 3. **Index Sequential Access:**
    To address the limitation of sequential access, this method adds an index to the file. The index holds pointers to various blocks, enabling random access. By accessing the index first, the pointers to specific blocks are obtained. This method is similar to indexed file allocation, where an index block holds pointers to allocated disk blocks.
@@ -75,39 +75,39 @@ A directory in an operating system acts as a container that organizes files and 
    - Advantages: Simple to implement, fast searching for smaller files, easy file operations (creation, deletion, etc.).
    - Disadvantages: Limited when the number of files or users increases, potential name collision issues.
 
-<img src="2023-08-04-18-49-04.png" width = 50%>
+<img src="img/2023-08-04-18-49-04.png" width = 50%>
 
 2. **Two-Level Directory:**
    - Each user has a separate directory, preventing name conflicts and enhancing security. But it hinders file sharing between users and lacks subdirectory creation.
    - Advantages: Provides a separate directory for each user, avoids name conflicts, easy file searching.
    - Disadvantages: Users cannot share files, users cannot create subdirectories.
 
-<img src = "2023-08-04-18-49-20.png" width = 60%>
+<img src = "img/2023-08-04-18-49-20.png" width = 60%>
 
 3. **Tree Structure (Hierarchical Structure):**
    - Directories are organized in a tree-like structure, allowing subdirectories, easier searching, and scalable organization. However, it restricts file sharing between users.
    - Advantages: Allows subdirectories, easier searching, file sorting becomes manageable, scalable for various users.
    - Disadvantages: Prevents file sharing among users, increased complexity with many subdirectories.
 
-<img src = "2023-08-04-18-49-39.png" width = 60%>
+<img src = "img/2023-08-04-18-49-39.png" width = 60%>
 
 4. **Acyclic Graph Structure:**
    - This structure enables file sharing between multiple users and supports efficient searching. Still, it's more complex to implement, and file deletion requires handling multiple references.
    - Advantages: Supports sharing of files and directories among multiple users, efficient searching.
    - Disadvantages: More complex to implement, requires caution while editing or deleting shared files.
 
-<img src = "2023-08-04-18-50-14.png" width = 50%>
+<img src = "img/2023-08-04-18-50-14.png" width = 50%>
 
 Each directory structure offers different benefits and trade-offs. The single-level directory is simple but limited, while the two-level directory solves name conflicts but restricts sharing. The tree structure is commonly used due to its flexibility and scalability, although it also has some limitations regarding file sharing and increased complexity with extensive subdirectories. The acyclic graph structure provides file sharing capabilities, but managing changes and deletions can be challenging.
 
 
 ## Consider the following disk queue with requests for I/O to blocks on cylinders 98, 183, 37,122,14,124,65,67 in that order, with the disk head initially at cylinder 53; using FCFS, SSTF algorithms measure the total head movement in cylinders. Also provide the necessary diagram to show the head movement for the above queue.
 
-![](2023-08-04-19-31-41.png)
+![](img/2023-08-04-19-31-41.png)
 
-![](2023-08-04-19-32-07.png)
+![](img/2023-08-04-19-32-07.png)
 
-![](2023-08-04-19-32-16.png)
+![](img/2023-08-04-19-32-16.png)
 
 
 ## Protection in OS
@@ -205,7 +205,7 @@ Advantages of demand paging include better memory utilization, support for large
 
 The demand paging process involves the CPU checking the page table to find the page in the main memory. If not found, a page fault occurs, and the page is swapped-in from secondary memory. Valid and invalid bits are used to indicate whether the page is present in the main memory.
 
-![](2023-08-04-20-00-15.png)
+![](img/2023-08-04-20-00-15.png)
 
 Common terms associated with demand paging are page fault (miss), swapping, and thrashing. Page faults occur when a referenced page is not present in the main memory. Swapping involves moving processes between secondary and main memory. Thrashing occurs when the CPU spends more time swapping pages than executing processes.
 
@@ -220,7 +220,7 @@ Thrashing in computer science refers to the poor performance of a virtual memory
 
 The concept of thrashing is closely related to page faults and swapping. Page faults occur when a program attempts to access data or code that is not currently located in the main memory. Swapping is the process of moving pages between the main memory and secondary storage to accommodate page faults.
 
-<img src="2023-08-04-20-05-16.png" width=40%>
+<img src="img/2023-08-04-20-05-16.png" width=40%>
 
 **Causes of Thrashing**
 
@@ -272,17 +272,17 @@ File allocation methods in operating systems are different techniques used to st
 1. **Contiguous File Allocation**:
 In this method, each file is allocated a continuous set of blocks on the disk. When a file is created, the required number of contiguous blocks are allocated, and the file's data is stored in these blocks. This method ensures that file data is stored sequentially, making it easy to access and read the entire file. However, it suffers from external fragmentation, where small gaps between allocated blocks can occur, leading to inefficient disk usage.
 
-<img src="2023-08-04-20-25-19.png" width = 50%>
+<img src="img/2023-08-04-20-25-19.png" width = 50%>
 
 2. **Linked File Allocation**:
 The linked file allocation method overcomes the limitations of contiguous allocation by storing file data in a scattered manner across the disk. In this approach, each block of a file contains a pointer to the next block of the same file. The file's directory entry stores the address of the first block. While this method reduces external fragmentation, it introduces the overhead of maintaining and traversing the linked list of blocks, making direct access slower.
 
-<img src="2023-08-04-20-26-04.png" width = 50%>
+<img src="img/2023-08-04-20-26-04.png" width = 50%>
 
 3. **Indexed File Allocation**:
 Indexed file allocation combines the advantages of both contiguous and linked allocation methods. It uses an index block that contains pointers to all the blocks of a file. The file's directory entry contains the address of the index block. Each entry in the index block points to a specific data block of the file. This method enables direct access to any block of the file without the need to traverse a linked list. Although it reduces external fragmentation and allows random access, it introduces additional overhead for maintaining the index block.
 
-<img src="2023-08-04-20-26-31.png" width = 50%>
+<img src="img/2023-08-04-20-26-31.png" width = 50%>
 
 **Advantages and Disadvantages**:
 
@@ -311,19 +311,19 @@ One of the key challenges in paging is handling page faults, which occur when a 
    - Simple to implement but may not be efficient in reducing page faults, as demonstrated by Belady's anomaly.
    - May lead to more page faults as the number of page frames increases.
 
-![](2023-08-04-23-19-21.png)
+![](img/2023-08-04-23-19-21.png)
 
 2. **Optimal Page Replacement**:
    - This algorithm selects the page that will not be used for the longest time in the future for replacement.
    - It is considered the best possible algorithm as it results in the minimum number of page faults. However, it requires knowledge of future page references, making it impractical for real-world use.
 
-![](2023-08-04-23-19-27.png)
+![](img/2023-08-04-23-19-27.png)
 
 3. **Least Recently Used (LRU)**:
    - LRU replaces the page that has not been used for the longest time. It relies on the principle that the least recently used page is the best candidate for replacement.
    - LRU is challenging to implement efficiently, as it requires keeping track of the order in which pages are used. It may require hardware support like special counters or software algorithms.
    - LRU performs well and reduces page faults but can be expensive to maintain in large systems.
 
-![](2023-08-04-23-19-35.png)
+![](img/2023-08-04-23-19-35.png)
 
 Each page replacement algorithm has its advantages and disadvantages, and the choice of the algorithm depends on the specific requirements of the system, the workload characteristics, and available resources. Operating systems typically use a combination of paging, page tables, and page replacement algorithms to optimize memory usage and provide efficient memory management for running programs.

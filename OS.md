@@ -45,7 +45,7 @@ Operating systems can be implemented using various design structures that dictat
 ### Simple Structure
 Simple structured operating systems are small, uncomplicated, and lack a well-defined structure. There is minimal separation between interfaces and functionality levels. An example of such an operating system is MS-DOS. In this structure, application programs can directly access basic I/O functions. However, if a user program fails, the entire system crashes due to the lack of isolation between modules.
 
-![Simple Structure](2023-08-14-22-45-09.png)
+![Simple Structure](img/2023-08-14-22-45-09.png)
 
 **Advantages:**
 - Superior application performance due to limited interfaces.
@@ -68,7 +68,7 @@ The micro-kernel structure involves eliminating non-essential kernel components 
 ### Layered Structure
 The layered structure divides an operating system into sections, or layers, with control retained over the system. Hardware resides in the bottom layer (layer 0), while the user interface is in the top layer (layer N). Each layer only relies on functions from lower-level layers, simplifying debugging and testing. UNIX is an example of an operating system using the layered structure.
 
-<img src="2023-08-14-22-47-46.png" alt="Layered Structure" width="50%"/>
+<img src="img/2023-08-14-22-47-46.png" alt="Layered Structure" width="50%"/>
 
 **Advantages:**
 - Easy OS improvement by changing a layer's implementation without affecting others.
@@ -323,7 +323,7 @@ Different types of Real-Time Operating Systems:
 
 A process in an operating system represents a program in execution, with its own memory space and resources. The process life cycle describes the various stages that a process goes through during its execution. While specific states and terminology may vary across different operating systems, the general process life cycle consists of the following stages:
 
-![](2023-08-15-07-31-35.png)
+![](img/2023-08-15-07-31-35.png)
 
 1. **Start:**
    - This is the initial state when a process is first created or launched.
@@ -384,7 +384,7 @@ A Process Control Block (PCB) is a data structure used by the operating system t
 
 The Process Control Block (PCB) is a vital data structure in an operating system that holds various data items essential for efficient process management. The PCB's structure and content play a critical role in managing processes effectively. The diagram below illustrates the components of a PCB:
 
-![](2023-08-15-07-41-01.png)
+![](img/2023-08-15-07-41-01.png)
 
 The PCB contains the following information about a process:
 
@@ -554,7 +554,7 @@ A deadlock in an operating system refers to a situation where multiple processes
 
 Imagine two processes, Process_1 and Process_2, as depicted in Figure 1:
 
-<img src="2023-08-15-18-04-06.png" alt="Deadlock Scenario" width="50%"/>
+<img src="img/2023-08-15-18-04-06.png" alt="Deadlock Scenario" width="50%"/>
 
 - Process_1 holds Resource_1 and is awaiting Resource_2.
 - Process_2 holds Resource_2 and is awaiting Resource_1.
@@ -569,7 +569,7 @@ Deadlock arises due to four necessary conditions:
    - Resources can only be used by one process at a time.
    - Mutex (binary semaphore) ensures exclusive access to shared resources.
    - Deadlocks commonly occur with resources that require exclusive access, like printers or tape drives.
-   - <img src="2023-08-15-18-05-26.png" alt="Mutual Exclusion" width="50%"/>
+   - <img src="img/2023-08-15-18-05-26.png" alt="Mutual Exclusion" width="50%"/>
 
 2. **No Preemption:**
    - Processes cannot forcibly take resources from others.
@@ -580,7 +580,7 @@ Deadlock arises due to four necessary conditions:
    - Processes hold resources while simultaneously waiting for others.
    - A process can request resources while holding others.
    - In the example above, Process_1 holds Resource_1 and requests Resource_2, while Process_2 holds Resource_2 and requests Resource_1.
-   - <img src="2023-08-15-18-05-45.png" alt="Hold and Wait" width="50%"/>
+   - <img src="img/2023-08-15-18-05-45.png" alt="Hold and Wait" width="50%"/>
 
 4. **Circular Wait:**
    - Processes form a circular chain of waiting.

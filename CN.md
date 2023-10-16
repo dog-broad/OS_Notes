@@ -50,7 +50,7 @@ CRC stands for Cyclic Redundancy Check. It is a method of error detection in dat
 
 The TCP/IP model, where TCP stands for Transmission Control Protocol and IP stands for Internet Protocol, is a network model designed to facilitate communication across diverse computer systems. It's a practical framework tailored to meet the original design of the Internet. TCP/IP comprises two primary protocols and encompasses numerous sub-protocols across four layers.
 
-<img src="2023-08-12-12-08-04.png" alt="TCP/IP Model" width=50%/>
+<img src="img/2023-08-12-12-08-04.png" alt="TCP/IP Model" width=50%/>
 
 **Application Layer:**
 
@@ -95,7 +95,7 @@ The Data Link and Physical layers are often combined into a single layer in the 
 
 Hence, the TCP/IP model has four layers:
 
-![](2023-08-12-12-12-58.png)
+![](img/2023-08-12-12-12-58.png)
 
 
 
@@ -103,7 +103,7 @@ Hence, the TCP/IP model has four layers:
 
 The OSI Reference Model, developed by the International Standards Organization (ISO), is a structured framework for understanding how different systems communicate. It comprises seven layers, each with specific responsibilities, enabling seamless communication across networks.
 
-<img src="2023-08-12-12-19-20.png" alt="OSI Model" width=50%>
+<img src="img/2023-08-12-12-19-20.png" alt="OSI Model" width=50%>
 
 **1. Physical Layer:**
 
@@ -168,15 +168,15 @@ In simpler terms guided media is a physical medium that uses physical connectors
 
 1. **Twisted Pair Cable:** This is a widely used guided medium for local area networks (LANs). It consists of pairs of insulated copper wires twisted together to reduce interference. Twisted pair cables are further categorized into unshielded twisted pair (UTP) and shielded twisted pair (STP), with varying levels of protection against external interference.
 
-<img src="2023-08-12-12-36-29.png" alt="Twisted Pair Cable" width=40% />
+<img src="img/2023-08-12-12-36-29.png" alt="Twisted Pair Cable" width=40% />
 
 2. **Coaxial Cable:** Coaxial cables consist of a central copper conductor surrounded by layers of insulation, metallic shield, and an outer protective sheath. They are often used for cable television and broadband internet connections.
 
-<img src="2023-08-12-12-38-10.png" alt="Coaxial Cable" width=40% />
+<img src="img/2023-08-12-12-38-10.png" alt="Coaxial Cable" width=40% />
 
 3. **Fiber Optic Cable:** Fiber optic cables use thin strands of glass or plastic to transmit data using light signals. They offer high bandwidth, low signal loss, and resistance to electromagnetic interference. Fiber optics are commonly used for long-distance communication and high-speed data transmission.
 
-<img src="2023-08-12-12-39-35.png" alt="Fiber Optic Cable" width=40% />
+<img src="img/2023-08-12-12-39-35.png" alt="Fiber Optic Cable" width=40% />
 
 **Unguided Media:**
 
@@ -288,12 +288,12 @@ A --> C[Slotted Aloha]
 **Pure Aloha:**
 In Pure Aloha, stations transmit data frames without checking channel availability, leading to potential collisions. If an acknowledgment isn't received within a specified time, stations wait for a random backoff time (Tb) before retransmitting the data frame. Successful data transmission requires retransmissions until acknowledgment.
 
-<img src="2023-08-12-15-32-36.png" alt="Pure Aloha" width=50% />
+<img src="img/2023-08-12-15-32-36.png" alt="Pure Aloha" width=50% />
 
 **Slotted Aloha:**
 Slotted Aloha improves efficiency by dividing the channel into fixed time intervals called slots. Stations can only transmit at the beginning of a slot, reducing collisions. However, collisions can still occur if multiple stations attempt to transmit in the same slot.
 
-<img src="2023-08-12-15-34-24.png" alt="Slotted Aloha" width=50% />
+<img src="img/2023-08-12-15-34-24.png" alt="Slotted Aloha" width=50% />
 
 **Efficiency and Throughput:**
 The channel utilization factor (G) is the ratio of the time slots when the channel is in use to the total time slots. It's a measure of channel efficiency, with higher values indicating more efficient channel utilization.

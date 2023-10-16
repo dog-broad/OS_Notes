@@ -113,7 +113,7 @@ Keep in mind that while Strassen's algorithm has a theoretically better time com
 
 ## 2. **Define a spanning tree.**
    A spanning tree of a graph is a subgraph that includes all the vertices of the original graph while forming a tree structure (no cycles). It must be connected and have the minimum possible number of edges to ensure connectivity.
-   ![](2023-08-08-18-16-58.png)
+   ![](img/2023-08-08-18-16-58.png)
 
 ## 3. **Formally represent the Knapsack problem.**
    The Knapsack problem is represented as follows:
@@ -232,7 +232,7 @@ The 8 Queens Problem can be solved by backtracking. Place queens sequentially in
 
 ## 8. **Discuss M-coloring concept.**
 M-coloring involves coloring the vertices of a graph with M colors such that no two adjacent vertices have the same color. This concept is vital in map coloring, register allocation, and scheduling problems.
-![](2023-08-08-19-02-21.png)
+![](img/2023-08-08-19-02-21.png)
 
 ## **Compare and contrast Brute force approach Vs backtracking.**
 **Brute Force Approach:**
