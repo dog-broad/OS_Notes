@@ -278,3 +278,129 @@ The Knowledge Discovery in Data (KDD) process is a comprehensive approach to ext
 ![](img/2023-10-16-22-25-29.png)
 
 ![](img/2023-10-16-22-25-34.png)
+
+
+## Improving the Efficiency of Apriori
+
+**Apriori Algorithm**
+
+The Apriori algorithm is a classic algorithm in data mining that is used for discovering interesting associations between variables in large datasets. It's primarily applied in market basket analysis, where it helps identify relationships between products that are frequently purchased together. The algorithm works by identifying frequent itemsets in a database and generating association rules based on these itemsets.
+
+**Methods To Improve Apriori Efficiency**
+
+The Apriori algorithm can be quite computationally intensive, especially when dealing with large datasets. To improve its efficiency, several methods and techniques can be applied:
+
+1. **Hash-Based Technique:** This method utilizes a hash-based data structure called a hash table. The hash table is used for generating k-itemsets (sets of k items) and counting their occurrences in the database. A hash function is employed to efficiently generate and manage the hash table. This can significantly speed up the process of identifying frequent itemsets.
+
+2. **Transaction Reduction:** In this method, transactions that do not contain any frequent items are marked or removed from consideration. This reduces the number of transactions that need to be scanned in subsequent iterations. By eliminating irrelevant transactions, the algorithm can focus on those that are more likely to contain frequent itemsets.
+
+3. **Partitioning:** Partitioning involves dividing the database into smaller partitions. The key idea is that if an itemset is frequent in the database, it should be frequent in at least one of its partitions. By scanning each partition separately, the number of scans needed is reduced. This can significantly improve efficiency, especially for databases with a wide range of itemsets.
+
+4. **Sampling:** The sampling method involves selecting a random sample, denoted as S, from the entire database D. The algorithm searches for frequent itemsets within this sample. While this approach can lead to the possibility of missing some global frequent itemsets, it can be mitigated by adjusting the minimum support threshold (min_sup) or increasing the sample size. Sampling is particularly useful when working with extremely large datasets.
+
+5. **Dynamic Itemset Counting:** In this technique, the Apriori algorithm is modified to add new candidate itemsets dynamically during the database scan. Instead of generating all candidate itemsets in advance, new candidates can be created on the fly as the database is scanned. This can help reduce the memory requirements and overall execution time.
+
+
+
+# <p align="center"> Unit 3 </p>
+
+# <p align="center"> <b>Classification and Clustering</b> </p>
+
+## Multilayer Feedforward Neural Networks
+
+A **Multilayer Feed-forward Neural Network**, commonly known as a **Feedforward Neural Network** or a **Multi-Layer Perceptron (MLP)**, is a type of artificial neural network in which the connections between the nodes, or neurons, do not form any cycles. It's a simple and widely used type of neural network for various machine learning tasks, including classification and regression. MLP consists of an input layer, one or more hidden layers, and an output layer.
+
+![](img/2023-10-17-06-29-28.png)
+
+**Key Features of a Multilayer Feed-forward Neural Network**:
+
+1. **Feed-Forward:** The network's information flows in one direction, from the input layer to the output layer. There are no feedback loops or cycles in the network.
+
+2. **Layered Structure:** It consists of multiple layers of neurons. Typically, there is an input layer, one or more hidden layers, and an output layer. The input layer receives the raw data, while the output layer produces the network's final output. The hidden layers process and transform the input data.
+
+3. **Each Neuron Performs a Weighted Sum and Activation:** Each neuron in the network receives inputs from the neurons in the previous layer, computes a weighted sum of these inputs, applies an activation function to the sum, and passes the result to the neurons in the subsequent layer.
+
+    ![](img/2023-10-17-06-30-11.png)
+
+4. **Nonlinear Activation Functions:** Typically, nonlinear activation functions like the sigmoid, hyperbolic tangent (tanh), or rectified linear unit (ReLU) are used in hidden layers to introduce nonlinearity into the network, allowing it to model complex relationships.
+
+**Example of a Multilayer Feed-forward Neural Network**:
+
+Let's consider a simple example of an MLP for binary classification, such as predicting whether an email is spam or not based on two features: the number of words in the email and the number of exclamation marks.
+
+- **Input Layer:** The input layer has two neurons, one for each feature. The values of these neurons represent the number of words and the number of exclamation marks in the email.
+
+- **Hidden Layer:** There is one hidden layer in this example with two neurons. Each neuron in the hidden layer receives inputs from both input neurons, computes a weighted sum, applies a sigmoid activation function, and passes the result to the output layer.
+
+- **Output Layer:** The output layer consists of a single neuron, which produces the network's output. In this binary classification task, the output represents the probability that the email is spam.
+
+- **Weights and Biases:** Each connection between neurons has a weight associated with it, and each neuron has a bias. These weights and biases are learned during the training process to optimize the network's performance.
+
+The network's training involves adjusting the weights and biases to minimize the error between the predicted outputs and the actual labels of a training dataset. Once trained, the network can be used to classify new emails as spam or not based on the number of words and exclamation marks.
+
+
+
+## Decision Tree Induction
+
+**Decision Tree Algorithm**
+
+A decision tree is a supervised machine learning algorithm used for both classification and regression tasks. It is a tree-like model that makes decisions or predictions by following a series of rules, starting from the root node and moving to leaf nodes. Each internal node in the tree represents a decision or a test on a feature attribute, and each branch represents the outcome of that test. The leaf nodes represent the final decision or prediction.
+
+The decision tree induction process aims to create a tree that best represents the patterns or relationships in the training data. The basic algorithm for inducing a decision tree from training data can be outlined as follows:
+
+**Terminology:**
+
+1. Create a root node, N.
+2. If all the tuples in the current data partition, D, belong to the same class, C, label node N as a leaf node with class C.
+3. If the attribute list is empty (no more attributes to split on), label node N as a leaf node with the majority class in D.
+4. Apply an attribute selection method (e.g., information gain or Gini impurity) to determine the "best" splitting criterion.
+5. Label node N with the selected splitting criterion.
+6. If the splitting attribute is discrete-valued and allows multiway splits, create branches for each known value of the attribute. For each outcome j, create a subset Dj of data tuples in D that satisfies outcome j.
+7. If the splitting attribute is continuous-valued, create two branches corresponding to A ≤ split point and A > split point, where the split point is determined by the attribute selection method.
+8. If the splitting attribute is discrete-valued and a binary tree is required, the test is of the form "A ∈ SA?," where SA is a subset of known values of A. Create branches labeled "yes" and "no" based on whether the test is satisfied or not.
+9. Recursively apply the same decision tree induction process to each partition Dj.
+
+The algorithm continues to partition and grow the tree until one of the terminating conditions is met:
+
+- All tuples in the current partition belong to the same class.
+- No attributes are left to split on.
+- A partition is empty (no tuples).
+
+The resulting tree is a representation of the patterns and decisions in the training data. It can be used for classification, where new data is passed through the tree to make predictions based on the rules learned during training.
+
+
+## Decision Tree Induction: My interpretation
+
+**Decision Tree Algorithm**:
+
+A decision tree is a supervised machine learning algorithm used for both classification and regression tasks. The primary objective of a decision tree is to create a model that predicts the value of a target variable based on several input features. The algorithm can be explained through the following steps:
+
+**Step 1 - Initialization**:
+- The decision tree algorithm starts with the entire dataset, often referred to as the root node.
+
+**Step 2 - Check for Termination**:
+- It checks if the termination conditions are met. The termination conditions are:
+  1. All tuples in the dataset belong to the same class: In this case, a leaf node is created, and it's labeled with the class.
+  2. There are no remaining attributes to split on: In this case, a leaf node is created, and it's labeled with the majority class in the dataset.
+
+**Step 3 - Attribute Selection**:
+- If the termination conditions are not met, the algorithm calls the attribute selection method to determine the best attribute to split the data.
+- The attribute selection method identifies the "best" attribute for splitting the data into distinct classes.
+- The "best" attribute is determined to maximize the purity of the resulting partitions, aiming for each partition to be as pure as possible.
+
+**Step 4 - Splitting**:
+- Based on the attribute selected in the previous step, the algorithm creates branches from the current node.
+- The data is partitioned into subsets according to the outcomes of the selected attribute's values.
+- There are three scenarios for partitioning:
+  1. If the attribute is discrete-valued, a branch is created for each known value of the attribute.
+  2. If the attribute is continuous-valued, two branches are created: one for values less than or equal to the split point and another for values greater than the split point.
+  3. If the attribute is discrete-valued and a binary tree is required, a test "$A ∈ S_{A}$?" is used, where $S_{A}$ is the splitting subset. Two branches are created, one for "yes" and another for "no."
+
+> **Note:** Discrete-valued attributes are those that have a finite or countably infinite set of values, while continuous-valued attributes are those that can take any real value within a specified range.
+
+**Step 5 - Recursion**:
+- The algorithm is applied recursively to each subset created in the previous step.
+- The recursion process continues until termination conditions are met.
+
+**Step 6 - Output**:
+- The final output is a decision tree. Each internal node represents a test on an attribute, and each leaf node represents a class label.
