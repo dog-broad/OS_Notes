@@ -387,6 +387,7 @@ A decision tree is a supervised machine learning algorithm used for both classif
 - If the termination conditions are not met, the algorithm calls the attribute selection method to determine the best attribute to split the data.
 - The attribute selection method identifies the "best" attribute for splitting the data into distinct classes.
 - The "best" attribute is determined to maximize the purity of the resulting partitions, aiming for each partition to be as pure as possible.
+- The "best" attribute is selected based on a measure of impurity, such as information gain or Gini index.
 
 **Step 4 - Splitting**:
 - Based on the attribute selected in the previous step, the algorithm creates branches from the current node.
