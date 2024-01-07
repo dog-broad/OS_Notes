@@ -397,3 +397,43 @@ UML diagrams can be classified into two main categories:
 - **Reusability:** Design diagrams that can be reused or adapted for similar systems or scenarios.
 
 ![](img/2024-01-07-21-46-19.png)
+
+
+
+## Class Diagram
+
+A **Class Diagram** is a type of UML diagram that shows the structure of a system by depicting the classes of the system, their attributes, operations, and the relationships between them. It's a static model that describes the structure of a system, showing the system's classes, their attributes, operations, and relationships. 
+
+- Class diagrams show a set of classes, interfaces, and collaborations and their relationships.
+- It is the most common diagram found modeling object-oriented systems.
+
+
+**Purposes of Class Diagrams:**
+
+- **Design and Planning:** Helps in visualizing the structure of a system during the design phase.
+- **Communication:** Serves as a communication tool among stakeholders to convey system structure and relationships.
+- **Responsibility Assignment:** Aids in assigning responsibilities to different teams during system development.
+- **Analysis:** Aids in identifying classes, their attributes, and relationships for further analysis and system development.
+- **Documentation:** Provides a clear and concise representation of the system's class structure for future reference.
+- **Forward and Reverse Engineering:** Helps in generating code from class diagrams (forward engineering) and vice versa (reverse engineering).
+
+![](img/2024-01-07-21-58-32.png)
+
+**Components of Class Diagrams:**
+
+1. **Class:** Represents a blueprint or template for creating objects. It contains attributes (characteristics or properties) and methods (functions or behaviors) that define the behavior of the objects.
+
+2. **Attributes:** Characteristics or properties of a class that describe the state of objects. These are depicted as named slots within the class, representing data associated with objects.
+
+3. **Methods:** Functions or behaviors of a class that describe how objects interact and operate. They are depicted as named operations within the class, showing what the objects of that class can do.
+
+4. **Relationships:** Define how classes are associated or connected to each other. Common relationships include associations, aggregations, compositions, inheritance (generalization), and dependencies.
+
+**Things to Remember:**
+
+- The name of the class should be meaningful and descriptive of its purpose in the system.
+- Each element within the class should be named and described clearly and identified before the construction of the class diagram.
+- Responsibilities (attributes and methods) should be assigned to the class based on its purpose and behavior.
+- For each class, minimum number of attributes and methods should be defined to ensure cohesion and avoid redundancy. It should be neither too large nor too small to not make it complex or useless.
+- Finally, before making the final version, the class diagram should be drawn on paper and reviewed by the team to ensure it's accurate and complete.
+
