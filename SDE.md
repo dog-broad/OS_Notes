@@ -425,9 +425,9 @@ A **Class Diagram** is a type of UML diagram that shows the structure of a syste
 
 2. **Attributes:** Characteristics or properties of a class that describe the state of objects. These are depicted as named slots within the class, representing data associated with objects.
 
-3. **Methods:** Functions or behaviors of a class that describe how objects interact and operate. They are depicted as named operations within the class, showing what the objects of that class can do.
+3. **Methods:** Functions or behaviors of a class that describe how objects interact and operate. They are depicted as named operations within the class, showing what the objects of that class can do. 
 
-4. **Relationships:** Define how classes are associated or connected to each other. Common relationships include associations, aggregations, compositions, inheritance (generalization), and dependencies.
+4. **Relationships:** Define how classes are associated or connected to each other. Common relationships include associations, aggregations, compositions, inheritance (generalization), and dependencies. These are depicted as lines connecting the classes.
 
 **Things to Remember:**
 
@@ -437,3 +437,34 @@ A **Class Diagram** is a type of UML diagram that shows the structure of a syste
 - For each class, minimum number of attributes and methods should be defined to ensure cohesion and avoid redundancy. It should be neither too large nor too small to not make it complex or useless.
 - Finally, before making the final version, the class diagram should be drawn on paper and reviewed by the team to ensure it's accurate and complete.
 
+
+
+## Object Diagram
+
+An **Object Diagram** is a type of UML diagram that shows a complete or partial view of the structure of a modeled system at a specific time. It's a static model that shows a set of objects and their relationships at a specific point in time. It's a snapshot of the system, showing the objects and their relationships at a specific point in time.  
+
+Unlike a class diagram, which represents the structure of a system, an object diagram represents the state of a system. So, it's more detailed than a class diagram, showing the objects and their attributes and relationships at a specific point in time.
+
+**Components of Object Diagrams:**
+
+1. **Object:** Represents an instance of a class. It's a runtime entity that has a state and behavior defined by its class. It's depicted as a rectangle with the name of the object at the top, followed by its attributes and operations.
+2. **Attributes:** Characteristics or properties of an object that describe its state. These are depicted as named slots within the object, representing data associated with the object.
+3. **Links:** Represent relationships between objects. They are depicted as lines connecting the objects, showing how they are related.
+
+![](img/2024-01-07-22-08-12.png)
+
+**Purpose of Object Diagrams:**
+
+- **Object diagrams** represent the **specific snapshot** of a system at a given moment, emphasizing the system's purpose.
+- Used for **both forward and reverse engineering**, they aid in system design and analysis, providing valuable insights.
+- Revealing **object relationships** like generalization, association, aggregation, and composition, they illustrate system connections.
+- Depicting the **static view of interactions**, they showcase object states and links before, during, or after an interaction.
+- **Understanding object behaviors and relationships** practically, they showcase collaborative functionalities to achieve goals.
+
+**Things to Remember:**
+
+- Object diagrams must be given a **meaningful name** that describes the purpose of the system.
+- Identify the **most important elements** that you want to include in the diagram, such as classes, objects, attributes, operations, etc.
+- Clarify the **associations among objects**, such as the type and direction of the relationship, the multiplicity, the role, etc.
+- Capture the **values of different elements** that you want to include in the diagram, such as the name and value of the attributes, the parameters and return values of the operations, etc.
+- Add **proper notes** at points where more clarity is required, such as explaining the meaning or significance of an element, a relationship, or a value.
