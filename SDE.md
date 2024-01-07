@@ -2,6 +2,31 @@
 
 # <p align="center"> <b> Software Engineering </b> </p>
 
+## SDLC
+
+The Software Development Life Cycle (SDLC) is a structured approach that software organizations employ to design, create, maintain, and enhance software systems. It's essentially a roadmap that guides the development process from conception to deployment, ensuring the delivery of high-quality software that meets user requirements.
+
+The Software Development Life Cycle (SDLC) consists of several stages that guide the development process of software systems. These stages are essential to ensure the successful creation, maintenance, and enhancement of high-quality software that meets user requirements. Each stage serves a specific purpose and contributes to the overall success of the project. 
+
+![](img/2024-01-07-21-22-10.png)
+
+**The SDLC stages are:**
+
+1. **Planning and Requirement Analysis:** The initial phase involves meticulous planning and gathering of requirements. It's where project outlines are shaped using inputs from customers and market analysis, forming the foundation of the entire project.
+
+2. **Defining Requirements:** Here, all the necessary software requirements are clearly specified, validated, and approved by stakeholders. The Software Requirement Specification (SRS) document plays a pivotal role in outlining these requirements.
+
+3. **Designing Architecture:** Multiple software architecture designs are conceived based on the requirements outlined in the SRS. The best-suited design is chosen after evaluations and assessments.
+
+4. **Developing Product:** The actual development phase kicks off, where developers write the software code based on the chosen design. This involves following established protocols and using appropriate programming languages.
+
+5. **Product Testing and Integration:** Thorough testing is conducted to identify and rectify potential flaws. This ensures that the software meets the quality standards specified in the SRS. It also involves documentation, training, and ongoing support.
+
+6. **Deployment and Maintenance:** The final product undergoes phased release and real-world testing. Feedback is gathered, and the product is fine-tuned based on user experiences. Continuous monitoring and maintenance ensure sustained performance.
+
+**The Significance of SDLC:**
+SDLC serves as a blueprint for software development, ensuring a systematic approach to create robust, user-centric, and cost-effective software solutions. Understanding and adhering to this process is crucial for developers to navigate complexities and deliver successful software products.
+
 ## Software Process Assessment
 
 Software process assessment is a critical practice in the field of software development, aimed at evaluating and improving the processes used in creating software. These assessments help organizations identify areas for improvement, ensure compliance with industry standards, and enhance the overall quality and efficiency of their software development processes. Various standards and assessment methods have been established to facilitate this process.
