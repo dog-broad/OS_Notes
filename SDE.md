@@ -448,7 +448,9 @@ Unlike a class diagram, which represents the structure of a system, an object di
 **Components of Object Diagrams:**
 
 1. **Object:** Represents an instance of a class. It's a runtime entity that has a state and behavior defined by its class. It's depicted as a rectangle with the name of the object at the top, followed by its attributes and operations.
+   
 2. **Attributes:** Characteristics or properties of an object that describe its state. These are depicted as named slots within the object, representing data associated with the object.
+   
 3. **Links:** Represent relationships between objects. They are depicted as lines connecting the objects, showing how they are related.
 
 ![](img/2024-01-07-22-08-12.png)
@@ -468,3 +470,84 @@ Unlike a class diagram, which represents the structure of a system, an object di
 - Clarify the **associations among objects**, such as the type and direction of the relationship, the multiplicity, the role, etc.
 - Capture the **values of different elements** that you want to include in the diagram, such as the name and value of the attributes, the parameters and return values of the operations, etc.
 - Add **proper notes** at points where more clarity is required, such as explaining the meaning or significance of an element, a relationship, or a value.
+
+
+## Class diagram of Library Management System
+
+```mermaid
+classDiagram
+    class Library {
+        -String name
+        -String address
+        -List<Book> books
+        -List<Member> members
+        +addBook()
+        +removeBook()
+        +addMember()
+        +removeMember()
+    }
+
+    class Book {
+        -String title
+        -String author
+        -String ISBN
+        -boolean available
+        +checkout()
+        +checkin()
+    }
+
+    class Member {
+        -String name
+        -int id
+        -List<Book> borrowedBooks
+        +borrowBook()
+        +returnBook()
+    }
+
+    class Author {
+        -String name
+        -List<Book> publishedBooks
+        +writeBook()
+    }
+
+    class Librarian {
+        -String name
+        -int employeeID
+        +addBook()
+        +removeBook()
+        +addMember()
+        +removeMember()
+    }
+
+    Library --> Book : contains
+    Library --> Member : manages
+    Library --> Librarian : employs
+    Author --> Book : writes
+    Member --> Book : borrows
+    Librarian --> Book : manages
+    Librarian --> Member : manages
+
+```
+
+
+<h1> <p align="center"> Behavioral Modelling </p> </h1>
+
+## Interaction Diagrams
+
+Interaction diagrams are a type of UML diagram that shows how objects interact with each other in a system. They're used to visualize the dynamic aspects of a system, focusing on the interactions between objects. It's used for modeling the dynamic aspects of a system, focusing on the interactions between objects.
+
+**Purpose and Function:**
+
+- **Visualizing System Interaction:** Interaction diagrams serve the purpose of providing a visual representation of how elements within a system communicate or collaborate with each other during runtime.
+- **Dynamic Behavior Capturing:** These diagrams help capture the dynamic behavior of a system by illustrating the exchange of messages among objects.
+
+We have two types of interaction diagrams in UML. One is the **Sequence Diagram**, and the other is the **Collaboration Diagram**.
+
+- **Sequence Diagrams:** Emphasize the chronological order of messages passed between objects. They display the sequence of interactions, focusing on the flow of messages over time. These diagrams provide a clear depiction of how methods or functions of different objects are called in a specific sequence.
+
+![](img/2024-01-07-22-20-04.png)
+  
+- **Collaboration Diagrams:** Highlight the structural organization of objects involved in message exchange. These diagrams showcase how objects are related to each other and how they collaborate to achieve a particular task. They emphasize the overall organization of objects, including how they interact, without strictly detailing the message flow sequence.
+
+![](img/2024-01-07-22-20-16.png)
+
