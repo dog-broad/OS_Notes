@@ -551,3 +551,32 @@ We have two types of interaction diagrams in UML. One is the **Sequence Diagram*
 
 ![](img/2024-01-07-22-20-16.png)
 
+
+## Use Case Diagram
+
+A **Use Case Diagram** is a type of UML diagram that shows the behavior of a system by depicting how users interact with that system. It's a behavioral model that describes the functionality of a system from a user's perspective.
+
+- It encapsulates the system's functionality by focusing on how external entities i.e., actors interact with the system.
+- It's a high-level diagram that provides an overview of the system's functionality, showing what the system does without going into the details of how it does it.
+- The main purpose of a use case diagram is to portray the dynamic behavior of a system in a clear and concise manner.
+
+**Purpose of Use Case Diagrams:**
+
+- **System Analysis:** Use case diagrams help in analyzing the system's behavior and gather all its needs and requirements.
+- **External view of the System:** They provide an external view of the system, focusing on how users interact with it.
+- **Factors Identification:** They aid in identifying the factors that influence the system and its behavior both internally and externally.
+- **Interaction Visualization:** They help visualize the interactions between the system and its users, showing how users interact with the system to achieve their goals.
+
+**Components of Use Case Diagrams:**
+
+1. **Actor:** Represents an external entity that interacts with the system. It can be a person, organization, or external system. It's depicted as a stick figure with a name below it.
+
+2. **Use Case:** Represents a specific functionality or behavior of the system. It's depicted as an oval with a name inside it.
+
+3. **System Boundary:** Represents the scope or boundary of the system. It's depicted as a rectangle that encloses all the use cases.
+
+4. **Relationships:** Represent the interactions between actors and use cases. They are depicted as lines connecting the actors and use cases.
+
+**Example:**
+
+![](img/2024-01-07-22-28-31.png)
