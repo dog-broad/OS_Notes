@@ -232,19 +232,19 @@ Functional and non-functional requirements are two types of requirements that ar
 
 | Functional Requirements                  | Non-Functional Requirements                 |
 |------------------------------------------|--------------------------------------------|
-| Outline system or component actions.     | Define attributes shaping system quality.   |
-| Describe "What the system should do."   | Impose rules on "How system meets functional demands."|
-| Identified within use case scenarios.    | Represent system attributes for quality.    |
-| Stipulated by end-users.                | Specified by technical specialists.         |
-| Vital for system functionality.          | Not mandatory but crucial for efficiency.  |
-| Tested through functional checks.        | Tested through quality-centric evaluations.|
-| Generally easier to articulate.          | Often intricate to precisely define.        |
-| Applies at a component level.            | Pertains to the system as a whole.         |
-| Focuses on system behavior.              | Centers on system performance and usability.|
-| Examples: Authentication, System shutdown, Email verification. | Examples: Response time, Security measures, Load time.|
-| Evaluated through System, Integration, End to End, API testing, etc. | Evaluated through Performance, Stress, Usability, Security testing, etc.|
-| Dictates system behavior.                | Influences overall system performance.      |
-| Subject to user-driven changes.          | Often remains stable and less change-prone.|
+| Explain what a system or part does.     | Define how well the system performs.       |
+| Say "What should be done by the system."| Describe "How the system should perform its tasks."|
+| Found in use case stories.              | Describe system qualities.                 |
+| Decided by users.                       | Defined by tech experts.                   |
+| Necessary for system working.           | Not must-have but impacts performance.    |
+| Checked with regular tests.             | Checked with quality-focused tests.        |
+| Usually easier to explain.              | Often trickier to define clearly.          |
+| Applies to smaller parts of the system. | Applies to the whole system.               |
+| Focuses on system actions.              | Focuses on how well the system works.     |
+| Examples: User login, System shutdown, Email alerts. | Examples: Speed, Security, User-friendliness.|
+| Tested through various functional checks.| Tested through checks focused on quality.  |
+| Guides system behavior.                 | Affects overall system performance.        |
+| Can change based on user needs.         | Often stays consistent without changes.   |
 
 
 <h1> <p align="center"> Unit 2 </p> </h1>
