@@ -226,6 +226,26 @@ A **Software Requirements Specification (SRS) Document** is like a blueprint for
 
 An SRS document is essential for keeping your development teams on the same page, meeting requirements, and making informed decisions throughout the product's lifecycle. It may be challenging to create, but the effort pays off in better understanding the product, its users, and the time needed for development. While you can use tools like Microsoft Word to create SRS documents, be cautious of versioning issues and the potential for documents to become out-of-date.
 
+## Functional and Non-Functional Requirements
+
+Functional and non-functional requirements are two types of requirements that are essential for building software. Functional requirements describe what the software should do, while non-functional requirements describe how the software should perform. Both are important for ensuring that the software meets user needs and expectations.
+
+| Functional Requirements                  | Non-Functional Requirements                 |
+|------------------------------------------|--------------------------------------------|
+| Outline system or component actions.     | Define attributes shaping system quality.   |
+| Describe "What the system should do."   | Impose rules on "How system meets functional demands."|
+| Identified within use case scenarios.    | Represent system attributes for quality.    |
+| Stipulated by end-users.                | Specified by technical specialists.         |
+| Vital for system functionality.          | Not mandatory but crucial for efficiency.  |
+| Tested through functional checks.        | Tested through quality-centric evaluations.|
+| Generally easier to articulate.          | Often intricate to precisely define.        |
+| Applies at a component level.            | Pertains to the system as a whole.         |
+| Focuses on system behavior.              | Centers on system performance and usability.|
+| Examples: Authentication, System shutdown, Email verification. | Examples: Response time, Security measures, Load time.|
+| Evaluated through System, Integration, End to End, API testing, etc. | Evaluated through Performance, Stress, Usability, Security testing, etc.|
+| Dictates system behavior.                | Influences overall system performance.      |
+| Subject to user-driven changes.          | Often remains stable and less change-prone.|
+
 
 <h1> <p align="center"> Unit 2 </p> </h1>
 
