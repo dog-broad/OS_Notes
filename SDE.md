@@ -395,3 +395,5 @@ UML diagrams can be classified into two main categories:
 - **Clarity:** Create diagrams that are easy to understand and interpret.
 - **Consistency:** Ensure uniformity in notation and representation throughout the diagrams.
 - **Reusability:** Design diagrams that can be reused or adapted for similar systems or scenarios.
+
+![](img/2024-01-07-21-46-19.png)
