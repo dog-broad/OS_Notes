@@ -87,6 +87,45 @@ The key idea is that you finish one phase before starting the next, like water f
 - Integration and testing are done late, making it hard to identify issues early.
 
 
+## Incremental Model
+
+The incremental model is a software development approach that breaks a project into smaller pieces and develops each piece individually. Each piece is called an increment. The increments are developed in a series of cycles, with each cycle adding more features to the software. The software is tested after each cycle to ensure it works as expected. This approach is also known as the Iterative Enhancement Model.
+
+![](img/2024-01-07-20-21-30.png)
+
+- **Development Phases:** It begins with a simple working system delivering basic features, followed by successive iterations until the desired system is achieved.
+
+- **Module-based Development:** Modules (A, B, C) of software products are incrementally developed and delivered, focusing on core features first.
+
+- **Iterative Process:** Each version builds upon the previous one, incorporating feedback from customers, with new functions added to increase capability.
+
+- **Incremental Construction:** Requirements are split into versions, starting with version 1, developed and deployed successively, culminating in the final release.
+
+**Types of Incremental Models:**
+1. **Staged Delivery Model:** Construction of one project part at a time.
+2. **Parallel Development Model:** Developing different subsystems simultaneously, reducing development time if adequate resources are available.  
+![](img/2024-01-07-20-23-16.png)
+
+**When to Use:**
+- Funding schedule, risk, program complexity, or early benefit realization.
+- Known upfront requirements.
+- Lengthy development schedules or projects involving new technology.
+
+**Characteristics:**
+- System development divided into smaller projects.
+- Partial systems constructed successively to create the final system.
+- Priority requirements addressed first, with frozen requirements for each increment.
+
+**Advantages:**
+- Rapid software preparation.
+- Clear project understanding for clients.
+- Easy implementation of changes.
+- Flexible scope adjustment, risk handling, and error identification.
+
+**Disadvantages:**
+- Requires a skilled team and well-planned execution.
+- Increased cost due to continuous iterations.
+- Issues may arise if all needs aren't gathered upfront, leading to design issues and time-consuming error corrections across iterations.
 
 ## CMMI
 
