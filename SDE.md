@@ -623,3 +623,31 @@ Absolutely! Here's an in-depth explanation of each testing strategy:
 
 10.  **Security Testing:** Security testing assesses the software's resilience against vulnerabilities, ensuring it adheres to security standards. It identifies potential threats, risks, and weaknesses to prevent unauthorized access, data breaches, or other security issues. Techniques like penetration testing and vulnerability scanning are commonly employed to fortify the software against potential attacks.  
 *Example:* Checking a financial application for potential vulnerabilities like SQL injection or cross-site scripting attacks.
+
+
+## Black Box Testing vs White Box Testing
+
+**Black Box Testing** is a software testing strategy that focuses on the functionality of the software without examining its internal code structure. Testers treat the software as a black box, focusing on inputs, outputs, and system behaviors based on requirements. Test cases are designed based on specifications and expected outputs. By treating the software as a black box, testers simulate real user scenarios to validate expected functionalities and uncover potential defects or inconsistencies in the application's behavior.
+
+**White Box Testing** is a software testing strategy that examines the internal code structure, logic, and paths within the software. Testers have access to the code and design the test cases based on the code structure to validate specific paths, conditions, and functionalities. It ensures thorough coverage of all possible code paths, aiding in identifying coding errors, loop issues, or optimization needs.
+
+| Black Box Testing | White Box Testing |
+|-------------------|-------------------|
+| It involves testing software without knowledge of its internal structure or code. | It involves testing software with knowledge of its internal structure or code. |
+| Code implementation isn't necessary for this testing. | Code implementation is necessary for this testing. |
+| Typically conducted by software testers. | Predominantly carried out by software developers. |
+| Requires no knowledge of implementation details. | Demands knowledge of implementation specifics. |
+| Referred to as outer or external software testing. | Referred to as inner or internal software testing. |
+| Functional testing approach. | Structural testing approach. |
+| Initiated based on requirement specifications documents. | Commences after a detailed design document. |
+| Doesn't require programming expertise. | Requires programming knowledge. |
+| Focuses on behavior testing of the software. | Focuses on logic testing of the software. |
+| More applicable to higher levels of software testing. | Generally applicable to lower levels of software testing. |
+| Also known as closed testing. | Also known as clear box testing. |
+| Less time-consuming compared to white box testing. | More time-consuming compared to black box testing. |
+| Not preferred for algorithm testing. | Suitable for algorithm testing. |
+| Testing is conducted using trial and error methods. | Inner data domains and boundaries are better tested. |
+| Example: Searching using keywords on Google. | Example: Checking and verifying loops through input. |
+| Black-box test design techniques: Decision table testing, All-pairs testing, Equivalence partitioning, Error guessing. | White-box test design techniques: Control flow testing, Data flow testing, Branch testing. |
+| Types: Functional Testing, Non-functional Testing, Regression Testing. | Types: Path Testing, Loop Testing, Condition Testing. |
+| Less exhaustive compared to white box testing. | More exhaustive than black box testing. |
