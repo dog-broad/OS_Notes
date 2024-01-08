@@ -684,28 +684,44 @@ There are two main types of software quality metrics:
    - **Productivity:** These metrics measure the productivity of the software development process. They include metrics like lines of code per hour, number of defects per hour and number of tasks completed per hour.
    - **Efficiency:** These metrics measure the efficiency of the software development process. They include metrics like defect removal efficiency, defect detection rate and defect containment efficiency.
 
-### Correctness - Defects per KLOC (Thousand Lines of Code)
+## Examples of Software Quality Metrics
+
+**Size and Complexity - Lines of Code (LOC)**
+Lines of Code (LOC) is a metric that measures the size of a software product by counting the number of lines of code in the software. It's a simple and easy-to-use metric that provides a rough estimate of the software's size. The formula for LOC is:
+
+$$\text{LOC} = \text{Total number of lines of code}$$
+
+This metric is useful for estimating the size of a software product and comparing it with other products. However, it doesn't take into account the complexity of the software, which can vary significantly from one product to another.
+
+**Correctness - Defects per KLOC (Thousand Lines of Code)**
 Correctness measures the software's accuracy and absence of defects. Defects per KLOC (Defects per Thousand Lines of Code) is a metric that quantifies the number of defects discovered per 1000 lines of code. It helps assess the software's reliability by evaluating the density of defects found during development or testing stages. The formula is:
 
 $$\text{Defects per KLOC} = \frac{\text{Total Defects}}{\text{Total Lines of Code (in thousands)}}$$
 
 This metric aids in understanding the software's robustness, guiding improvement efforts, and providing a benchmark for quality levels.
 
-### Maintainability - Mean Time to Change (MTTC)
+**Reliability - Mean Time Between Failures (MTBF)**
+Reliability measures the software's ability to perform its intended functions without failure. Mean Time Between Failures (MTBF) is a metric that quantifies the average time between failures. It's calculated using the formula:
+
+$$\text{MTBF} = \frac{\text{Total Time}}{\text{Number of Failures}}$$
+
+This metric helps assess the software's reliability by measuring the average time between failures. A higher MTBF indicates better reliability, signifying that the software is less likely to fail.
+
+**Maintainability - Mean Time to Change (MTTC)**
 Maintainability assesses the ease with which software can be modified or enhanced. Mean Time to Change (MTTC) measures the average time required to implement changes or modifications in the software. It represents the software's adaptability to alterations and enhancements. The formula for MTTC is:
 
 $$\text{MTTC} = \frac{\text{Total Time for Changes}}{\text{Number of Changes}}$$
 
 A lower MTTC implies better maintainability, indicating that modifications can be implemented swiftly and efficiently.
 
-### Integrity - Threat Probability and Security
+**Integrity - Threat Probability and Security**
 Integrity in software refers to its reliability and trustworthiness concerning threats and security vulnerabilities. It can be quantified by combining Threat Probability and Security measures. Assuming Threat is the probability of an attack occurring within a given time frame and Security as the software's resilience, the integrity formula can be represented as:
 
 $$\text{Integrity} = \sum (1 - (\text{Threat} \times (1 - \text{Security})))$$
 
 This formula calculates the overall integrity by summing the probability of not being attacked (1 - Threat * (1 - Security)) for different threats and security measures.
 
-### Usability - Defect Removal Efficiency (DRE)
+**Usability - Defect Removal Efficiency (DRE)**
 Usability evaluates how user-friendly and efficient the software is. Defect Removal Efficiency (DRE) measures the effectiveness of defect identification before and after software delivery. It's calculated using the formula:
 
 $$\text{DRE} = \frac{\text{Errors found before delivery}}{\text{Errors found before delivery + Defects found before delivery}}$$
@@ -770,3 +786,19 @@ A higher DRE indicates better usability, signifying that a greater proportion of
 | Involves learning from past mistakes and incidents. | Involves continuous improvement and learning from potential scenarios. |
 | Reactive responses can disrupt workflows and operations. | Proactive measures aim to maintain smooth operations. |
 | Emphasizes corrective actions. | Emphasizes preventive actions. |
+
+
+## RMMM Plan (Risk Mitigation, Monitoring and Management)
+
+**Risk Mitigation, Monitoring, and Management (RMMM)** is a strategy that focuses on identifying, assessing, and mitigating risks to an organization's assets and resources. It involves identifying potential risks, analyzing their impact, and developing strategies to minimize their impact. It's a continuous process that helps organizations identify and manage risks to their assets and resources.
+
+**Risk Mitigation, Monitoring, and Management (RMMM) Plan:**
+
+1. **Risk Mitigation:**
+Risk mitigation is primarily a proactive problem avoidance strategy. It involves developing plans to prevent potential problems from occurring. To initiate this process, checklists are utilized to identify risks in a generic sense, which is followed by a deeper analysis to identify project-specific risks. Once all risks are identified, they are evaluated based on their probability of occurrence. Plans are then devised to either avoid or reduce the impact of these identified risks should they materialize.
+
+2. **Risk Monitoring:**
+Monitoring, on the other hand, is a project tracking activity. Its primary goal is to ensure that any predicted risks occur as anticipated. It also verifies that the risk-aversion strategies defined for each risk are appropriately applied. Additionally, it collects relevant information during the project lifecycle that can later be used for future risk analysis.
+
+3. **Risk Management:**
+Risk management encompasses planning for contingencies in the event of risk occurrence. It involves assessing, prioritizing, and planning for risks that might affect the project. This proactive approach assists in minimizing the probability or impact of potential risks.
