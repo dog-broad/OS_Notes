@@ -651,3 +651,63 @@ Absolutely! Here's an in-depth explanation of each testing strategy:
 | Black-box test design techniques: Decision table testing, All-pairs testing, Equivalence partitioning, Error guessing. | White-box test design techniques: Control flow testing, Data flow testing, Branch testing. |
 | Types: Functional Testing, Non-functional Testing, Regression Testing. | Types: Path Testing, Loop Testing, Condition Testing. |
 | Less exhaustive compared to white box testing. | More exhaustive than black box testing. |
+
+
+<h1> <p align="center"> Product Metrics </p> </h1>
+
+## Software Quality Metrics
+
+**Software Quality Metrics** are quantitative measures that help in evaluating the quality of a software product or service. They provide insights into the software's performance, reliability, and efficiency, helping in identifying potential issues and improving the overall quality of the product. These metrics are used to assess the quality of a software product or service.
+
+Software quality metrics are important for measuring:
+
+1. Software Performance
+2. Planning work items
+3. Measuring Productivity
+4. Debugging
+5. Estimating Software Costs
+
+**Characteristics of Software Quality Metrics:**
+
+- **Simple and Computable:** Metrics should be simple and easy to understand. They should be computable, allowing for easy calculation and analysis.
+- **Consistent and Unambiguous:** Metrics should be consistent and unambiguous, ensuring that they are interpreted the same way by everyone.
+- **Use consistent units:** Metrics should use consistent units of measurement to ensure accurate comparisons.
+- **Independent:** Metrics should be independent of the software's size, complexity, programming language and other factors.
+
+There are two main types of software quality metrics:
+
+1. **Product Metrics:** These metrics focus on the characteristics of the software product itself, such as its size, complexity, and performance. They are used to assess the quality of the software product. The 2 important product metrics are:
+   - **Size and Complexity:** These metrics measure the size and complexity of the software product. They include metrics like lines of code, number of functions and cyclomatic complexity.
+   - **Quality and Reliability:** These metrics measure the quality and reliability of the software product. They include metrics like defect density, failure rate and mean time between failures.
+
+2. **Process Metrics:** These metrics focus on the software development process, such as the time taken to complete a task or the number of defects found during testing. They are used to assess the quality of the software development process. Some important process metrics are:
+   - **Productivity:** These metrics measure the productivity of the software development process. They include metrics like lines of code per hour, number of defects per hour and number of tasks completed per hour.
+   - **Efficiency:** These metrics measure the efficiency of the software development process. They include metrics like defect removal efficiency, defect detection rate and defect containment efficiency.
+
+### Correctness - Defects per KLOC (Thousand Lines of Code)
+Correctness measures the software's accuracy and absence of defects. Defects per KLOC (Defects per Thousand Lines of Code) is a metric that quantifies the number of defects discovered per 1000 lines of code. It helps assess the software's reliability by evaluating the density of defects found during development or testing stages. The formula is:
+
+$$\text{Defects per KLOC} = \frac{\text{Total Defects}}{\text{Total Lines of Code (in thousands)}}$$
+
+This metric aids in understanding the software's robustness, guiding improvement efforts, and providing a benchmark for quality levels.
+
+### Maintainability - Mean Time to Change (MTTC)
+Maintainability assesses the ease with which software can be modified or enhanced. Mean Time to Change (MTTC) measures the average time required to implement changes or modifications in the software. It represents the software's adaptability to alterations and enhancements. The formula for MTTC is:
+
+$$\text{MTTC} = \frac{\text{Total Time for Changes}}{\text{Number of Changes}}$$
+
+A lower MTTC implies better maintainability, indicating that modifications can be implemented swiftly and efficiently.
+
+### Integrity - Threat Probability and Security
+Integrity in software refers to its reliability and trustworthiness concerning threats and security vulnerabilities. It can be quantified by combining Threat Probability and Security measures. Assuming Threat is the probability of an attack occurring within a given time frame and Security as the software's resilience, the integrity formula can be represented as:
+
+$$\text{Integrity} = \sum (1 - (\text{Threat} \times (1 - \text{Security})))$$
+
+This formula calculates the overall integrity by summing the probability of not being attacked (1 - Threat * (1 - Security)) for different threats and security measures.
+
+### Usability - Defect Removal Efficiency (DRE)
+Usability evaluates how user-friendly and efficient the software is. Defect Removal Efficiency (DRE) measures the effectiveness of defect identification before and after software delivery. It's calculated using the formula:
+
+$$\text{DRE} = \frac{\text{Errors found before delivery}}{\text{Errors found before delivery + Defects found before delivery}}$$
+
+A higher DRE indicates better usability, signifying that a greater proportion of errors and defects were identified and resolved before software delivery, enhancing its usability for end-users.
