@@ -1,6 +1,6 @@
-# <p align"center"> Unit 1 </p>
+# <p align="center"> Unit 1 </p>
 
-# <p align"center"> <b>Introduction to Digital Marketing</b> </p>
+# <p align="center"> <b>Introduction to Digital Marketing</b> </p>
 
 ## Explain in detail about website optimisation and content management on web.
 
