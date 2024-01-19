@@ -258,6 +258,39 @@ The Knowledge Discovery in Data (KDD) process is a comprehensive approach to ext
 
 ## Apriori Algorithm
 
+Apriori algorithm is a classic method used for association rule mining in data mining. It’s a systematic approach to finding frequent itemsets within a dataset and deriving association rules based on those itemsets.
+
+### Apriori Algorithm Steps:
+
+1. **Initialize**
+   - Set minimum support count and minimum confidence threshold.
+   - Scan the dataset to build a frequency table (C1) for single items (K=1).
+   - Determine frequent items (L1) based on minimum support count.
+
+2. **Generate Frequent Itemsets**
+   - Iterate (K > 1) until no new frequent itemsets can be found.
+   - Generate candidate itemsets (Ck) by joining frequent itemsets from the previous step.
+     - For K=2: Join L1 to generate C2, pruning subsets that are not frequent.
+     - For K=3: Join L2 to generate C3, pruning subsets that are not frequent.
+     - Repeat this process until no more frequent itemsets can be derived.
+
+3. **Calculate Support Counts**
+   - Search the dataset for occurrences of candidate itemsets.
+   - Calculate the support count for each candidate itemset.
+
+4. **Prune Candidate Itemsets**
+   - Remove candidate itemsets (Ck) with support counts below the minimum support threshold.
+   - This generates the set of frequent itemsets (Lk) for the current iteration.
+
+5. **Derive Association Rules**
+   - Generate association rules from the frequent itemsets that meet the minimum confidence threshold.
+   - Create rules using frequent itemsets: {IF} -> {THEN}, considering subsets of the frequent itemsets.
+
+6. **Repeat or Terminate**
+   - Repeat steps 2-5 until no further frequent itemsets can be derived.
+   - Terminate the process when no new frequent itemsets can be found or reach a predefined iteration limit.
+
+
 ![](img/2023-10-16-22-11-52.png)
 
 ![](img/2023-10-16-22-12-10.png)
